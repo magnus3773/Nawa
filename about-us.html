@@ -23,7 +23,7 @@
     <style>
         :root{ --nawa-navy:#0F172A; --nawa-gold:#EAB308; }
       
-        /* Immer weißer Balken, ohne Transparenz/Blur */
+        /* Immer weißer Header-Balken, keine Transparenz/Blur */
         #header-sticky,
         .header,
         .header-1, .header-6, .header-8,
@@ -36,7 +36,16 @@
           box-shadow:0 2px 12px rgba(15,23,42,.06);
         }
       
-        /* Wenn das Theme beim Scrollen eine "sticky"-Klasse setzt */
+        /* Einheitliche Höhe/Abstände im Header */
+        .header__main{ padding:14px 0 !important; }
+        .header__logo img{ max-height:36px; }
+      
+        /* Sticky-Verhalten: oben anpinnen, nicht durchsichtig */
+        #header-sticky{
+          position: sticky !important;
+          top: 0;
+          z-index: 999;
+        }
         #header-sticky.sticky,
         .header.sticky,
         .header-1.sticky, .header-6.sticky, .header-8.sticky,
@@ -45,7 +54,10 @@
           box-shadow:0 2px 12px rgba(15,23,42,.06);
         }
       
-        /* Menü-Farben passend zu deinem Schema */
+        /* Verhindert Überlappung: Platz für den fixen Header einplanen */
+        body{ scroll-padding-top: 80px; }
+      
+        /* Menüfarben passend zu deinem Schema */
         .main-menu ul li > a { color: var(--nawa-navy) !important; }
         .main-menu ul li > a:hover { color: var(--nawa-gold) !important; }
       </style>
