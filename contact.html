@@ -53,52 +53,6 @@
         .main-menu ul li > a { color: var(--nawa-navy) !important; }
         .main-menu ul li > a:hover { color: var(--nawa-gold) !important; }
       </style>
-      /* --- Layout-Fix: Logo links, Menü mittig/gleich ausgerichtet --- */
-      .header .container,
-      .header-6 .container,
-      .header-8 .container{
-        max-width: 1200px !important;
-        padding: 0 24px !important;
-        margin: 0 auto !important;
-      }
-      
-      .header__main{
-        display: flex !important;
-        align-items: center !important;
-        justify-content: space-between !important;
-      }
-      
-      /* Links/Rechts/Mitte korrekt als Flex aufspannen */
-      .header__left{ flex: 0 0 auto !important; }
-      .header__middle{
-        flex: 1 1 auto !important;
-        display: flex !important;
-        justify-content: center !important;   /* Menü mittig – nimm 'flex-start', falls du es links neben dem Logo willst */
-      }
-      .header__right{ flex: 0 0 auto !important; }
-      
-      /* Menü optisch zentrieren und mit Abstand */
-      .main-menu #mobile-menu > ul{
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;   /* oder flex-start */
-        gap: 28px !important;
-        margin: 0 !important;
-        padding: 0 !important;
-      }
-      
-      /* Entfernt evtl. interne negative/seitliche Abstände */
-      .mega-menu-wrapper,
-      .mega__menu-wrapper{
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-      }
-      
-      /* Logo-Größe konstant */
-      .header__logo img{ max-height: 36px !important; }
-      </head>
-
-
 <body>
 
 
