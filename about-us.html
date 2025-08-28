@@ -20,7 +20,36 @@
     <link rel="stylesheet" href="assets/css/slick.css">
     <link rel="stylesheet" href="assets/css/default.css">
     <link rel="stylesheet" href="assets/css/main.css">
-</head>
+    <style>
+        :root{ --nawa-navy:#0F172A; --nawa-gold:#EAB308; }
+      
+        /* Immer weißer Balken, ohne Transparenz/Blur */
+        #header-sticky,
+        .header,
+        .header-1, .header-6, .header-8,
+        .header__main,
+        .mega-menu-wrapper, .mega__menu-wrapper,
+        .menu-area{
+          background:#ffffff !important;
+          backdrop-filter:none !important;
+          -webkit-backdrop-filter:none !important;
+          box-shadow:0 2px 12px rgba(15,23,42,.06);
+        }
+      
+        /* Wenn das Theme beim Scrollen eine "sticky"-Klasse setzt */
+        #header-sticky.sticky,
+        .header.sticky,
+        .header-1.sticky, .header-6.sticky, .header-8.sticky,
+        .header__main.sticky{
+          background:#ffffff !important;
+          box-shadow:0 2px 12px rgba(15,23,42,.06);
+        }
+      
+        /* Menü-Farben passend zu deinem Schema */
+        .main-menu ul li > a { color: var(--nawa-navy) !important; }
+        .main-menu ul li > a:hover { color: var(--nawa-gold) !important; }
+      </style>
+      </head>
 <body>
 
 <!-- Header (Deutsch, NEU) -->
