@@ -1,186 +1,439 @@
 <!doctype html>
-<html lang="de">
+<html class="no-js" lang="de">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>Leistungen – Alpen Intelligenz</title>
-  <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/css/main.css">
-  <style>
-    :root { --nawa-navy:#0F172A; --nawa-gold:#EAB308; }
+  <meta name="description" content="Alpen Intelligenz: KI-Automatisierung und individuelle Lösungen, die Abläufe verschlanken und Kosten senken.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    /* Header fix */
-    #header-sticky, .header {
-      background:#fff !important;
+  <link rel="shortcut icon" type="image/x-icon" href="assets/imgs/logo/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sofia&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/vendor/animate.min.css">
+  <link rel="stylesheet" href="assets/css/vendor/odometer.min.css">
+  <link rel="stylesheet" href="assets/css/plugins/swiper.min.css">
+  <link rel="stylesheet" href="assets/css/vendor/magnific-popup.css">
+  <link rel="stylesheet" href="assets/css/vendor/fontawesome-pro.css">
+  <link rel="stylesheet" href="assets/css/vendor/spacing.css">
+  <link rel="stylesheet" href="assets/css/vendor/custom-font.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+
+  <!-- Fix/Overrides -->
+  <style>
+    :root{ --nawa-navy:#0F172A; --nawa-gold:#EAB308; }
+
+    /* Fester weißer Header ohne Blur */
+    #header-sticky,
+    .header, .header-1, .header-6, .header-8,
+    .header__main, .mega-menu-wrapper, .mega__menu-wrapper, .menu-area{
+      background:#ffffff !important;
+      backdrop-filter:none !important;
+      -webkit-backdrop-filter:none !important;
       box-shadow:0 2px 12px rgba(15,23,42,.06);
     }
-    .main-menu ul li > a { color:var(--nawa-navy) !important; }
-    .main-menu ul li > a:hover { color:var(--nawa-gold) !important; }
-
-    /* 4er Grid */
-    .features-grid {
-      display:grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap:24px;
-      margin-top:40px;
+    #header-sticky.sticky,
+    .header.sticky, .header-1.sticky, .header-6.sticky, .header-8.sticky,
+    .header__main.sticky{
+      background:#ffffff !important;
+      box-shadow:0 2px 12px rgba(15,23,42,.06);
     }
-    @media(max-width:991px){ .features-grid{ grid-template-columns:2fr 2fr; } }
-    @media(max-width:575px){ .features-grid{ grid-template-columns:1fr; } }
-    .feature-card {
-      background:#fff;
+    .main-menu ul li > a { color: var(--nawa-navy) !important; }
+    .main-menu ul li > a:hover { color: var(--nawa-gold) !important; }
+
+    /* Breadcrumb: Shapes entschärfen, damit nix überlappt */
+    .breadcrumb__shapes { pointer-events:none; opacity:.7; }
+    @media (max-width: 991px){ .breadcrumb__shapes { display:none; } }
+
+    /* Einfache 4-Kachel-Reihe (kein Slider) */
+    .features-grid { display:grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap:24px; }
+    @media (max-width:1199px){ .features-grid{ grid-template-columns: repeat(2,1fr);} }
+    @media (max-width:575px){ .features-grid{ grid-template-columns: 1fr;} }
+    .feature-card{
       border:1px solid rgba(15,23,42,.08);
-      border-radius:12px;
-      padding:20px;
+      border-radius:14px;
+      padding:22px;
+      background:#fff;
+      height:100%;
+      transition: transform .2s ease, box-shadow .2s ease;
     }
-    .feature-card h5 { margin-bottom:8px; color:var(--nawa-navy); }
+    .feature-card:hover{
+      transform: translateY(-2px);
+      box-shadow:0 8px 24px rgba(15,23,42,.08);
+    }
+    .feature-card h5{ margin:0 0 10px; color:var(--nawa-navy); font-weight:700; }
+    .feature-card p{ margin:0; color:#475569; line-height:1.6; }
 
-    /* Footer fix */
-    footer { background:#0F172A; color:#fff; padding:40px 0; }
-    footer a { color:#fff; text-decoration:none; }
-    footer h5 { color:var(--nawa-gold); margin-bottom:12px; }
+    /* Footer Links immer sichtbar */
+    footer a{ color:#ffffff; }
+    footer a:hover{ color:var(--nawa-gold); }
   </style>
 </head>
+
 <body>
+<!-- preloader start -->
+<div id="preloader">
+  <div class="preloader-close">x</div>
+  <div class="sk-three-bounce">
+    <div class="sk-child sk-bounce1"></div>
+    <div class="sk-child sk-bounce2"></div>
+    <div class="sk-child sk-bounce3"></div>
+  </div>
+</div>
+<noscript><style>#preloader{display:none!important;}</style></noscript>
+<!-- preloader end -->
+
+<!-- Backtotop -->
+<div class="backtotop-wrap cursor-pointer" aria-label="Nach oben">
+  <svg class="backtotop-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102" aria-hidden="true">
+    <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+  </svg>
+</div>
+
+<!-- Offcanvas -->
+<div class="fix">
+  <div class="offcanvas__area">
+    <div class="offcanvas__wrapper">
+      <div class="offcanvas__content">
+        <div class="offcanvas__top d-flex justify-content-between align-items-center">
+          <div class="offcanvas__logo">
+            <a href="index.html"><img src="assets/imgs/logo/offcanvas-logo.png" alt="Alpen Intelligenz Logo" loading="lazy"></a>
+          </div>
+          <div class="offcanvas__close">
+            <button class="offcanvas-close-icon animation--flip" aria-label="Menü schließen">
+              <span class="offcanvas-m-lines">
+                <span class="offcanvas-m-line line--1"></span>
+                <span class="offcanvas-m-line line--2"></span>
+                <span class="offcanvas-m-line line--3"></span>
+              </span>
+            </button>
+          </div>
+        </div>
+        <div class="mobile-menu fix"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="offcanvas__overlay"></div>
+<div class="offcanvas__overlay-white"></div>
 
 <!-- Header -->
 <header>
-  <div id="header-sticky" class="header">
-    <div class="container d-flex justify-content-between align-items-center py-3">
-      <a href="index.html"><img src="assets/imgs/logo/logo.png" alt="Logo" style="height:40px;"></a>
-      <nav>
-        <ul class="d-flex gap-4 list-unstyled mb-0">
-          <li><a href="service.html">Leistungen</a></li>
-          <li><a href="project.html">Portfolio</a></li>
-          <li><a href="contact.html">Kontakt</a></li>
-        </ul>
-      </nav>
+  <div id="header-sticky" class="header header-6 header-8">
+    <div class="container">
+      <div class="mega-menu-wrapper header-8__main">
+        <div class="header__main header-8__main">
+          <div class="header__left header-8__left">
+            <div class="header__logo">
+              <a href="index.html">
+                <img src="assets/imgs/logo/logo.png" alt="Alpen Intelligenz Logo" loading="lazy">
+              </a>
+            </div>
+          </div>
+          <div class="header__middle">
+            <div class="mean__menu-wrapper d-none d-lg-block">
+              <div class="main-menu header-8__menu">
+                <nav id="mobile-menu">
+                  <ul>
+                    <li><a href="service.html">Leistungen</a></li>
+                    <li><a href="project.html">Portfolio</a></li>
+                    <li><a href="contact.html">Kontakt</a></li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+          <div class="header__right header-8__right"></div>
+          <div class="menu__bar">
+            <button class="offcanvas__toggle" aria-label="Menü öffnen"><i class="fa-solid fa-bars"></i></button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </header>
 
-<!-- Intro -->
-<section class="py-5">
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-lg-6">
-        <img src="assets/imgs/images/choose-img-1.png" class="img-fluid" alt="">
-      </div>
-      <div class="col-lg-6">
-        <h2>Effizienz durch KI-Automatisierung</h2>
-        <p>Wir entwickeln maßgeschneiderte Lösungen, die Abläufe in Ihrem Betrieb automatisieren. Weniger Aufwand, weniger Kosten – und mehr Zeit für das Wesentliche.</p>
-        <ul>
-          <li>Schnelle Integration</li>
-          <li>Leichte Bedienung</li>
-          <li>Ständige Betreuung</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 4 Kacheln -->
-<section class="py-5 bg-light">
-  <div class="container">
-    <div class="features-grid">
-      <div class="feature-card">
-        <h5>Assistent & Chat</h5>
-        <p>Digitale Assistenten übernehmen Termine, Anfragen und Standardprozesse zuverlässig.</p>
-      </div>
-      <div class="feature-card">
-        <h5>Prozess-Automatisierung</h5>
-        <p>Abläufe von Ablage bis Abrechnung werden schlanker, schneller und fehlerfrei.</p>
-      </div>
-      <div class="feature-card">
-        <h5>Individuelle Lösungen</h5>
-        <p>Wir entwickeln Systeme, die exakt zu Ihrem Betrieb passen – kein „One-Size-Fits-All“.</p>
-      </div>
-      <div class="feature-card">
-        <h5>Integration & Betreuung</h5>
-        <p>Wir kümmern uns um Einrichtung, Schulung und Support, damit Sie sorgenfrei profitieren.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section class="py-5">
-  <div class="container">
-    <h2 class="mb-4">Häufige Fragen & Antworten</h2>
-    <div class="accordion" id="faq">
-      <div class="accordion-item">
-        <h2 class="accordion-header">
-          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#q1">
-            Warum sollte ich in KI-Automatisierung investieren?
-          </button>
-        </h2>
-        <div id="q1" class="accordion-collapse collapse show" data-bs-parent="#faq">
-          <div class="accordion-body">Weil Personalkosten steigen und viele Routineaufgaben längst automatisierbar sind. Wer jetzt handelt, spart monatlich deutlich mehr, als die Investition kostet.</div>
+<!-- Body -->
+<div id="smooth-wrapper">
+  <div id="smooth-content">
+    <main>
+      <!-- Breadcrumb -->
+      <section class="breadcrumb__before p-relative">
+        <div class="breadcrumb__area overflow-hidden position-relative" data-background="assets/imgs/shapes/breadcrumb-shape.png">
+          <div class="breadcrumb__shapes">
+            <div class="breadcrumb__shapes-shape-1"></div>
+            <div class="breadcrumb__shapes-shape-2"></div>
+            <div class="breadcrumb__shapes-shape-3"></div>
+            <div class="breadcrumb__shapes-shape-4"></div>
+            <div class="breadcrumb__shapes-shape-5 upDown">
+              <img src="assets/imgs/shapes/breadcrumb-shape-1.png" alt="" loading="lazy">
+            </div>
+            <div class="breadcrumb__shapes-shape-6 line-to-bottom-360">
+              <img src="assets/imgs/shapes/breadcrumb-shape-2.png" alt="" loading="lazy">
+            </div>
+            <div class="breadcrumb__shapes-shape-7 line-to-bottom-360-l">
+              <img src="assets/imgs/shapes/breadcrumb-shape-3.png" alt="" loading="lazy">
+            </div>
+            <div class="breadcrumb__shapes-shape-8 leftRight">
+              <img src="assets/imgs/shapes/breadcrumb-shape-4.png" alt="" loading="lazy">
+            </div>
+            <div class="breadcrumb__shapes-shape-9">
+              <img src="assets/imgs/shapes/breadcrumb-shape-5.png" alt="" loading="lazy">
+            </div>
+          </div>
+          <div class="container">
+            <div class="row align-items-center justify-content-between">
+              <div class="col-12">
+                <div class="breadcrumb__content">
+                  <div class="breadcrumb__title-wrapper">
+                    <h1 class="breadcrumb__title">Leistungen</h1>
+                  </div>
+                  <div class="breadcrumb__menu">
+                    <nav aria-label="Breadcrumb">
+                      <ul>
+                        <li><span><a href="index.html"><img src="assets/imgs/icon/home-icon.png" alt="" loading="lazy">Startseite</a></span></li>
+                        <li class="active"><span>Leistungen</span></li>
+                      </ul>
+                    </nav>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="accordion-item">
-        <h2 class="accordion-header">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q2">
-            Ist das nicht zu komplex für meinen Betrieb?
-          </button>
-        </h2>
-        <div id="q2" class="accordion-collapse collapse" data-bs-parent="#faq">
-          <div class="accordion-body">Nein. Wir übernehmen Konzeption, Einrichtung und Anpassung. Ihre Mitarbeitenden arbeiten sofort mit einfachen Abläufen – ohne technisches Vorwissen.</div>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <h2 class="accordion-header">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q3">
-            Wie stelle ich sicher, dass es sich lohnt?
-          </button>
-        </h2>
-        <div id="q3" class="accordion-collapse collapse" data-bs-parent="#faq">
-          <div class="accordion-body">Wir starten mit klar messbaren Prozessen wie Terminorganisation oder Angebotsvorbereitung. Schon nach wenigen Wochen sehen Sie, wie viele Stunden frei werden und Kosten sinken.</div>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <h2 class="accordion-header">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q4">
-            Was passiert nach der Umsetzung?
-          </button>
-        </h2>
-        <div id="q4" class="accordion-collapse collapse" data-bs-parent="#faq">
-          <div class="accordion-body">Wir bleiben Ihr Ansprechpartner – ob punktuell oder im Rahmen einer laufenden Betreuung. Ihre Systeme bleiben aktuell und wachsen mit Ihrem Betrieb.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
 
-<!-- Footer -->
-<footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 mb-3">
-        <h5>Kontakt</h5>
-        <p>
-          Alpen Intelligenz<br>
-          Leitengasse 41<br>
-          9300 St. Veit an der Glan<br>
-          <a href="mailto:magnus_business@outlook.com">magnus_business@outlook.com</a><br>
-          +43 670 4081412
-        </p>
-      </div>
-      <div class="col-md-6 mb-3">
-        <h5>Navigation</h5>
-        <ul class="list-unstyled">
-          <li><a href="index.html">Startseite</a></li>
-          <li><a href="service.html">Leistungen</a></li>
-          <li><a href="project.html">Portfolio</a></li>
-          <li><a href="contact.html">Kontakt</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="text-center mt-3">
-      © 2025 Alpen Intelligenz – KI-Automatisierung & Agentur. Alle Rechte vorbehalten.
-    </div>
-  </div>
-</footer>
+      <!-- Intro / Nutzen -->
+      <section class="choose-us__area section-space">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-6">
+              <div class="choose-us__media-wrapper">
+                <div class="choose-us__thumb">
+                  <div class="choose-us__thumb-img return">
+                    <img src="assets/imgs/images/choose-img-1.png" alt="Illustration" loading="lazy">
+                  </div>
+                  <div class="choose-us__thumb-img-2">
+                    <img src="assets/imgs/images/choose-img-2.png" alt="Illustration" loading="lazy">
+                  </div>
+                  <div class="choose-us__thumb-img-3">
+                    <img src="assets/imgs/images/choose-img-3.png" alt="Illustration" loading="lazy">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="choose-us__content-wrap">
+                <div class="section__title-wrapper hero">
+                  <h2 class="section__title-wrapper-title _split_text">Effizienz durch KI-Automatisierung</h2>
+                  <p class="section__title-wrapper-dec rr_title_anim mt-20">
+                    Wir entwickeln maßgeschneiderte Lösungen, die Abläufe in Ihrem Betrieb automatisieren.
+                    Das bedeutet: weniger Aufwand, weniger Kosten – und mehr Zeit für das Wesentliche.
+                  </p>
+                  <div class="choose-us__list-item">
+                    <ul>
+                      <li class="rr_title_anim"><img src="assets/imgs/icon/choose-icon-1.png" alt="" loading="lazy">Schnelle Integration</li>
+                      <li class="rr_title_anim"><img src="assets/imgs/icon/choose-icon-1.png" alt="" loading="lazy">Leichte Bedienung</li>
+                      <li class="rr_title_anim"><img src="assets/imgs/icon/choose-icon-1.png" alt="" loading="lazy">Ständige Betreuung</li>
+                    </ul>
+                  </div>
+                  <a class="rr-btn btn-transparent mt-40" href="contact.html">Kontakt aufnehmen <i class="fa-solid fa-angle-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
+      <!-- 4 Kacheln -->
+      <section class="section-space-bottom">
+        <div class="container">
+          <div class="features-grid">
+            <div class="feature-card">
+              <img src="assets/imgs/icon/fast-content-1.png" alt="" style="height:40px;width:auto;margin-bottom:12px;" loading="lazy">
+              <h5>Assistent & Chat</h5>
+              <p>Digitale Assistenten, die Termine, Anfragen und Standardprozesse zuverlässig abwickeln.</p>
+            </div>
+            <div class="feature-card">
+              <img src="assets/imgs/icon/fast-content-2.png" alt="" style="height:40px;width:auto;margin-bottom:12px;" loading="lazy">
+              <h5>Prozess-Automatisierung</h5>
+              <p>Von Ablage bis Abrechnung – Abläufe werden schlanker, schneller und fehlerärmer.</p>
+            </div>
+            <div class="feature-card">
+              <img src="assets/imgs/icon/fast-content-3.png" alt="" style="height:40px;width:auto;margin-bottom:12px;" loading="lazy">
+              <h5>Individuelle Lösungen</h5>
+              <p>Wir entwickeln Systeme exakt für Ihren Bedarf statt „One-Size-Fits-All“.</p>
+            </div>
+            <div class="feature-card">
+              <img src="assets/imgs/icon/fast-content-4.png" alt="" style="height:40px;width:auto;margin-bottom:12px;" loading="lazy">
+              <h5>Integration & Betreuung</h5>
+              <p>Einrichtung, Schulung und Support – damit Sie sorgenfrei profitieren.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="faq__area ask-question p-relative overflow-hidden section-space-bottom">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-6">
+              <div class="section__title-wrapper hero mb-40">
+                <h2 class="section__title-wrapper-title _split_text">Häufige Fragen & Antworten</h2>
+              </div>
+              <div class="ask-question__faq">
+                <div class="accordion" id="accordionExample">
+                  <div class="accordion-item ask-question__faq-item faq__item">
+                    <h5 class="accordion-header" id="headingA">
+                      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseA" aria-expanded="true" aria-controls="collapseA">
+                        Warum sollte ich in KI-Automatisierung investieren?
+                      </button>
+                    </h5>
+                    <div id="collapseA" class="accordion-collapse collapse show" aria-labelledby="headingA" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        <p>Weil Personalkosten steigen und viele Routineaufgaben bereits automatisierbar sind. Wer jetzt handelt, spart monatlich spürbar – oft deutlich mehr, als die Investition kostet.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item ask-question__faq-item faq__item">
+                    <h5 class="accordion-header" id="headingB">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseB" aria-expanded="false" aria-controls="collapseB">
+                        Ist das nicht zu komplex für meinen Betrieb?
+                      </button>
+                    </h5>
+                    <div id="collapseB" class="accordion-collapse collapse" aria-labelledby="headingB" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        <p>Nein. Wir übernehmen Konzeption, Einrichtung und Anpassung. Ihre Mitarbeitenden arbeiten mit klaren, einfachen Abläufen – ohne technisches Vorwissen.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item ask-question__faq-item faq__item">
+                    <h5 class="accordion-header" id="headingC">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseC" aria-expanded="false" aria-controls="collapseC">
+                        Wie stelle ich sicher, dass es sich lohnt?
+                      </button>
+                    </h5>
+                    <div id="collapseC" class="accordion-collapse collapse" aria-labelledby="headingC" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        <p>Wir starten mit klar messbaren Aufgaben (z. B. Terminorganisation, Angebots- oder Rechnungsvorbereitung). Dadurch sehen Sie schnell, wie viele Stunden pro Woche frei werden – die Einsparungen übertreffen die Kosten in der Regel zügig.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item ask-question__faq-item faq__item">
+                    <h5 class="accordion-header" id="headingD">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseD" aria-expanded="false" aria-controls="collapseD">
+                        Was passiert nach der Umsetzung?
+                      </button>
+                    </h5>
+                    <div id="collapseD" class="accordion-collapse collapse" aria-labelledby="headingD" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        <p>Wir bleiben Ihr Ansprechpartner. Auf Wunsch Betreuung nach Bedarf oder im festen Rahmen – so bleiben Ihre Systeme aktuell und wachsen mit Ihren Anforderungen.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="faq__thumb-2">
+                <div class="faq__thumb return">
+                  <img src="assets/imgs/images/faq-img-1.png" alt="FAQ Illustration" loading="lazy">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-before footer-inner" style="background-color:#0F172A; color:#ffffff; padding:40px 0;">
+      <section class="footer__area footer-1">
+        <div class="container">
+          <div class="row footer__wrap align-items-start">
+
+            <!-- Kontakt -->
+            <div class="col-lg-6 col-md-6 col-sm-12 mb-30">
+              <div class="footer__widget">
+                <h5 class="title" style="color:#EAB308; margin-bottom:15px;">Kontakt</h5>
+                <p>
+                  Alpen Intelligenz<br>
+                  Leitengasse 41<br>
+                  9300 St. Veit an der Glan, Österreich
+                </p>
+                <p>
+                  <a href="mailto:magnus_business@outlook.com" style="text-decoration:none;">magnus_business@outlook.com</a><br>
+                  <span>+43 670 4081412</span>
+                </p>
+              </div>
+            </div>
+
+            <!-- Navigation -->
+            <div class="col-lg-6 col-md-6 col-sm-12 mb-30">
+              <div class="footer__widget">
+                <h5 class="title" style="color:#EAB308; margin-bottom:15px;">Navigation</h5>
+                <ul style="list-style:none; padding:0; margin:0;">
+                  <li><a href="index.html" style="text-decoration:none;">Startseite</a></li>
+                  <li><a href="service.html" style="text-decoration:none;">Leistungen</a></li>
+                  <li><a href="project.html" style="text-decoration:none;">Portfolio</a></li>
+                  <li><a href="contact.html" style="text-decoration:none;">Kontakt</a></li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Copyright -->
+          <div class="footer__bottom-wrapper mt-40">
+            <div class="footer__bottom text-center">
+              <p style="margin:0;">© 2025 Alpen Intelligenz – KI-Automatisierung & Agentur. Alle Rechte vorbehalten.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </footer>
+
+  </div>
+</div>
+
+<div id="scroll-percentage"><span id="scroll-percentage-value"></span></div>
+
+<!-- JS (nur Nötiges aktiv; problematische Smooth-Scroll-Plugins auskommentiert) -->
+<script src="assets/js/vendor/jquery-3.7.1.min.js"></script>
 <script src="assets/js/vendor/bootstrap.bundle.min.js"></script>
+<script src="assets/js/plugins/meanmenu.min.js"></script>
+<script src="assets/js/vendor/magnific-popup.min.js"></script>
+<script src="assets/js/vendor/jquery-ui.min.js"></script>
+
+<!-- Optional: wenn dein main.js andere Plugins erwartet, lass diese drin;
+     wenn es ruckelt, die drei GSAP-Plugins unten auskommentiert lassen. -->
+<script src="assets/js/plugins/waypoints.min.js"></script>
+<script src="assets/js/plugins/swiper.min.js"></script>
+<script src="assets/js/plugins/gsap.js"></script>
+<!-- <script src="assets/js/plugins/ScrollSmoother.js"></script>
+<script src="assets/js/plugins/ScrollToPlugin.js"></script>
+<script src="assets/js/plugins/ScrollTrigger.js"></script> -->
+<script src="assets/js/plugins/SplitText.js"></script>
+<script src="assets/js/plugins/wow.js"></script>
+<script src="assets/js/vendor/type.js"></script>
+<script src="assets/js/vendor/vanilla-tilt.js"></script>
+<script src="assets/js/plugins/nice-select.min.js"></script>
+<script src="assets/js/vendor/odometer.min.js"></script>
+<script src="assets/js/plugins/parallax-scroll.js"></script>
+<script src="assets/js/plugins/jquery.countdown.min.js"></script>
+<script src="assets/js/plugins/isotope-docs.min.js"></script>
+<script src="assets/js/vendor/ajax-form.js"></script>
+
+<!-- Dein Template-Skript -->
+<script src="assets/js/main.js"></script>
 </body>
 </html>
