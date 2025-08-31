@@ -2,59 +2,69 @@
 <html class="no-js" lang="de">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Alpen Intelligenz – AI Agentur</title>
-    <meta name="description" content="NAWA – Ihre Agentur für KI-Agenten, Automatisierung und digitale Lösungen.">
-    <meta name="author" content="soukhinkhan">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Place favicon.ico in the root directory -->
-    <link rel="shortcut icon" type="image/x-icon" href="assets/imgs/favicon.png">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Sofia&display=swap" rel="stylesheet">
-    <!-- CSS here -->
-    <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/vendor/animate.min.css">
-    <link rel="stylesheet" href="assets/css/vendor/odometer.min.css">
-    <link rel="stylesheet" href="assets/css/plugins/swiper.min.css">
-    <link rel="stylesheet" href="assets/css/vendor/magnific-popup.css">
-    <link rel="stylesheet" href="assets/css/vendor/fontawesome-pro.css"> 
-    <link rel="stylesheet" href="assets/css/vendor/spacing.css">
-    <link rel="stylesheet" href="assets/css/vendor/custom-font.css">
-    <link rel="stylesheet" href="assets/css/main.css">
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Alpen Intelligenz – AI Agentur</title>
+  <meta name="description" content="Alpen Intelligenz – Ihre Agentur für KI-Agenten, Automatisierung und digitale Lösungen.">
+  <meta name="author" content="soukhinkhan">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- NAWA overrides -->
-    <style>
-      :root{
-        --nawa-navy:#0F172A;
-        --nawa-gold:#EAB308;
-      }
-      body{ background:#fff !important; color:var(--nawa-navy) !important; }
-      h1,h2,h3,h4,h5,h6{ color:var(--nawa-navy) !important; }
-      a{ color:var(--nawa-navy); }
-      a:hover{ color:#0b1222; }
-      .header, .header-6, .header-8, .menu-area{ background:#ffffff !important; }
-      .main-menu ul li > a{ color:var(--nawa-navy) !important; }
-      .main-menu ul li > a:hover{ color:var(--nawa-gold) !important; }
-      .rr-btn, .btn, .btn-primary{ background:var(--nawa-navy) !important; border-color:var(--nawa-navy) !important; color:#fff !important; }
-      .rr-btn:hover, .btn:hover{ background:#0c1223 !important; border-color:#0c1223 !important; }
-      .price-bg, .badge, .highlight{ background:var(--nawa-gold) !important; }
-      .color-theme-primary, .text-primary{ color:var(--nawa-navy) !important; }
-      .border-accent{ border-color:var(--nawa-gold) !important; }
-      .underline-accent{ text-decoration-color:var(--nawa-gold) !important; }
-      /* remove header shadows if any */
-      .header__main, .header-6__main{ box-shadow:none !important; }
-    </style>
-    <style>
-        .banner8__title-wrapper-title {
-          color: white !important;
-        }
-        .banner8__title-wrapper-dec {
-          color: white !important;
-        }
-      </style>
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="assets/imgs/logo/favicon.png">
+  <link rel="icon" href="assets/imgs/logo/favicon.png">
+
+  <!-- WICHTIG: Logo vorab laden (passt den Pfad ggf. an) -->
+  <link rel="preload" as="image" href="assets/imgs/logo/logo-2.png" imagesizes="140px">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sofia&display=swap" rel="stylesheet">
+
+  <!-- CSS here -->
+  <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/vendor/animate.min.css">
+  <link rel="stylesheet" href="assets/css/vendor/odometer.min.css">
+  <link rel="stylesheet" href="assets/css/plugins/swiper.min.css">
+  <link rel="stylesheet" href="assets/css/vendor/magnific-popup.css">
+  <link rel="stylesheet" href="assets/css/vendor/fontawesome-pro.css">
+  <link rel="stylesheet" href="assets/css/vendor/spacing.css">
+  <link rel="stylesheet" href="assets/css/vendor/custom-font.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+
+  <!-- Mini-Override: Logo-Größe & Header-Hintergrund -->
+  <style>
+    .header__logo img{width:140px;height:auto;display:block}
+    .header, .header-6, .header-8, .menu-area{background:#fff!important}
+  </style>
+</head>
+
+   <!-- Alpen Intelligenz Overrides -->
+<style>
+  :root{
+    --alpen-navy:#0A192F;   /* dunkles Blau */
+    --alpen-silber:#B0BEC5; /* kühles Silber */
+  }
+  body{ background:#fff !important; color:var(--alpen-navy) !important; }
+  h1,h2,h3,h4,h5,h6{ color:var(--alpen-navy) !important; }
+  a{ color:var(--alpen-navy); }
+  a:hover{ color:#546E7A; }
+  .header, .header-6, .header-8, .menu-area{ background:#ffffff !important; }
+  .main-menu ul li > a{ color:var(--alpen-navy) !important; }
+  .main-menu ul li > a:hover{ color:var(--alpen-silber) !important; }
+  .rr-btn, .btn, .btn-primary{ background:var(--alpen-navy) !important; border-color:var(--alpen-navy) !important; color:#fff !important; }
+  .rr-btn:hover, .btn:hover{ background:#12263A !important; border-color:#12263A !important; }
+  .price-bg, .badge, .highlight{ background:var(--alpen-silber) !important; }
+  .color-theme-primary, .text-primary{ color:var(--alpen-navy) !important; }
+  .border-accent{ border-color:var(--alpen-silber) !important; }
+  .underline-accent{ text-decoration-color:var(--alpen-silber) !important; }
+  .header__main, .header-6__main{ box-shadow:none !important; }
+</style>
+
+<!-- Titel & Untertitel auf Startseite weiß -->
+<style>
+  .banner8__title-wrapper-title { color: white !important; }
+  .banner8__title-wrapper-dec { color: white !important; }
+</style>
 
 </head>
 
