@@ -202,24 +202,15 @@
     <div id="smooth-content">
       <main>
   
-<!-- Breadcrumb / Hero -->
+<!-- Breadcrumb / Hero mit animiertem Titel -->
 <section class="breadcrumb__before p-relative">
   <div
     class="breadcrumb__area position-relative"
     style="
-      /* 1) Navy-Balken oben (80px) + 2) Hintergrundbild */
       background:
-        linear-gradient(
-          to bottom,
-          #0F172A 0,            /* Navy */
-          #0F172A 80px,         /* Höhe des Balkens -> hier anpassen */
-          rgba(15,23,42,0) 80px,
-          rgba(15,23,42,0) 100%
-        ),
+        linear-gradient(to bottom, #0F172A 0, #0F172A 80px, rgba(15,23,42,0) 80px, rgba(15,23,42,0) 100%),
         url('assets/imgs/images/navy-colour.png') center/cover no-repeat;
-
-      /* Titel weiter nach unten schieben */
-      padding: 160px 0 100px;   /* top | left/right | bottom -> top hier anpassen */
+      padding: 160px 0 100px;   /* Titel weiter unten: erste Zahl erhöhen/verringern */
       text-align: center;
     "
   >
@@ -227,7 +218,7 @@
       <div class="row">
         <div class="col-12">
           <div class="breadcrumb__content">
-            <h1 class="breadcrumb__title" style="color:#fff; font-size:48px; margin:0;">
+            <h1 class="breadcrumb__title underline-sweep" style="color:#fff; font-size:48px; margin:0;">
               Leistungen
             </h1>
           </div>
@@ -236,6 +227,56 @@
     </div>
   </div>
 </section>
+
+<!-- Animation (CSS + JS Trigger) -->
+<style>
+  /* sanftes Einblenden mit Blur + Up-Motion */
+  @keyframes aiFadeUp {
+    0%   { opacity:0; transform:translateY(24px) scale(.98); filter:blur(6px); }
+    60%  { opacity:1; transform:translateY(0)    scale(1);   filter:blur(0);   }
+    100% { opacity:1; }
+  }
+  .breadcrumb__title { opacity:0; will-change: transform, filter, opacity; }
+
+  /* Unterstreichung, die „wächst“ */
+  .underline-sweep { position:relative; display:inline-block; }
+  .underline-sweep::after{
+    content:""; position:absolute; left:50%; bottom:-16px;
+    height:3px; width:0;
+    background:linear-gradient(90deg, #EAB308, #60A5FA, #22D3EE);
+    transform:translateX(-50%); border-radius:2px;
+    transition:width .6s ease .2s;
+  }
+
+  /* Endzustand wenn im Viewport */
+  .breadcrumb__title.is-in { animation: aiFadeUp .9s cubic-bezier(.2,.8,.2,1) both; }
+  .underline-sweep.is-in::after { width: 220px; }
+
+  /* Barrierefreiheit: keine Animation für Nutzer mit „reduced motion“ */
+  @media (prefers-reduced-motion: reduce){
+    .breadcrumb__title, .underline-sweep::after { animation:none !important; transition:none !important; opacity:1; }
+    .underline-sweep::after { width:220px; }
+  }
+</style>
+
+<script>
+  // Startet die Animation, sobald der Titel sichtbar ist
+  document.addEventListener('DOMContentLoaded', () => {
+    const title = document.querySelector('.breadcrumb__title');
+    if (!title) return;
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          title.classList.add('is-in');          // Text-Animation
+          title.classList.add('underline-sweep'); // stellt sicher, dass die Linie existiert
+          title.classList.add('is-in');          // Linie wächst
+          io.disconnect();
+        }
+      });
+    }, { threshold: 0.5 });
+    io.observe(title);
+  });
+</script>
 
       <!-- Intro / Nutzen (Bild rechts) -->
       <section class="choose-us__area section-space">
