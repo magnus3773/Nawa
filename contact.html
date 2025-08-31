@@ -163,176 +163,195 @@
   <!-- /Header -->
 
 <!-- Body main wrapper start -->
- <div id="smooth-wrapper">
-    <div id="smooth-content">
-        <main>
-          <!-- breadcrumb area (Kontakt, clean) -->
-<section class="breadcrumb__before p-relative">
-  <div class="breadcrumb__area position-relative contact-hero"
-       style="background: url('assets/imgs/images/navy-colour.png') center/cover no-repeat;
-              padding: 140px 0 90px; text-align: center;">
-    <div class="container">
-      <div class="row align-items-center justify-content-between">
-        <div class="col-12">
-          <div class="breadcrumb__content">
-            <div class="breadcrumb__title-wrapper">
-              <h1 class="breadcrumb__title" style="color:#fff; margin:0;">Kontakt</h1>
-            </div>
-            <div class="breadcrumb__menu" style="margin-top:16px;">
-              <nav aria-label="Breadcrumb">
-                <ul>
-                  <li>
-                    <span>
-                      <a href="index.html" style="color:#fff;">
-                        <img src="assets/imgs/icon/home-icon.png" alt="" style="filter:invert(1) brightness(2);">
-                        Startseite
-                      </a>
-                    </span>
-                  </li>
-                  <li class="active"><span style="color:#fff;">Kontakt</span></li>
-                </ul>
-              </nav>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<div id="smooth-wrapper">
+  <div id="smooth-content">
+    <main>
 
-            <!--Contact Section-->
-            <section class="contact__area section-space">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="contact__media">
-                                <img src="assets/imgs/images/contact-img-1.png" alt="img not found">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="contact__title-wrapper">
-                                <div class="section__title-wrapper">
-                                    <h2 class="section__title-wrapper-title">Kontaktieren Sie uns</h2>
-                                </div>
-                                <div class="contact__form-wrapper">
-                                    <form class="contact__form" id="contact__form" method="POST" action="./mail.php">
-                                        <div class="row">
-                                            <div class="col-sm-6">
-                                                <div class="contact__input">
-                                                    <input type="text" placeholder="Your Name">
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6 p-0-5-20">
-                                                <div class="contact__input">
-                                                    <input type="email" placeholder="Your Email">
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <div class="contact__input">
-                                                    <input type="number" placeholder="Phone Number">
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6 p-0-5-20">
-                                                <div class="contact__input">
-                                                    <input type="tel" placeholder="Subject">
-                                                </div>
-                                            </div>
-                                            <div class="col-12">
-                                                <div class="contact__textarea">
-                                                    <textarea name="textarea" id="textarea" cols="30" rows="10" placeholder="Write Message..."></textarea>
-                                                    <div class="wrap">
-                                                        <input type="checkbox" class="form-check-input" id="agree">
-                                                        <label class="form-check-label" for="agree">Ja, ich möchte Updates zu Ihren Angeboten erhalten.</label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-12">
-                                                <button type="submit" class="rr-btn mt-35">Senden</button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="contact-map section-space-bottom">
-              <div class="container">
-                <div class="map">
-                  <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2732.5950638747345!2d14.357525877071165!3d46.77287767112551!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47706d85d533f7b3%3A0x5dd94705f4362bba!2sLeitengasse%2041%2C%209300%20St.%20Veit%20an%20der%20Glan!5e0!3m2!1sde!2sat!4v1756645333559!5m2!1sde!2sat" 
-                    width="100%" 
-                    height="450" 
-                    style="border:0;" 
-                    allowfullscreen="" 
-                    loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade">
-                  </iframe>
+      <!-- breadcrumb area (Kontakt, clean) -->
+      <section class="breadcrumb__before p-relative">
+        <div class="breadcrumb__area position-relative"
+             style="background: url('assets/imgs/images/navy-colour.png') center/cover no-repeat;
+                    padding: 140px 0 90px;">
+          <div class="container">
+            <div class="row">
+              <div class="col-12 text-center">
+                <div class="breadcrumb__content">
+                  <div class="breadcrumb__title-wrapper" style="margin-bottom:16px;">
+                    <h1 class="breadcrumb__title" style="color:#fff; margin:0;">Kontakt</h1>
+                  </div>
+                  <div class="breadcrumb__menu">
+                    <nav aria-label="Breadcrumb">
+                      <ul style="list-style:none; padding:0; margin:0; display:inline-flex; gap:10px; align-items:center;">
+                        <li>
+                          <span>
+                            <a href="index.html" style="color:#fff; text-decoration:none;">
+                              <img src="assets/imgs/icon/home-icon.png" alt="" style="filter:invert(1) brightness(2); vertical-align:middle; margin-right:6px;">
+                              Startseite
+                            </a>
+                          </span>
+                        </li>
+                        <li style="color:#fff;">/</li>
+                        <li class="active"><span style="color:#fff;">Kontakt</span></li>
+                      </ul>
+                    </nav>
+                  </div>
                 </div>
               </div>
-            </section>
-                    </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section class="contact__area section-space" style="padding:80px 0;">
+        <div class="container">
+          <div class="row g-4 align-items-center">
+            <div class="col-md-6">
+              <div class="contact__media">
+                <img src="assets/imgs/images/contact-img-1.png" alt="Kontakt" style="width:100%; height:auto; display:block;">
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="contact__title-wrapper">
+                <div class="section__title-wrapper">
+                  <h2 class="section__title-wrapper-title" style="margin-bottom:16px;">Kontaktieren Sie uns</h2>
+                  <p style="margin-bottom:24px;">Schreiben Sie uns kurz Ihr Anliegen – wir melden uns zeitnah.</p>
                 </div>
-            </section>
-        </main>
-        <div class="loading-form">
-            <div class="sk-three-bounce">
-                <div class="sk-child sk-bounce1"></div>
-                <div class="sk-child sk-bounce2"></div>
-                <div class="sk-child sk-bounce3"></div>
-            </div>
-        </div>
-<!-- Footer area start -->
-<footer class="footer-before footer-inner" style="background-color:#0F172A; color:#ffffff; padding:40px 0;">
-    <section class="footer__area footer-1">
-      <div class="container">
-        <div class="row footer__wrap align-items-start">
-          
-          <!-- Kontakt -->
-          <div class="col-lg-6 col-md-6 col-sm-12 mb-30">
-            <div class="footer__widget">
-              <h5 class="title" style="color:#EAB308; margin-bottom:15px;">Kontakt</h5>
-              <p>
-                Alpen Intelligenz<br>
-                Leitengasse 41<br>
-                9300 St. Veit an der Glan, Österreich
-              </p>
-              <p>
-                <a href="mailto:magnus_business@outlook.com" style="color:#ffffff; text-decoration:none;">magnus_business@outlook.com</a><br>
-                <span style="color:#ffffff;">+43 670 4081412</span>
-              </p>
+
+                <div class="contact__form-wrapper">
+                  <form class="contact__form" id="contact__form" method="POST" action="./mail.php" novalidate>
+                    <div class="row g-3">
+                      <div class="col-sm-6">
+                        <div class="contact__input">
+                          <input type="text" name="name" placeholder="Ihr Name" required>
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="contact__input">
+                          <input type="email" name="email" placeholder="Ihre E-Mail" required>
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="contact__input">
+                          <input type="tel" name="phone" placeholder="Telefon (optional)">
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="contact__input">
+                          <input type="text" name="subject" placeholder="Betreff" required>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="contact__textarea">
+                          <textarea name="textarea" id="textarea" cols="30" rows="6" placeholder="Ihre Nachricht…" required></textarea>
+                          <div class="wrap" style="margin-top:10px; display:flex; align-items:center; gap:8px;">
+                            <input type="checkbox" class="form-check-input" id="agree">
+                            <label class="form-check-label" for="agree">Ja, ich möchte Updates zu Ihren Angeboten erhalten.</label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <button type="submit" class="rr-btn mt-10">Senden</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+
+              </div>
             </div>
           </div>
-          
-          <!-- Navigation -->
-          <div class="col-lg-6 col-md-6 col-sm-12 mb-30">
-            <div class="footer__widget">
-              <h5 class="title" style="color:#EAB308; margin-bottom:15px;">Navigation</h5>
-              <ul style="list-style:none; padding:0; margin:0;">
-                <li><a href="index.html" style="color:#ffffff; text-decoration:none;">Startseite</a></li>
-                <li><a href="service.html" style="color:#ffffff; text-decoration:none;">Leistungen</a></li>
-                <li><a href="project.html" style="color:#ffffff; text-decoration:none;">Portfolio</a></li>
-                <li><a href="contact.html" style="color:#ffffff; text-decoration:none;">Kontakt</a></li>
-              </ul>
+        </div>
+      </section>
+
+      <!-- Google Map -->
+      <section class="contact-map section-space-bottom" style="padding-bottom:80px;">
+        <div class="container">
+          <div class="map">
+            <!-- Variante A: fixe Höhe (einfach) -->
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2732.5950638747345!2d14.357525877071165!3d46.77287767112551!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47706d85d533f7b3%3A0x5dd94705f4362bba!2sLeitengasse%2041%2C%209300%20St.%20Veit%20an%20der%20Glan!5e0!3m2!1sde!2sat!4v1756645333559!5m2!1sde!2sat" 
+              width="100%" 
+              height="450" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+
+            <!--
+            Variante B: 16:9 responsiv (falls du willst)
+            <div style="position:relative; width:100%; padding-top:56.25%;">
+              <iframe
+                src="…"
+                style="position:absolute; inset:0; width:100%; height:100%; border:0;"
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
             </div>
-          </div>
-  
-        </div>
-  
-        <!-- Copyright -->
-        <div class="footer__bottom-wrapper mt-40">
-          <div class="footer__bottom text-center">
-            <p style="color:#ffffff; margin:0;">© 2025 Alpen Intelligenz – KI-Automatisierung & Agentur. Alle Rechte vorbehalten.</p>
+            -->
           </div>
         </div>
+      </section>
+
+    </main>
+
+    <!-- Loading Spinner (Form) -->
+    <div class="loading-form" style="display:none;">
+      <div class="sk-three-bounce">
+        <div class="sk-child sk-bounce1"></div>
+        <div class="sk-child sk-bounce2"></div>
+        <div class="sk-child sk-bounce3"></div>
       </div>
-    </section>
-  </footer>
-  <!-- Footer area end -->
     </div>
+
+    <!-- Footer area start -->
+    <footer class="footer-before footer-inner" style="background-color:#0F172A; color:#ffffff; padding:40px 0;">
+      <section class="footer__area footer-1">
+        <div class="container">
+          <div class="row footer__wrap align-items-start">
+            <!-- Kontakt -->
+            <div class="col-lg-6 col-md-6 col-sm-12 mb-30">
+              <div class="footer__widget">
+                <h5 class="title" style="color:#EAB308; margin-bottom:15px;">Kontakt</h5>
+                <p>
+                  Alpen Intelligenz<br>
+                  Leitengasse 41<br>
+                  9300 St. Veit an der Glan, Österreich
+                </p>
+                <p>
+                  <a href="mailto:magnus_business@outlook.com" style="color:#ffffff; text-decoration:none;">magnus_business@outlook.com</a><br>
+                  <span style="color:#ffffff;">+43 670 4081412</span>
+                </p>
+              </div>
+            </div>
+            <!-- Navigation -->
+            <div class="col-lg-6 col-md-6 col-sm-12 mb-30">
+              <div class="footer__widget">
+                <h5 class="title" style="color:#EAB308; margin-bottom:15px;">Navigation</h5>
+                <ul style="list-style:none; padding:0; margin:0;">
+                  <li><a href="index.html" style="color:#ffffff; text-decoration:none;">Startseite</a></li>
+                  <li><a href="service.html" style="color:#ffffff; text-decoration:none;">Leistungen</a></li>
+                  <li><a href="project.html" style="color:#ffffff; text-decoration:none;">Portfolio</a></li>
+                  <li><a href="contact.html" style="color:#ffffff; text-decoration:none;">Kontakt</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Copyright -->
+          <div class="footer__bottom-wrapper mt-40">
+            <div class="footer__bottom text-center">
+              <p style="color:#ffffff; margin:0;">© 2025 Alpen Intelligenz – KI-Automatisierung & Agentur. Alle Rechte vorbehalten.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </footer>
+    <!-- Footer area end -->
+
+  </div>
 </div>
+
 <div id="scroll-percentage"><span id="scroll-percentage-value"></span></div>
 
 
