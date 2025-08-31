@@ -17,42 +17,45 @@ class ContactForm {
 
         if (mail($this->recipient, $subject, $email_content, $email_headers)) {
             http_response_code(200);
-            echo "Thank You! Your message has been sent.";
+            echo "Vielen Dank! Ihre Nachricht wurde erfolgreich versendet.";
         } else {
             http_response_code(500);
-            echo "Oops! Something went wrong and we couldn't send your message.";
+            echo "Ups! Etwas ist schiefgelaufen – Ihre Nachricht konnte nicht gesendet werden.";
         }
     }
 
     private function buildEmailContent($name, $email, $phone, $subject, $message) {
         $content = "";
         $fields = array(
-            "Name" => $name,
-            "Email" => $email,
-            "Phone" => $phone,
-            "Subject" => $subject,
-            "Message" => $message
+            "Name"    => $name,
+            "E-Mail"  => $email,
+            "Telefon" => $phone,
+            "Betreff" => $subject,
+            "Nachricht" => $message
         );
         foreach ($fields as $fieldName => $fieldValue) {
             if (!empty($fieldValue)) {
-                $content .= "$fieldName: $fieldValue \r\n\n";
+                $content .= "$fieldName: $fieldValue\r\n\r\n";
             }
         }
         return $content;
     }
 
     private function buildEmailHeaders() {
-        $headers = "From: {$this->fromName} <{$this->fromEmail}>\r\n";
+        // UTF-8 und Plaintext, damit Umlaute korrekt sind
+        $headers  = "From: {$this->fromName} <{$this->fromEmail}>\r\n";
         $headers .= "Reply-To: {$this->fromEmail}\r\n";
+        $headers .= "MIME-Version: 1.0\r\n";
+        $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
         $headers .= "X-Mailer: PHP/" . phpversion();
         return $headers;
     }
 }
 
-
-$recipient = "support@envato.com";
-$fromName = "RRDevs";
-$fromEmail = "hellow@rrdevs.net";
+// HINWEIS: Hier Empfänger/Absender anpassen
+$recipient = "support@envato.com";   // z.B. "magnus_business@outlook.com"
+$fromName  = "RRDevs";               // z.B. "Alpen Intelligenz"
+$fromEmail = "hellow@rrdevs.net";    // z.B. "magnus_business@outlook.com"
 
 $contactForm = new ContactForm($recipient, $fromName, $fromEmail);
 
@@ -66,12 +69,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         http_response_code(400);
-        echo "Please complete the form and try again.";
+        echo "Bitte überprüfen Sie Ihre Eingaben und versuchen Sie es erneut.";
         exit;
     }
 
     $contactForm->sendEmail($name, $email, $phone, $subject, $message);
 } else {
     http_response_code(403);
-    echo "There was a problem with your submission, please try again.";
+    echo "Bei der Übermittlung ist ein Problem aufgetreten. Bitte versuchen Sie es erneut.";
 }
