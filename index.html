@@ -62,159 +62,148 @@
 </head>
 
 <body>
-  <!-- Header -->
-  <header>
-    <div id="header-sticky" class="header header-6 header-8">
-      <div class="container">
-        <div class="mega-menu-wrapper header-8__main">
-          <div class="header__main header-8__main">
+ <!-- =================== HEADER + OFFCANVAS (ALPEN INTELLIGENZ) =================== -->
 
-            <!-- LOGO -->
-            <div class="header__left header-8__left">
-              <div class="header__logo" style="display:flex;align-items:center;height:56px;">
-                <a href="index.html" aria-label="Startseite" style="display:flex;align-items:center;height:100%;">
-                  <img 
-                    src="assets/imgs/logo/favicon.png" 
-                    alt="Alpen Intelligenz Logo" 
-                    style="height:48px; width:auto; display:block;">
-                </a>
-              </div>
-            </div>
-            <!-- /LOGO -->
-
-            <!-- Navigation -->
-            <div class="header__middle">
-              <div class="mean__menu-wrapper d-none d-lg-block">
-                <div class="main-menu header-8__menu">
-                  <nav id="mobile-menu">
-                    <ul>
-                      <li><a href="service.html">Leistungen</a></li>
-                      <li><a href="project.html">Portfolio</a></li>
-                      <li><a href="contact.html">Kontakt</a></li>
-                    </ul>
-                  </nav>
-                </div>
-              </div>
-            </div>
-            <!-- /Navigation -->
-
-            <!-- Rechte Seite (Buttons / Mobile-Menü) -->
-            <div class="header__right header-8__right"></div>
-            <div class="menu__bar">
-              <button class="offcanvas__toggle" aria-label="Menü öffnen">
-                <i class="fa-solid fa-bars"></i>
-              </button>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-  <!-- /Header -->
-
-
-<body>
-
-
-<!-- preloader start -->
-<div id="preloader">
-    <div class="preloader-close">x</div>
-    <div class="sk-three-bounce">
-        <div class="sk-child sk-bounce1"></div>
-        <div class="sk-child sk-bounce2"></div>
-        <div class="sk-child sk-bounce3"></div>
-    </div>
-</div>
-<!-- preloader start -->
-
-<!-- Backtotop start -->
-<div class="backtotop-wrap cursor-pointer">
-    <svg class="backtotop-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
-    </svg>
-</div>
-<!-- Backtotop end -->
-
-<!-- Offcanvas area start -->
+<!-- Offcanvas (mobiles Menü) -->
 <div class="fix">
-    <div class="offcanvas__area">
-        <div class="offcanvas__wrapper">
-            <div class="offcanvas__content">
-                <div class="offcanvas__top d-flex justify-content-between align-items-center">
-                    <div class="offcanvas__logo">
-                        <a href="index.html">
-                            <img src="assets/imgs/logo/offcanvas-logo.png" alt="logo not found">
-                        </a>
-                    </div>
-                    <div class="offcanvas__close">
-                        <button class="offcanvas-close-icon animation--flip">
-                                <span class="offcanvas-m-lines">
-                              <span class="offcanvas-m-line line--1"></span><span class="offcanvas-m-line line--2"></span><span class="offcanvas-m-line line--3"></span>
-                                </span>
-                        </button>
-                    </div>
-                </div>
-                <div class="mobile-menu fix"></div>
-                <div class="offcanvas__social">
-                    <h3 class="offcanvas__title mb-20">Subscribe & Follow</h3>
-                    <ul>
-                        <li><a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="https://pinterest.com/"><i class="fa-brands fa-pinterest-p"></i></a></li>
-                        <li><a href="https://youtube.com/"><i class="fab fa-youtube"></i></a></li>
-                        <li><a href="https://linkedin.com/"><i class="fab fa-linkedin"></i></a></li>
-                    </ul>
-                </div>
-            </div>
+  <div class="offcanvas__area" style="visibility:hidden; opacity:0; transition:opacity .25s ease;">
+    <div class="offcanvas__wrapper">
+      <div class="offcanvas__content">
+        <div class="offcanvas__top d-flex justify-content-between align-items-center">
+          <div class="offcanvas__logo">
+            <a href="index.html" aria-label="Startseite">
+              <img src="assets/imgs/logo/favicon.png" alt="Alpen Intelligenz Logo" style="height:40px; width:auto;">
+            </a>
+          </div>
+          <div class="offcanvas__close">
+            <button class="offcanvas-close-icon animation--flip" aria-label="Menü schließen">
+              <span class="offcanvas-m-lines">
+                <span class="offcanvas-m-line line--1"></span>
+                <span class="offcanvas-m-line line--2"></span>
+                <span class="offcanvas-m-line line--3"></span>
+              </span>
+            </button>
+          </div>
         </div>
+        <div class="mobile-menu fix">
+          <nav>
+            <ul style="list-style:none; padding-left:0; margin:20px 0 0;">
+              <li style="margin-bottom:12px;"><a href="service.html">Leistungen</a></li>
+              <li style="margin-bottom:12px;"><a href="project.html">Portfolio</a></li>
+              <li><a href="contact.html">Kontakt</a></li>
+            </ul>
+          </nav>
+        </div>
+        <!-- (Optional) Socials entfernen oder lassen -->
+        <!-- <div class="offcanvas__social"> ... </div> -->
+      </div>
     </div>
+  </div>
 </div>
-<div class="offcanvas__overlay"></div>
-<div class="offcanvas__overlay-white"></div>
-<!-- Offcanvas area start -->
+<div class="offcanvas__overlay" style="visibility:hidden; opacity:0; transition:opacity .25s ease;"></div>
+<div class="offcanvas__overlay-white" style="display:none;"></div>
+<!-- /Offcanvas -->
 
-<!-- Header (Deutsch, NEU) -->
+<!-- Header -->
 <header>
-    <div id="header-sticky" class="header header-6 header-8">
-      <div class="container">
-        <div class="mega-menu-wrapper header-8__main">
-          <div class="header__main header-8__main">
-            <div class="header__left header-8__left">
-              <div class="header__logo">
-                <a href="index.html">
-                  <img src="assets/imgs/logo/favicon.png" alt="NAWA Logo">
-                </a>
-              </div>
-            </div>
-  
-            <div class="header__middle">
-              <div class="mean__menu-wrapper d-none d-lg-block">
-                <div class="main-menu header-8__menu">
-                  <nav id="mobile-menu">
-                    <ul>
-                      <li><a href="service.html">Leistungen</a></li>
-                      <li><a href="project.html">Portfolio</a></li>
-                      <li><a href="contact.html">Kontakt</a></li>
-                    </ul>
-                  </nav>
-                </div>
-              </div>
-            </div>
-  
-            <div class="header__right header-8__right"></div>
-  
-            <div class="menu__bar">
-              <button class="offcanvas__toggle">
-                <i class="fa-solid fa-bars"></i>
-              </button>
+  <div id="header-sticky" class="header header-6 header-8" style="background:#ffffff;">
+    <div class="container">
+      <div class="mega-menu-wrapper header-8__main">
+        <div class="header__main header-8__main" style="display:flex; align-items:center; justify-content:space-between; gap:16px; min-height:64px;">
+
+          <!-- Logo -->
+          <div class="header__left header-8__left">
+            <div class="header__logo" style="display:flex;align-items:center;height:56px;">
+              <a href="index.html" aria-label="Startseite" style="display:flex;align-items:center;height:100%;">
+                <img 
+                  src="assets/imgs/logo/favicon.png" 
+                  alt="Alpen Intelligenz Logo" 
+                  style="height:48px; width:auto; display:block;">
+              </a>
             </div>
           </div>
+
+          <!-- Desktop-Navigation -->
+          <div class="header__middle">
+            <div class="mean__menu-wrapper d-none d-lg-block">
+              <div class="main-menu header-8__menu">
+                <nav id="mobile-menu">
+                  <ul>
+                    <li><a href="service.html">Leistungen</a></li>
+                    <li><a href="project.html">Portfolio</a></li>
+                    <li><a href="contact.html">Kontakt</a></li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mobile-Menü Button -->
+          <div class="header__right header-8__right"></div>
+          <div class="menu__bar d-lg-none">
+            <button class="offcanvas__toggle" aria-label="Menü öffnen" style="background:none;border:0;font-size:24px;line-height:1;">
+              <i class="fa-solid fa-bars"></i>
+            </button>
+          </div>
+
         </div>
       </div>
     </div>
-  </header>
-  <!-- /Header -->
+  </div>
+</header>
+<!-- /Header -->
 
+<!-- Kleine Styles, um Farben sicher zu setzen -->
+<style>
+  .main-menu ul li > a { color:#0F172A !important; }
+  .main-menu ul li > a:hover { color:#EAB308 !important; }
+
+  /* Offcanvas sichtbar wenn .active */
+  .offcanvas__area.active { visibility:visible !important; opacity:1 !important; }
+  .offcanvas__overlay.active { visibility:visible !important; opacity:1 !important; }
+
+  /* Einfache Offcanvas-Grundlage für Fälle ohne Template-CSS */
+  .offcanvas__area {
+    position: fixed; top:0; right:0; bottom:0; width:300px; background:#fff; z-index:1002;
+    transform: translateX(0); /* wir blenden per visibility/opacity ein */
+    padding: 20px;
+    box-shadow: -8px 0 24px rgba(0,0,0,.08);
+  }
+  .offcanvas__overlay {
+    position: fixed; inset:0; background:rgba(0,0,0,.35); z-index:1001;
+  }
+</style>
+
+<!-- Minimal-JS damit das Burger-Menü sicher funktioniert -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const toggle = document.querySelector(".offcanvas__toggle");
+    const offcanvas = document.querySelector(".offcanvas__area");
+    const overlay = document.querySelector(".offcanvas__overlay");
+    const closeBtn = document.querySelector(".offcanvas-close-icon");
+
+    function openMenu() {
+      if(offcanvas) offcanvas.classList.add("active");
+      if(overlay) overlay.classList.add("active");
+      document.body.style.overflow = "hidden";
+    }
+    function closeMenu() {
+      if(offcanvas) offcanvas.classList.remove("active");
+      if(overlay) overlay.classList.remove("active");
+      document.body.style.overflow = "";
+    }
+
+    if(toggle) toggle.addEventListener("click", openMenu);
+    if(closeBtn) closeBtn.addEventListener("click", closeMenu);
+    if(overlay) overlay.addEventListener("click", closeMenu);
+
+    // Escape schließt
+    document.addEventListener("keydown", (e) => {
+      if(e.key === "Escape") closeMenu();
+    });
+  });
+</script>
+<!-- =================== /HEADER + OFFCANVAS =================== -->
 <!-- Body main wrapper start -->
 <div id="smooth-wrapper">
     <div id="smooth-content">
