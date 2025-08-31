@@ -62,72 +62,66 @@
 </head>
 
 <body>
- <!-- =================== HEADER + OFFCANVAS (ALPEN INTELLIGENZ) =================== -->
+<!-- =================== HEADER + OFFCANVAS (ALPEN INTELLIGENZ) =================== -->
 
 <!-- Offcanvas (mobiles Menü) -->
 <div class="fix">
-  <div class="offcanvas__area" style="visibility:hidden; opacity:0; transition:opacity .25s ease;">
+  <div class="offcanvas__area" style="visibility:hidden;opacity:0;transition:opacity .25s ease;">
     <div class="offcanvas__wrapper">
       <div class="offcanvas__content">
         <div class="offcanvas__top d-flex justify-content-between align-items-center">
           <div class="offcanvas__logo">
             <a href="index.html" aria-label="Startseite">
-              <img src="assets/imgs/logo/favicon.png" alt="Alpen Intelligenz Logo" style="height:40px; width:auto;">
+              <img src="assets/imgs/logo/favicon.png" alt="Alpen Intelligenz Logo" style="height:40px;width:auto;">
             </a>
           </div>
           <div class="offcanvas__close">
-            <button class="offcanvas-close-icon animation--flip" aria-label="Menü schließen">
-              <span class="offcanvas-m-lines">
-                <span class="offcanvas-m-line line--1"></span>
-                <span class="offcanvas-m-line line--2"></span>
-                <span class="offcanvas-m-line line--3"></span>
+            <button class="offcanvas-close-icon animation--flip" aria-label="Menü schließen" style="background:none;border:0;cursor:pointer;">
+              <span class="offcanvas-m-lines" style="display:inline-block;">
+                <span class="offcanvas-m-line line--1" style="display:block;width:22px;height:2px;background:#0F172A;margin:4px 0;"></span>
+                <span class="offcanvas-m-line line--2" style="display:block;width:22px;height:2px;background:#0F172A;margin:4px 0;"></span>
+                <span class="offcanvas-m-line line--3" style="display:block;width:22px;height:2px;background:#0F172A;margin:4px 0;"></span>
               </span>
             </button>
           </div>
         </div>
-        <div class="mobile-menu fix">
-          <nav>
-            <ul style="list-style:none; padding-left:0; margin:20px 0 0;">
-              <li style="margin-bottom:12px;"><a href="service.html">Leistungen</a></li>
-              <li style="margin-bottom:12px;"><a href="project.html">Portfolio</a></li>
-              <li><a href="contact.html">Kontakt</a></li>
-            </ul>
-          </nav>
-        </div>
-        <!-- (Optional) Socials entfernen oder lassen -->
-        <!-- <div class="offcanvas__social"> ... </div> -->
+
+        <nav class="mobile-menu fix" aria-label="Mobiles Menü" style="margin-top:16px;">
+          <ul style="list-style:none;padding-left:0;margin:0;">
+            <li style="margin-bottom:12px;"><a href="service.html">Leistungen</a></li>
+            <li style="margin-bottom:12px;"><a href="project.html">Portfolio</a></li>
+            <li><a href="contact.html">Kontakt</a></li>
+          </ul>
+        </nav>
       </div>
     </div>
   </div>
 </div>
-<div class="offcanvas__overlay" style="visibility:hidden; opacity:0; transition:opacity .25s ease;"></div>
+<div class="offcanvas__overlay" style="visibility:hidden;opacity:0;transition:opacity .25s ease;"></div>
 <div class="offcanvas__overlay-white" style="display:none;"></div>
 <!-- /Offcanvas -->
 
 <!-- Header -->
 <header>
-  <div id="header-sticky" class="header header-6 header-8" style="background:#ffffff;">
+  <div id="header-sticky" class="header header-6 header-8" style="background:#ffffff;position:relative;z-index:1005;">
     <div class="container">
       <div class="mega-menu-wrapper header-8__main">
-        <div class="header__main header-8__main" style="display:flex; align-items:center; justify-content:space-between; gap:16px; min-height:64px;">
+        <div class="header__main header-8__main" style="display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px;">
 
           <!-- Logo -->
           <div class="header__left header-8__left">
             <div class="header__logo" style="display:flex;align-items:center;height:56px;">
               <a href="index.html" aria-label="Startseite" style="display:flex;align-items:center;height:100%;">
-                <img 
-                  src="assets/imgs/logo/favicon.png" 
-                  alt="Alpen Intelligenz Logo" 
-                  style="height:48px; width:auto; display:block;">
+                <img src="assets/imgs/logo/favicon.png" alt="Alpen Intelligenz Logo" style="height:48px;width:auto;display:block;">
               </a>
             </div>
           </div>
 
           <!-- Desktop-Navigation -->
-          <div class="header__middle">
+          <div class="header__middle" style="flex:1;">
             <div class="mean__menu-wrapper d-none d-lg-block">
               <div class="main-menu header-8__menu">
-                <nav id="mobile-menu">
+                <nav id="mobile-menu" aria-label="Hauptmenü">
                   <ul>
                     <li><a href="service.html">Leistungen</a></li>
                     <li><a href="project.html">Portfolio</a></li>
@@ -138,11 +132,17 @@
             </div>
           </div>
 
-          <!-- Mobile-Menü Button -->
+          <!-- Burger-Button (immer sichtbar) -->
           <div class="header__right header-8__right"></div>
-          <div class="menu__bar d-lg-none">
-            <button class="offcanvas__toggle" aria-label="Menü öffnen" style="background:none;border:0;font-size:24px;line-height:1;">
-              <i class="fa-solid fa-bars"></i>
+          <div class="menu__bar">
+            <button class="offcanvas__toggle" aria-label="Menü öffnen"
+                    style="display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:8px 10px;background:#0F172A;color:#fff;border:0;border-radius:10px;cursor:pointer;line-height:1;">
+              <!-- Eigenes SVG, unabhängig von Icon-Fonts -->
+              <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="3" y="5" width="18" height="2" rx="1" fill="#fff"></rect>
+                <rect x="3" y="11" width="18" height="2" rx="1" fill="#fff"></rect>
+                <rect x="3" y="17" width="18" height="2" rx="1" fill="#fff"></rect>
+              </svg>
             </button>
           </div>
 
@@ -153,54 +153,55 @@
 </header>
 <!-- /Header -->
 
-<!-- Kleine Styles, um Farben sicher zu setzen -->
+<!-- Styles (sichtbar & klickbar halten) -->
 <style>
-  .main-menu ul li > a { color:#0F172A !important; }
-  .main-menu ul li > a:hover { color:#EAB308 !important; }
+  .main-menu ul{display:flex;gap:24px;margin:0;padding:0;list-style:none;}
+  .main-menu ul li > a{color:#0F172A !important;text-decoration:none;}
+  .main-menu ul li > a:hover{color:#EAB308 !important;}
 
-  /* Offcanvas sichtbar wenn .active */
-  .offcanvas__area.active { visibility:visible !important; opacity:1 !important; }
-  .offcanvas__overlay.active { visibility:visible !important; opacity:1 !important; }
+  /* Offcanvas sichtbar, wenn .active */
+  .offcanvas__area.active{visibility:visible !important;opacity:1 !important;}
+  .offcanvas__overlay.active{visibility:visible !important;opacity:1 !important;}
 
-  /* Einfache Offcanvas-Grundlage für Fälle ohne Template-CSS */
-  .offcanvas__area {
-    position: fixed; top:0; right:0; bottom:0; width:300px; background:#fff; z-index:1002;
-    transform: translateX(0); /* wir blenden per visibility/opacity ein */
-    padding: 20px;
-    box-shadow: -8px 0 24px rgba(0,0,0,.08);
+  /* Basis-Layout falls Theme-CSS fehlt/überschreibt */
+  .offcanvas__area{
+    position:fixed;top:0;right:0;bottom:0;width:300px;background:#fff;z-index:1002;
+    transform:translateX(0);padding:20px;box-shadow:-8px 0 24px rgba(0,0,0,.08);
   }
-  .offcanvas__overlay {
-    position: fixed; inset:0; background:rgba(0,0,0,.35); z-index:1001;
+  .offcanvas__overlay{
+    position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:1001;
+  }
+
+  /* Auf großen Screens Desktop-Menü zeigen, Burger bleibt auch sichtbar */
+  @media (min-width: 992px){
+    .mean__menu-wrapper{display:block !important;}
+    .menu__bar{display:flex !important;align-items:center;margin-left:auto;}
   }
 </style>
 
-<!-- Minimal-JS damit das Burger-Menü sicher funktioniert -->
+<!-- Minimal-JS für das Burger-Menü -->
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const toggle = document.querySelector(".offcanvas__toggle");
-    const offcanvas = document.querySelector(".offcanvas__area");
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggle  = document.querySelector(".offcanvas__toggle");
+    const offc    = document.querySelector(".offcanvas__area");
     const overlay = document.querySelector(".offcanvas__overlay");
-    const closeBtn = document.querySelector(".offcanvas-close-icon");
+    const closeBtn= document.querySelector(".offcanvas-close-icon");
 
-    function openMenu() {
-      if(offcanvas) offcanvas.classList.add("active");
-      if(overlay) overlay.classList.add("active");
+    function openMenu(){
+      offc && offc.classList.add("active");
+      overlay && overlay.classList.add("active");
       document.body.style.overflow = "hidden";
     }
-    function closeMenu() {
-      if(offcanvas) offcanvas.classList.remove("active");
-      if(overlay) overlay.classList.remove("active");
+    function closeMenu(){
+      offc && offc.classList.remove("active");
+      overlay && overlay.classList.remove("active");
       document.body.style.overflow = "";
     }
 
-    if(toggle) toggle.addEventListener("click", openMenu);
-    if(closeBtn) closeBtn.addEventListener("click", closeMenu);
-    if(overlay) overlay.addEventListener("click", closeMenu);
-
-    // Escape schließt
-    document.addEventListener("keydown", (e) => {
-      if(e.key === "Escape") closeMenu();
-    });
+    toggle && toggle.addEventListener("click", openMenu);
+    closeBtn && closeBtn.addEventListener("click", closeMenu);
+    overlay && overlay.addEventListener("click", closeMenu);
+    document.addEventListener("keydown", (e)=>{ if(e.key==="Escape") closeMenu(); });
   });
 </script>
 <!-- =================== /HEADER + OFFCANVAS =================== -->
