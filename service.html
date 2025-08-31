@@ -204,23 +204,30 @@
   
 <!-- Breadcrumb / Hero -->
 <section class="breadcrumb__before p-relative">
+  <div
+    class="breadcrumb__area position-relative"
+    style="
+      /* 1) Navy-Balken oben (80px) + 2) Hintergrundbild */
+      background:
+        linear-gradient(
+          to bottom,
+          #0F172A 0,            /* Navy */
+          #0F172A 80px,         /* Höhe des Balkens -> hier anpassen */
+          rgba(15,23,42,0) 80px,
+          rgba(15,23,42,0) 100%
+        ),
+        url('assets/imgs/images/navy-colour.png') center/cover no-repeat;
 
-  <!-- Navy-Balken oben -->
-  <div style="background:#0F172A; height:80px; width:100%;"></div>
-
-  <!-- Bereich mit Hintergrundbild -->
-  <div class="breadcrumb__area position-relative"
-       style="
-         background: url('assets/imgs/images/navy-colour.png') center/cover no-repeat;
-         padding: 160px 0 100px;  /* nach unten verschieben */
-         text-align: center;
-       ">
+      /* Titel weiter nach unten schieben */
+      padding: 160px 0 100px;   /* top | left/right | bottom -> top hier anpassen */
+      text-align: center;
+    "
+  >
     <div class="container">
       <div class="row">
         <div class="col-12">
           <div class="breadcrumb__content">
-            <h1 class="breadcrumb__title" 
-                style="color:#fff; font-size:48px; margin:0;">
+            <h1 class="breadcrumb__title" style="color:#fff; font-size:48px; margin:0;">
               Leistungen
             </h1>
           </div>
@@ -228,7 +235,6 @@
       </div>
     </div>
   </div>
-
 </section>
 
       <!-- Intro / Nutzen (Bild rechts) -->
