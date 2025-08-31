@@ -1,78 +1,65 @@
 <!doctype html>
 <html class="no-js" lang="de">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Leistungen – Alpen Intelligenz</title>
-  <meta name="description" content="Alpen Intelligenz: KI-Automatisierung und individuelle Lösungen, die Abläufe verschlanken und Kosten senken.">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <link rel="shortcut icon" type="image/x-icon" href="assets/imgs/logo/favicon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Sofia&display=swap" rel="stylesheet">
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/css/vendor/animate.min.css">
-  <link rel="stylesheet" href="assets/css/vendor/odometer.min.css">
-  <link rel="stylesheet" href="assets/css/plugins/swiper.min.css">
-  <link rel="stylesheet" href="assets/css/vendor/magnific-popup.css">
-  <link rel="stylesheet" href="assets/css/vendor/fontawesome-pro.css">
-  <link rel="stylesheet" href="assets/css/vendor/spacing.css">
-  <link rel="stylesheet" href="assets/css/vendor/custom-font.css">
-  <link rel="stylesheet" href="assets/css/main.css">
-
-  <!-- Fix/Overrides -->
-  <style>
-    :root{ --nawa-navy:#0F172A; --nawa-gold:#EAB308; }
-
-    /* Fester weißer Header ohne Blur */
-    #header-sticky,
-    .header, .header-1, .header-6, .header-8,
-    .header__main, .mega-menu-wrapper, .mega__menu-wrapper, .menu-area{
-      background:#ffffff !important;
-      backdrop-filter:none !important;
-      -webkit-backdrop-filter:none !important;
-      box-shadow:0 2px 12px rgba(15,23,42,.06);
-    }
-    #header-sticky.sticky,
-    .header.sticky, .header-1.sticky, .header-6.sticky, .header-8.sticky,
-    .header__main.sticky{
-      background:#ffffff !important;
-      box-shadow:0 2px 12px rgba(15,23,42,.06);
-    }
-    .main-menu ul li > a { color: var(--nawa-navy) !important; }
-    .main-menu ul li > a:hover { color: var(--nawa-gold) !important; }
-
-    /* Breadcrumb: Shapes entschärfen, damit nix überlappt */
-    .breadcrumb__shapes { pointer-events:none; opacity:.7; }
-    @media (max-width: 991px){ .breadcrumb__shapes { display:none; } }
-
-    /* Einfache 4-Kachel-Reihe (kein Slider) */
-    .features-grid { display:grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap:24px; }
-    @media (max-width:1199px){ .features-grid{ grid-template-columns: repeat(2,1fr);} }
-    @media (max-width:575px){ .features-grid{ grid-template-columns: 1fr;} }
-    .feature-card{
-      border:1px solid rgba(15,23,42,.08);
-      border-radius:14px;
-      padding:22px;
-      background:#fff;
-      height:100%;
-      transition: transform .2s ease, box-shadow .2s ease;
-    }
-    .feature-card:hover{
-      transform: translateY(-2px);
-      box-shadow:0 8px 24px rgba(15,23,42,.08);
-    }
-    .feature-card h5{ margin:0 0 10px; color:var(--nawa-navy); font-weight:700; }
-    .feature-card p{ margin:0; color:#475569; line-height:1.6; }
-
-    /* Footer Links immer sichtbar */
-    footer a{ color:#ffffff; }
-    footer a:hover{ color:var(--nawa-gold); }
-  </style>
-</head>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Alpen Intelligenz – AI Agentur</title>
+    <meta name="description" content="Alpen Intelligenz – Ihre Agentur für KI-Agenten, Automatisierung und digitale Lösungen.">
+    <meta name="author" content="soukhinkhan">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/imgs/logo/favicon.png">
+    <link rel="icon" href="assets/imgs/logo/favicon.png">
+  
+    <!-- Logo preload -->
+    <link rel="preload" as="image" href="assets/imgs/logo/favicon.png" imagesizes="140px">
+  
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sofia&display=swap" rel="stylesheet">
+  
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/vendor/animate.min.css">
+    <link rel="stylesheet" href="assets/css/vendor/odometer.min.css">
+    <link rel="stylesheet" href="assets/css/plugins/swiper.min.css">
+    <link rel="stylesheet" href="assets/css/vendor/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/vendor/fontawesome-pro.css"> 
+    <link rel="stylesheet" href="assets/css/vendor/spacing.css">
+    <link rel="stylesheet" href="assets/css/vendor/custom-font.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+  
+    <!-- Alpen Intelligenz overrides -->
+    <style>
+        :root{
+          --alpen-navy:#0F172A;
+          --alpen-gold:#EAB308;
+        }
+        body{ background:#fff !important; color:var(--alpen-navy) !important; }
+        h1,h2,h3,h4,h5,h6{ color:var(--alpen-navy) !important; }
+        a{ color:var(--alpen-navy); }
+        a:hover{ color:#0b1222; }
+        .header, .header-6, .header-8, .menu-area{ background:#ffffff !important; }
+        .main-menu ul li > a{ color:var(--alpen-navy) !important; }
+        .main-menu ul li > a:hover{ color:var(--alpen-gold) !important; }
+        .rr-btn, .btn, .btn-primary{ background:var(--alpen-navy) !important; border-color:var(--alpen-navy) !important; color:#fff !important; }
+        .rr-btn:hover, .btn:hover{ background:#0c1223 !important; border-color:#0c1223 !important; }
+        .price-bg, .badge, .highlight{ background:var(--alpen-gold) !important; }
+        .color-theme-primary, .text-primary{ color:var(--alpen-navy) !important; }
+        .border-accent{ border-color:var(--alpen-gold) !important; }
+        .underline-accent{ text-decoration-color:var(--alpen-gold) !important; }
+        /* remove header shadows */
+        .header__main, .header-6__main{ box-shadow:none !important; }
+        /* Banner Text Weiß */
+        .banner8__title-wrapper-title,
+        .banner8__title-wrapper-dec {
+          color: white !important;
+        }
+    </style>
+  </head>
+  
 
 <body>
 <!-- preloader start -->
