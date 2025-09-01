@@ -617,6 +617,86 @@ style="background:url('assets/imgs/images/background-herosection.jpg') center ce
   <!-- Footer area end -->
     </div>
  </div>
+  <!-- Footer area end -->
+</div>
+</div>
+<div id="scroll-percentage"><span id="scroll-percentage-value"></span></div>
+
+<!-- ================== AI CHATBOT ================== -->
+<script>
+(function() {
+  const url = "https://DEINE-N8N-DOMAIN.com/webhook/xxxx"; // <— HIER deine n8n Webhook-URL einsetzen
+
+  const widget = document.createElement("div");
+  widget.innerHTML = `
+    <style>
+      #chatbot-container {
+        position: fixed; bottom: 20px; right: 20px;
+        width: 320px; height: 400px; background: #fff;
+        border: 1px solid #e5e7eb; border-radius: 12px;
+        display: flex; flex-direction: column;
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+        box-shadow: 0 10px 30px rgba(2,6,23,.15);
+        overflow: hidden; z-index: 9999;
+      }
+      #chatbot-messages { flex: 1; padding: 12px; overflow-y: auto; }
+      #chatbot-messages .user { color: #1d4ed8; margin: 6px 0; }
+      #chatbot-messages .bot  { color: #16a34a; margin: 6px 0; }
+      #chatbot-input { display: flex; border-top: 1px solid #e5e7eb; }
+      #chatbot-input input {
+        flex: 1; border: 0; padding: 12px; font-size: 14px; outline: none;
+      }
+      #chatbot-input button {
+        border: 0; background: #0F172A; color: #fff;
+        padding: 0 14px; cursor: pointer; font-weight: 600;
+      }
+    </style>
+    <div id="chatbot-container">
+      <div id="chatbot-messages"></div>
+      <div id="chatbot-input">
+        <input id="chatbot-msg" type="text" placeholder="Schreib etwas…" />
+        <button id="chatbot-send">➤</button>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(widget);
+
+  const chat = document.getElementById('chatbot-messages');
+  const input = document.getElementById('chatbot-msg');
+  const sendBtn = document.getElementById('chatbot-send');
+  let slots = { name:null, concern:null, contact:null };
+  const sessionId = Math.random().toString(36).slice(2);
+
+  async function send() {
+    const message = input.value.trim();
+    if (!message) return;
+    chat.innerHTML += `<div class="user"><b>Du:</b> ${message}</div>`;
+    input.value = "";
+    chat.scrollTop = chat.scrollHeight;
+
+    try {
+      const res = await fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ sessionId, message, slots, meta: { source: "web" } })
+      });
+      const data = await res.json();
+      slots = data.slots || slots;
+      chat.innerHTML += `<div class="bot"><b>Bot:</b> ${data.reply || '(keine Antwort)'}</div>`;
+    } catch (e) {
+      chat.innerHTML += `<div class="bot"><b>Bot:</b> Netzwerkfehler – bitte später nochmal.</div>`;
+    }
+    chat.scrollTop = chat.scrollHeight;
+  }
+
+  sendBtn.onclick = send;
+  input.addEventListener("keydown", e => { if (e.key === "Enter") send(); });
+})();
+</script>
+<!-- ================== /AI CHATBOT ================== -->
+
+</body>
+</html>
 
 <div id="scroll-percentage"><span id="scroll-percentage-value"></span></div>
 
