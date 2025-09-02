@@ -625,24 +625,35 @@ style="background:url('assets/imgs/images/background-herosection.jpg') center ce
 <!-- Alpen Intelligenz Chat-Widget -->
 <script>
   (function() {
-    const N8N_URL = "https://DEINE-N8N-DOMAIN/webhook/chatbot"; // <-- anpassen
+    // ==== KONFIG ====
+    const N8N_URL = "https://magnus3773.app.n8n.cloud/webhook/723ab9df-4195-4059-98ba-148a1ba468de";
+    const BRAND = {
+      name: "Alpen Intelligenz",
+      logo: "favicon.png",
+      welcome: "Servus! Wie kann ich dir heute helfen?",
+      bubbleBg: "#0F172A",  // navy
+      bubbleColor: "#FFFFFF", // weiß
+      headerBg: "#0F172A",
+      accent: "#EAB308",
+      chatBgImage: "chatbot-background.jpg"
+    };
   
-    // Launcher
+    // ==== LAUNCHER ====
     const launcher = document.createElement("button");
     launcher.id = "ai-chat-launcher";
     launcher.setAttribute("aria-label","Chat öffnen");
-    launcher.innerHTML = "💬";
+    launcher.textContent = "💬";
     document.body.appendChild(launcher);
   
-    // Widget
+    // ==== WIDGET ====
     const wrap = document.createElement("div");
     wrap.id = "ai-chat-wrap";
     wrap.innerHTML = `
       <div id="ai-chat">
         <div id="ai-chat__header">
           <div class="ai-chat__brand">
-            <img src="favicon.png" alt="Logo" class="ai-chat__logo" />
-            <span class="ai-chat__title">Alpen Intelligenz</span>
+            <img src="${BRAND.logo}" alt="Logo" class="ai-chat__logo" />
+            <span class="ai-chat__title">${BRAND.name}</span>
           </div>
           <button id="ai-chat__min" aria-label="Minimieren">▾</button>
         </div>
@@ -657,14 +668,14 @@ style="background:url('assets/imgs/images/background-herosection.jpg') center ce
     `;
     document.body.appendChild(wrap);
   
-    // Styles (Branding)
+    // ==== STYLES ====
     const css = document.createElement("style");
     css.textContent = `
       :root{
-        --ai-navy:#0F172A;      /* Bubbles */
-        --ai-white:#FFFFFF;     /* Bubble Text */
-        --ai-header:#0F172A;    /* Header */
-        --ai-accent:#EAB308;    /* optional */
+        --ai-navy:${BRAND.bubbleBg};
+        --ai-white:${BRAND.bubbleColor};
+        --ai-header:${BRAND.headerBg};
+        --ai-accent:${BRAND.accent};
         --ai-shadow:0 12px 30px rgba(2,6,23,.18);
         --ai-radius:14px;
       }
@@ -686,7 +697,7 @@ style="background:url('assets/imgs/images/background-herosection.jpg') center ce
         font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
       }
   
-      /* Header mit Logo links */
+      /* Header */
       #ai-chat__header{
         background:var(--ai-header); color:#fff; padding:10px 12px;
         display:flex; align-items:center; justify-content:space-between;
@@ -699,27 +710,24 @@ style="background:url('assets/imgs/images/background-herosection.jpg') center ce
         transform: rotate(180deg);
       }
   
-      /* Chat-Hintergrundbild */
+      /* Chat-Hintergrund */
       #ai-chat__messages{
         position:relative;
         flex:1; padding:12px; overflow-y:auto; background:#0b1220;
       }
       #ai-chat__messages .ai-chat__bg{
         position:absolute; inset:0; z-index:0;
-        background-image: url("chatbot-background.jpg");
+        background-image: url("${BRAND.chatBgImage}");
         background-size: cover; background-position:center;
-        filter: brightness(0.55); /* abdunkeln für Lesbarkeit */
+        filter: brightness(0.55);
       }
   
-      /* Nachrichten-Liste */
+      /* Nachrichten */
       #ai-chat__messages .msg{
-        position:relative; z-index:1; /* über dem Hintergrund */
-        margin:8px 0; line-height:1.35;
+        position:relative; z-index:1; margin:8px 0; line-height:1.35;
         display:flex; flex-direction:column; align-items:flex-start;
       }
       .msg.user{ align-items:flex-end; }
-  
-      /* Bubbles: Navy Hintergrund + weiße Schrift */
       .msg .bubble{
         display:inline-block; padding:10px 12px; border-radius:14px;
         background: var(--ai-navy); color: var(--ai-white);
@@ -740,6 +748,7 @@ style="background:url('assets/imgs/images/background-herosection.jpg') center ce
     `;
     document.head.appendChild(css);
   
+    // ==== LOGIK ====
     const panel    = document.getElementById("ai-chat-wrap");
     const messages = document.getElementById("ai-chat__messages");
     const form     = document.getElementById("ai-chat__form");
@@ -747,7 +756,7 @@ style="background:url('assets/imgs/images/background-herosection.jpg') center ce
     const sendBtn  = document.getElementById("ai-chat__send");
     const minBtn   = document.getElementById("ai-chat__min");
   
-    // Session
+    // Session-ID merken
     const SESSION_KEY = "aiChatSessionId";
     let sessionId = localStorage.getItem(SESSION_KEY);
     if(!sessionId){ sessionId = Math.random().toString(36).slice(2); localStorage.setItem(SESSION_KEY, sessionId); }
@@ -756,11 +765,17 @@ style="background:url('assets/imgs/images/background-herosection.jpg') center ce
     launcher.addEventListener("click", () => {
       const open = panel.style.display === "block";
       panel.style.display = open ? "none" : "block";
-      if(!open) { input.focus(); if(messages.dataset.greeted !== "1"){ addBot("Hallo! Wie kann ich dir helfen?"); messages.dataset.greeted="1"; } }
+      if(!open) {
+        input.focus();
+        if(messages.dataset.greeted !== "1"){
+          addBot(BRAND.welcome);
+          messages.dataset.greeted="1";
+        }
+      }
     });
     minBtn.addEventListener("click", () => { panel.style.display = "none"; });
   
-    // Render-Helfer (sicher)
+    // Render
     function addLine(role, text){
       const row = document.createElement("div");
       row.className = `msg ${role}`;
@@ -790,11 +805,15 @@ style="background:url('assets/imgs/images/background-herosection.jpg') center ce
             meta: { source: "web" }
           })
         });
-        const data = await res.json().catch(() => ({}));
-        const reply = (data && (data.reply || data.message)) || "Okay.";
+        const raw = await res.text();
+        // Versuch JSON zu parsen (n8n muss JSON zurückgeben)
+        let data = {};
+        try { data = JSON.parse(raw); } catch(e) {}
+        const reply = (data && (data.reply || data.message)) || (raw || "Okay.");
         addBot(reply);
       }catch(err){
         addBot("Netzwerkfehler – bitte später erneut versuchen.");
+        console.error("Chat fetch error:", err);
       }finally{
         sendBtn.disabled = false;
         input.focus();
