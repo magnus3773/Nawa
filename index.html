@@ -622,29 +622,33 @@ style="background:url('assets/imgs/images/background-herosection.jpg') center ce
 </div>
 <div id="scroll-percentage"><span id="scroll-percentage-value"></span></div>
 
-<!-- ================== AI CHATBOT (n8n) ================== -->
+<!-- Alpen Intelligenz Chat-Widget -->
 <script>
   (function() {
-    // >>> HIER ist deine n8n Webhook-URL <<<
-    const N8N_URL = "https://magnus3773.app.n8n.cloud/webhook/c323fa8db-8d01-429f-a2ba-d007dd15bdc7";
+    const N8N_URL = "https://DEINE-N8N-DOMAIN/webhook/chatbot"; // <-- anpassen
   
-    // Launcher-Button
+    // Launcher
     const launcher = document.createElement("button");
     launcher.id = "ai-chat-launcher";
     launcher.setAttribute("aria-label","Chat öffnen");
     launcher.innerHTML = "💬";
     document.body.appendChild(launcher);
   
-    // Chat-Widget
+    // Widget
     const wrap = document.createElement("div");
     wrap.id = "ai-chat-wrap";
     wrap.innerHTML = `
       <div id="ai-chat">
         <div id="ai-chat__header">
-          <div class="ai-chat__title">Alpen Intelligenz Chat</div>
+          <div class="ai-chat__brand">
+            <img src="favicon.png" alt="Logo" class="ai-chat__logo" />
+            <span class="ai-chat__title">Alpen Intelligenz</span>
+          </div>
           <button id="ai-chat__min" aria-label="Minimieren">▾</button>
         </div>
-        <div id="ai-chat__messages" aria-live="polite"></div>
+        <div id="ai-chat__messages" aria-live="polite">
+          <div class="ai-chat__bg"></div>
+        </div>
         <form id="ai-chat__form" autocomplete="off">
           <input id="ai-chat__input" type="text" placeholder="Schreib etwas…" />
           <button id="ai-chat__send" type="submit" aria-label="Senden">➤</button>
@@ -653,12 +657,14 @@ style="background:url('assets/imgs/images/background-herosection.jpg') center ce
     `;
     document.body.appendChild(wrap);
   
-    // Basis-Styles
+    // Styles (Branding)
     const css = document.createElement("style");
     css.textContent = `
       :root{
-        --ai-navy:#0F172A;
-        --ai-gold:#EAB308;
+        --ai-navy:#0F172A;      /* Bubbles */
+        --ai-white:#FFFFFF;     /* Bubble Text */
+        --ai-header:#0F172A;    /* Header */
+        --ai-accent:#EAB308;    /* optional */
         --ai-shadow:0 12px 30px rgba(2,6,23,.18);
         --ai-radius:14px;
       }
@@ -671,88 +677,96 @@ style="background:url('assets/imgs/images/background-herosection.jpg') center ce
         transition:transform .2s ease, box-shadow .2s ease;
       }
       #ai-chat-launcher:hover{ transform: translateY(-1px); }
+  
       #ai-chat-wrap{ position:fixed; right:20px; bottom:86px; z-index:9999; display:none; }
       #ai-chat{
-        width:min(92vw, 340px); height:460px; background:#fff; border:1px solid #e5e7eb;
+        width:min(92vw, 360px); height:520px; background:#fff; border:1px solid #e5e7eb;
         border-radius:var(--ai-radius); box-shadow:var(--ai-shadow);
-        display:flex; flex-direction:column; overflow:hidden; font-family:system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+        display:flex; flex-direction:column; overflow:hidden;
+        font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
       }
+  
+      /* Header mit Logo links */
       #ai-chat__header{
-        background:var(--ai-navy); color:#fff; padding:10px 12px;
+        background:var(--ai-header); color:#fff; padding:10px 12px;
         display:flex; align-items:center; justify-content:space-between;
       }
+      .ai-chat__brand{ display:flex; align-items:center; gap:8px; }
+      .ai-chat__logo{ width:18px; height:18px; border-radius:4px; object-fit:contain; }
       .ai-chat__title{ font-weight:600; font-size:14px; }
       #ai-chat__min{
         background:transparent; border:0; color:#fff; font-size:18px; cursor:pointer;
         transform: rotate(180deg);
       }
+  
+      /* Chat-Hintergrundbild */
       #ai-chat__messages{
-        flex:1; padding:12px; overflow-y:auto; background:#fff;
+        position:relative;
+        flex:1; padding:12px; overflow-y:auto; background:#0b1220;
       }
-      #ai-chat__messages .msg{ margin:6px 0; line-height:1.35; }
-      .msg .by{ font-weight:600; margin-right:6px; }
-      .msg.user .by{ color:#1d4ed8; }
-      .msg.bot  .by{ color:#16a34a; }
+      #ai-chat__messages .ai-chat__bg{
+        position:absolute; inset:0; z-index:0;
+        background-image: url("chatbot-background.jpg");
+        background-size: cover; background-position:center;
+        filter: brightness(0.55); /* abdunkeln für Lesbarkeit */
+      }
+  
+      /* Nachrichten-Liste */
+      #ai-chat__messages .msg{
+        position:relative; z-index:1; /* über dem Hintergrund */
+        margin:8px 0; line-height:1.35;
+        display:flex; flex-direction:column; align-items:flex-start;
+      }
+      .msg.user{ align-items:flex-end; }
+  
+      /* Bubbles: Navy Hintergrund + weiße Schrift */
       .msg .bubble{
-        display:inline-block; padding:8px 10px; border-radius:10px;
-        background:#f3f4f6; color:#0f172a; max-width:90%;
-        white-space:pre-wrap; word-wrap:break-word;
+        display:inline-block; padding:10px 12px; border-radius:14px;
+        background: var(--ai-navy); color: var(--ai-white);
+        max-width:85%; white-space:pre-wrap; word-wrap:break-word;
+        box-shadow: 0 4px 10px rgba(0,0,0,.15);
       }
-      .msg.user .bubble{ background:#eef2ff; }
-      .msg.bot  .bubble{ background:#ecfdf5; }
-      #ai-chat__form{ display:flex; border-top:1px solid #eef2f7; }
+  
+      /* Input-Leiste */
+      #ai-chat__form{ display:flex; border-top:1px solid #eef2f7; background:#fff; }
       #ai-chat__input{
         flex:1; border:0; padding:12px; font-size:14px; outline:none;
       }
       #ai-chat__send{
         border:0; background:var(--ai-navy); color:#fff; padding:0 14px; cursor:pointer; font-weight:600;
       }
-      @media (max-width:480px){ #ai-chat{ height:60vh; } }
+  
+      @media (max-width:480px){ #ai-chat{ height:65vh; } }
     `;
     document.head.appendChild(css);
   
-    const panel   = document.getElementById("ai-chat-wrap");
-    const messages= document.getElementById("ai-chat__messages");
-    const form    = document.getElementById("ai-chat__form");
-    const input   = document.getElementById("ai-chat__input");
-    const sendBtn = document.getElementById("ai-chat__send");
-    const minBtn  = document.getElementById("ai-chat__min");
+    const panel    = document.getElementById("ai-chat-wrap");
+    const messages = document.getElementById("ai-chat__messages");
+    const form     = document.getElementById("ai-chat__form");
+    const input    = document.getElementById("ai-chat__input");
+    const sendBtn  = document.getElementById("ai-chat__send");
+    const minBtn   = document.getElementById("ai-chat__min");
   
-    // Session merken
+    // Session
     const SESSION_KEY = "aiChatSessionId";
     let sessionId = localStorage.getItem(SESSION_KEY);
-    if(!sessionId){
-      sessionId = Math.random().toString(36).slice(2);
-      localStorage.setItem(SESSION_KEY, sessionId);
-    }
+    if(!sessionId){ sessionId = Math.random().toString(36).slice(2); localStorage.setItem(SESSION_KEY, sessionId); }
   
     // Öffnen/Schließen
     launcher.addEventListener("click", () => {
       const open = panel.style.display === "block";
-      if(open){
-        panel.style.display = "none";
-      } else {
-        panel.style.display = "block";
-        input.focus();
-        if(messages.dataset.greeted !== "1"){
-          addBot("Hallo! Wie kann ich dir helfen?");
-          messages.dataset.greeted = "1";
-        }
-      }
+      panel.style.display = open ? "none" : "block";
+      if(!open) { input.focus(); if(messages.dataset.greeted !== "1"){ addBot("Hallo! Wie kann ich dir helfen?"); messages.dataset.greeted="1"; } }
     });
     minBtn.addEventListener("click", () => { panel.style.display = "none"; });
   
-    // Nachrichten rendern
+    // Render-Helfer (sicher)
     function addLine(role, text){
-      const row  = document.createElement("div");
+      const row = document.createElement("div");
       row.className = `msg ${role}`;
-      const by   = document.createElement("span");
-      by.className = "by";
-      by.textContent = role === "user" ? "Du:" : "Bot:";
       const bubble = document.createElement("span");
       bubble.className = "bubble";
       bubble.textContent = text;
-      row.appendChild(by);
       row.appendChild(bubble);
       messages.appendChild(row);
       messages.scrollTop = messages.scrollHeight;
@@ -760,12 +774,11 @@ style="background:url('assets/imgs/images/background-herosection.jpg') center ce
     const addUser = (t) => addLine("user", t);
     const addBot  = (t) => addLine("bot",  t);
   
-    // Nachricht senden
+    // Senden
     async function sendMessage(text){
       addUser(text);
       input.value = "";
       sendBtn.disabled = true;
-  
       try{
         const res = await fetch(N8N_URL, {
           method: "POST",
@@ -773,7 +786,7 @@ style="background:url('assets/imgs/images/background-herosection.jpg') center ce
           body: JSON.stringify({
             sessionId,
             message: text,
-            slots: {},
+            slots: {name:null, concern:null, contact:null},
             meta: { source: "web" }
           })
         });
@@ -796,7 +809,7 @@ style="background:url('assets/imgs/images/background-herosection.jpg') center ce
     });
   })();
   </script>
-  <!-- ================== /AI CHATBOT (n8n) ================== -->
+  <!-- /Alpen Intelligenz Chat-Widget -->
 
 </body>
 </html>
