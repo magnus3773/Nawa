@@ -37,6 +37,7 @@
       --alpen-navy:#0F172A;
       --alpen-gold:#EAB308;
       --alpen-white:#FFFFFF;
+      --slide-max-h: 70vh; /* maximale Höhe der Bilder im Slider */
     }
     body{ background:#fff !important; color:var(--alpen-navy) !important; }
     h1,h2,h3,h4,h5,h6{ color:var(--alpen-navy) !important; }
@@ -82,37 +83,67 @@
       position: relative;
       border-radius: 12px;
       overflow: hidden;
-    }
-    .portfolio-slide img{
-      width:100%;
-      height:520px;
-      object-fit:cover;
-      display:block;
+      background:#f7f8fb;               /* dezenter Rahmenhintergrund für Balken */
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding: 16px;                     /* Luft, damit nichts klebt */
     }
 
-    /* ▼▼ Farbanpassung der Beschreibung unten ▼▼ */
+    /* Bild immer komplett zeigen – ohne Beschnitt */
+    .portfolio-slide img{
+      display:block;
+      width:auto;                        /* nie auf 100% zwingen */
+      height:auto;
+      max-width:100%;
+      max-height:var(--slide-max-h);
+      object-fit:contain;                /* alles sichtbar */
+    }
+
+    /* Portrait/Querformat-Feintuning über Klassen (per JS gesetzt) */
+    .portfolio-slide.landscape img{
+      max-width:100%;
+      max-height:var(--slide-max-h);
+    }
+    .portfolio-slide.portrait img{
+      max-height:var(--slide-max-h);
+      width:auto;
+    }
+
+    /* Beschriftung */
     .portfolio-slide__caption{
       position:absolute;
-      left:16px; right:16px; bottom:16px;
-      background: rgba(15,23,42,0.72) !important; /* Navy mit Transparenz */
-      color: var(--alpen-white) !important;
-      padding:12px 16px;
+      left:50%;
+      transform: translateX(-50%);
+      bottom:16px;
+      background: rgba(15,23,42,0.72);
+      color: var(--alpen-white);
+      padding:10px 14px;
       border-radius:10px;
-      border:1px solid var(--alpen-gold);       /* feine goldene Linie */
+      border:1px solid var(--alpen-gold);
       box-shadow: 0 6px 20px rgba(0,0,0,.25);
       backdrop-filter: blur(4px);
+      width: fit-content;
+      max-width: calc(100% - 32px);
+      text-align:left;
     }
     .portfolio-slide__caption .title{
-      margin:0; font-size:18px; line-height:1.3;
-      color: var(--alpen-gold) !important;      /* Titel in Gold */
-      font-weight: 600;
+      margin:0;
+      font-size:16px;
+      color: var(--alpen-gold);
+      font-weight:600;
+      line-height:1.3;
     }
     .portfolio-slide__caption .desc{
-      margin:2px 0 0; font-size:14px;
-      color: var(--alpen-white) !important;     /* Beschreibung in Weiß */
-      opacity: .92;
+      margin:2px 0 0;
+      font-size:13px;
+      color:#fff;
+      opacity:.95;
     }
-    /* ▲▲ Farbanpassung der Beschreibung unten ▲▲ */
+
+    @media (max-width: 768px){
+      :root { --slide-max-h: 62vh; }     /* auf kleineren Geräten etwas niedriger */
+    }
   </style>
 </head>
 
@@ -250,10 +281,10 @@
           <div class="swiper portfolioSwiper">
             <div class="swiper-wrapper">
 
-              <!-- Slide 1 -->
+              <!-- Slide 1: Querformat/Screen -->
               <div class="swiper-slide">
                 <div class="portfolio-slide">
-                  <img src="assets/imgs/images/portfolio.1.png" alt="Projekt 1 – Portfolio Bild" loading="lazy">
+                  <img src="assets/imgs/project/portfolio1.jpg" alt="Projekt 1 – Portfolio Bild (Querformat)" loading="lazy">
                   <div class="portfolio-slide__caption">
                     <p class="title">Projekt 1</p>
                     <p class="desc">Kurze Beschreibung</p>
@@ -261,10 +292,10 @@
                 </div>
               </div>
 
-              <!-- Slide 2 -->
+              <!-- Slide 2: Hochformat/Handy -->
               <div class="swiper-slide">
                 <div class="portfolio-slide">
-                  <img src="assets/imgs/images/portfolio.2.png" alt="Projekt 2 – Portfolio Bild" loading="lazy">
+                  <img src="assets/imgs/project/portfolio2.jpg" alt="Projekt 2 – Portfolio Bild (Hochformat)" loading="lazy">
                   <div class="portfolio-slide__caption">
                     <p class="title">Projekt 2</p>
                     <p class="desc">Kurze Beschreibung</p>
@@ -272,11 +303,11 @@
                 </div>
               </div>
 
-              <!-- Weitere Slides hier hinzufügen: einfach kopieren und Bildquelle anpassen -->
+              <!-- Mehr Slides? Einfach kopieren und Bildpfad anpassen -->
               <!--
               <div class="swiper-slide">
                 <div class="portfolio-slide">
-                  <img src="assets/imgs/project/dein-bild.jpg" alt="Projekt X – Portfolio Bild" loading="lazy">
+                  <img src="assets/imgs/project/dein-bild.jpg" alt="Projekt X" loading="lazy">
                   <div class="portfolio-slide__caption">
                     <p class="title">Projekt X</p>
                     <p class="desc">Kurze Beschreibung</p>
@@ -361,7 +392,7 @@
 <script src="assets/js/vendor/type.js"></script>
 <script src="assets/js/vendor/vanilla-tilt.js"></script>
 <script src="assets/js/plugins/nice-select.min.js"></script>
-script src="assets/js/vendor/odometer.min.js"></script>
+<script src="assets/js/vendor/odometer.min.js"></script>
 <script src="assets/js/vendor/jquery-ui.min.js"></script>
 <script src="assets/js/plugins/parallax-scroll.js"></script>
 <script src="assets/js/plugins/jquery.countdown.min.js"></script>
@@ -369,25 +400,43 @@ script src="assets/js/vendor/odometer.min.js"></script>
 <script src="assets/js/vendor/ajax-form.js"></script>
 <script src="assets/js/main.js"></script>
 
-<!-- Init Portfolio Swiper (Loop + Tastatursteuerung) -->
+<!-- Init Portfolio Swiper (Loop + Tastatursteuerung) und Format-Erkennung -->
 <script>
   document.addEventListener('DOMContentLoaded', function () {
+    // Slider
     var portfolioSwiper = new Swiper('.portfolioSwiper', {
       loop: true,
       speed: 500,
       slidesPerView: 1,
       spaceBetween: 24,
-      keyboard: {
-        enabled: true,
-        onlyInViewport: true
-      },
+      autoHeight: true, // passt die Höhe an (Portrait/Querformat)
+      keyboard: { enabled: true, onlyInViewport: true },
       navigation: {
         nextEl: '.portfolioSwiper .swiper-button-next',
         prevEl: '.portfolioSwiper .swiper-button-prev'
       }
     });
 
-    // Fallback: explizit auf Pfeiltasten reagieren (zusätzlich zur Swiper-Keyboard-Option)
+    // Orientierung erkennen (Portrait/Querformat) -> passende Klassen setzen
+    document.querySelectorAll('.portfolio-slide img').forEach(function(img){
+      function applyOrientation(){
+        var slide = img.closest('.portfolio-slide');
+        if(!slide) return;
+        slide.classList.remove('portrait','landscape');
+        if (img.naturalHeight > img.naturalWidth) {
+          slide.classList.add('portrait');
+        } else {
+          slide.classList.add('landscape');
+        }
+      }
+      if (img.complete) {
+        applyOrientation();
+      } else {
+        img.addEventListener('load', applyOrientation, { once:true });
+      }
+    });
+
+    // zusätzlicher Fallback für Pfeiltasten
     document.addEventListener('keydown', function (e) {
       if (e.key === 'ArrowLeft') { portfolioSwiper.slidePrev(); }
       if (e.key === 'ArrowRight') { portfolioSwiper.slideNext(); }
