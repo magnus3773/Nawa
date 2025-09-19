@@ -37,6 +37,11 @@
       --alpen-navy:#0F172A;
       --alpen-gold:#EAB308;
       --alpen-white:#FFFFFF;
+
+      /* >>> Du kannst hier bequem die Titel-/Breadcrumb-Farbe ändern <<< */
+      --hero-title-color: var(--alpen-navy);
+      --hero-breadcrumb-color: var(--alpen-navy);
+
       --slide-max-h: 70vh; /* maximale Höhe der Bilder im Slider */
     }
     body{ background:#fff !important; color:var(--alpen-navy) !important; }
@@ -59,10 +64,12 @@
       background: url('assets/imgs/images/navy-colour.png') center/cover no-repeat;
       padding: 140px 0 90px; text-align: center;
     }
-    .portfolio-hero .breadcrumb__title{ color:#fff !important; }
+    /* Titel + Breadcrumbs nun NICHT mehr weiß */
+    .portfolio-hero .breadcrumb__title{ color: var(--hero-title-color) !important; }
     .portfolio-hero a,
-    .portfolio-hero .active span{ color:#fff !important; }
-    .portfolio-hero img{ filter: invert(1) brightness(2); }
+    .portfolio-hero .active span{ color: var(--hero-breadcrumb-color) !important; }
+    /* Icon nicht invertieren */
+    .portfolio-hero img{ filter: none; }
 
     /* Portfolio Slider */
     .portfolio-carousel{
@@ -83,24 +90,24 @@
       position: relative;
       border-radius: 12px;
       overflow: hidden;
-      background:#f7f8fb;               /* dezenter Rahmenhintergrund für Balken */
+      background:#f7f8fb;
       display:flex;
       align-items:center;
       justify-content:center;
-      padding: 16px;                     /* Luft, damit nichts klebt */
+      padding: 16px;
     }
 
     /* Bild immer komplett zeigen – ohne Beschnitt */
     .portfolio-slide img{
       display:block;
-      width:auto;                        /* nie auf 100% zwingen */
+      width:auto;
       height:auto;
       max-width:100%;
       max-height:var(--slide-max-h);
-      object-fit:contain;                /* alles sichtbar */
+      object-fit:contain;
     }
 
-    /* Portrait/Querformat-Feintuning über Klassen (per JS gesetzt) */
+    /* Orientierungsklassen (werden per JS gesetzt) */
     .portfolio-slide.landscape img{
       max-width:100%;
       max-height:var(--slide-max-h);
@@ -142,7 +149,7 @@
     }
 
     @media (max-width: 768px){
-      :root { --slide-max-h: 62vh; }     /* auf kleineren Geräten etwas niedriger */
+      :root { --slide-max-h: 62vh; }
     }
   </style>
 </head>
@@ -284,7 +291,7 @@
               <!-- Slide 1: Querformat/Screen -->
               <div class="swiper-slide">
                 <div class="portfolio-slide">
-                  <img src="assets/imgs/images/portfolio.1.png" alt="Projekt 1 – Portfolio Bild (Querformat)" loading="lazy">
+                  <img src="assets/imgs/project/portfolio1.jpg" alt="Projekt 1 – Portfolio Bild (Querformat)" loading="lazy">
                   <div class="portfolio-slide__caption">
                     <p class="title">Projekt 1</p>
                     <p class="desc">Kurze Beschreibung</p>
@@ -295,7 +302,7 @@
               <!-- Slide 2: Hochformat/Handy -->
               <div class="swiper-slide">
                 <div class="portfolio-slide">
-                  <img src="assets/imgs/images/portfolio.2.png" alt="Projekt 2 – Portfolio Bild (Hochformat)" loading="lazy">
+                  <img src="assets/imgs/project/portfolio2.jpg" alt="Projekt 2 – Portfolio Bild (Hochformat)" loading="lazy">
                   <div class="portfolio-slide__caption">
                     <p class="title">Projekt 2</p>
                     <p class="desc">Kurze Beschreibung</p>
