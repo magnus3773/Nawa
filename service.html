@@ -1,7 +1,5 @@
-
-  <!doctype html>
+<!doctype html>
 <html class="no-js" lang="de">
-
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -63,59 +61,7 @@
 </head>
 
 <body>
-  <!-- Header -->
-  <header>
-    <div id="header-sticky" class="header header-6 header-8">
-      <div class="container">
-        <div class="mega-menu-wrapper header-8__main">
-          <div class="header__main header-8__main">
-
-            <!-- LOGO -->
-            <div class="header__left header-8__left">
-              <div class="header__logo" style="display:flex;align-items:center;height:56px;">
-                <a href="index.html" aria-label="Startseite" style="display:flex;align-items:center;height:100%;">
-                  <img 
-                    src="assets/imgs/logo/favicon.png" 
-                    alt="Alpen Intelligenz Logo" 
-                    style="height:48px; width:auto; display:block;">
-                </a>
-              </div>
-            </div>
-            <!-- /LOGO -->
-
-            <!-- Navigation -->
-            <div class="header__middle">
-              <div class="mean__menu-wrapper d-none d-lg-block">
-                <div class="main-menu header-8__menu">
-                  <nav id="mobile-menu">
-                    <ul>
-                      <li><a href="service.html">Leistungen</a></li>
-                      <li><a href="project.html">Portfolio</a></li>
-                      <li><a href="contact.html">Kontakt</a></li>
-                    </ul>
-                  </nav>
-                </div>
-              </div>
-            </div>
-            <!-- /Navigation -->
-
-            <!-- Rechte Seite (Buttons / Mobile-Menü) -->
-            <div class="header__right header-8__right"></div>
-            <div class="menu__bar">
-              <button class="offcanvas__toggle" aria-label="Menü öffnen">
-                <i class="fa-solid fa-bars"></i>
-              </button>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-  <!-- /Header -->
-  
-
-<body><!-- preloader start -->
+  <!-- preloader start -->
   <div id="preloader">
     <div class="preloader-close">x</div>
     <div class="sk-three-bounce">
@@ -126,77 +72,197 @@
   </div>
   <noscript><style>#preloader{display:none!important;}</style></noscript>
   <!-- preloader end -->
-  
+
   <!-- Backtotop -->
   <div class="backtotop-wrap cursor-pointer" aria-label="Nach oben">
     <svg class="backtotop-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102" aria-hidden="true">
       <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
     </svg>
   </div>
-  
-  <!-- Offcanvas -->
+
+  <!-- =================== ALPEN INTELLIGENZ: HEADER + OFFCANVAS (wie Startseite) =================== -->
+
+  <!-- Offcanvas (mobiles Menü) -->
   <div class="fix">
-    <div class="offcanvas__area">
+    <div class="offcanvas__area" aria-hidden="true">
       <div class="offcanvas__wrapper">
         <div class="offcanvas__content">
-          <div class="offcanvas__top d-flex justify-content-between align-items-center">
-            <div class="offcanvas__logo">
-              <a href="index.html"><img src="assets/imgs/logo/favicon.png" alt="Alpen Intelligenz Logo" loading="lazy"></a>
-            </div>
-            <div class="offcanvas__close">
-              <button class="offcanvas-close-icon animation--flip" aria-label="Menü schließen">
-                <span class="offcanvas-m-lines">
-                  <span class="offcanvas-m-line line--1"></span>
-                  <span class="offcanvas-m-line line--2"></span>
-                  <span class="offcanvas-m-line line--3"></span>
-                </span>
-              </button>
-            </div>
+          <div class="offcanvas__top">
+            <a class="offcanvas__logo" href="index.html" aria-label="Startseite">
+              <img src="assets/imgs/logo/favicon.png" alt="Alpen Intelligenz" />
+            </a>
+
+            <!-- Pfeil nach oben als Close -->
+            <button class="offcanvas-close" aria-label="Menü schließen">
+              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+                <path d="M12 6l-7 7h14z" fill="currentColor"></path>
+              </svg>
+            </button>
           </div>
-          <div class="mobile-menu fix"></div>
+
+          <nav class="offcanvas__nav" aria-label="Mobiles Menü">
+            <ul>
+              <li style="--d:0"><a href="service.html">Leistungen</a></li>
+              <li style="--d:1"><a href="project.html">Portfolio</a></li>
+              <li style="--d:2"><a href="contact.html">Kontakt</a></li>
+            </ul>
+          </nav>
         </div>
       </div>
     </div>
   </div>
-  <div class="offcanvas__overlay"></div>
-  <div class="offcanvas__overlay-white"></div>
-  
+  <div class="offcanvas__overlay" tabindex="-1" aria-hidden="true"></div>
+
   <!-- Header -->
-  <header>
-    <div id="header-sticky" class="header header-6 header-8">
-      <div class="container">
-        <div class="mega-menu-wrapper header-8__main">
-          <div class="header__main header-8__main">
-            <div class="header__left header-8__left">
-              <div class="header__logo">
-                <a href="index.html">
-                  <img src="assets/imgs/logo/favicon.png" alt="Alpen Intelligenz Logo" loading="lazy">
-                </a>
-              </div>
-            </div>
-            <div class="header__middle">
-              <div class="mean__menu-wrapper d-none d-lg-block">
-                <div class="main-menu header-8__menu">
-                  <nav id="mobile-menu">
-                    <ul>
-                      <li><a href="service.html">Leistungen</a></li>
-                      <li><a href="project.html">Portfolio</a></li>
-                      <li><a href="contact.html">Kontakt</a></li>
-                    </ul>
-                  </nav>
-                </div>
-              </div>
-            </div>
-            <div class="header__right header-8__right"></div>
-            <div class="menu__bar">
-              <button class="offcanvas__toggle" aria-label="Menü öffnen"><i class="fa-solid fa-bars"></i></button>
-            </div>
-          </div>
-        </div>
-      </div>
+  <header class="ai-header">
+    <div class="ai-header__inner">
+      <a class="ai-header__logo" href="index.html" aria-label="Startseite">
+        <img src="assets/imgs/logo/favicon.png" alt="Alpen Intelligenz" />
+      </a>
+
+      <nav class="ai-nav d-none d-lg-block" aria-label="Hauptmenü">
+        <ul>
+          <li><a href="service.html">Leistungen</a></li>
+          <li><a href="project.html">Portfolio</a></li>
+          <li><a href="contact.html">Kontakt</a></li>
+        </ul>
+      </nav>
+
+      <!-- Burger/Pfeil Button -->
+      <button class="ai-burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="ai-offcanvas">
+        <!-- Burger -->
+        <svg class="ai-burger__icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+          <rect x="3" y="5"  width="18" height="2" rx="1"></rect>
+          <rect x="3" y="11" width="18" height="2" rx="1"></rect>
+          <rect x="3" y="17" width="18" height="2" rx="1"></rect>
+        </svg>
+        <!-- Pfeil nach oben -->
+        <svg class="ai-burger__arrow" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+          <path d="M12 6l-7 7h14z"></path>
+        </svg>
+      </button>
     </div>
   </header>
-  
+
+  <!-- Styles (nur für Header/Offcanvas) -->
+  <style>
+    :root{
+      --ai-navy:#0B1F3F;  /* exakt wie auf der Startseite */
+      --ai-gold:#EAB308;
+      --ai-overlay: rgba(0,0,0,.35);
+      --ease: cubic-bezier(.22,.61,.36,1);
+    }
+    /* Header */
+    .ai-header{position:relative;z-index:1005;background:#fff;}
+    .ai-header__inner{max-width:1140px;margin:0 auto;padding:14px 16px;
+      display:flex;align-items:center;justify-content:space-between;gap:16px;}
+    .ai-header__logo img{height:48px;width:auto;display:block}
+
+    .ai-nav ul{display:flex;gap:24px;list-style:none;margin:0;padding:0}
+    .ai-nav a{color:var(--ai-navy);text-decoration:none}
+    .ai-nav a:hover{color:var(--ai-gold)}
+
+    /* Burger */
+    .ai-burger{display:inline-flex;align-items:center;justify-content:center;
+      padding:10px 12px;border:0;border-radius:12px;cursor:pointer;
+      background:var(--ai-navy);color:#fff;transition:transform .2s var(--ease);}
+    .ai-burger:active{transform:scale(.98)}
+    .ai-burger__icon rect{fill:#fff;transition:opacity .2s var(--ease)}
+    .ai-burger__arrow{display:none;fill:#fff;transition:transform .3s var(--ease)}
+
+    /* Offcanvas */
+    .offcanvas__area{
+      position:fixed;top:0;right:0;height:100dvh;width:min(86vw,360px);
+      background:#fff;z-index:1200;
+      transform:translateX(100%);opacity:0;
+      transition:transform .45s var(--ease), opacity .45s var(--ease);
+      will-change:transform,opacity;
+      box-shadow:-12px 0 32px rgba(0,0,0,.08);
+    }
+    .offcanvas__overlay{
+      position:fixed;inset:0;background:var(--ai-overlay);z-index:1190;
+      opacity:0;visibility:hidden;transition:opacity .35s var(--ease), visibility .35s var(--ease);
+    }
+
+    .offcanvas__top{display:flex;align-items:center;justify-content:space-between;padding:18px}
+    .offcanvas__logo img{height:40px;width:auto;display:block}
+    .offcanvas-close{background:#f3f5f9;border:0;border-radius:10px;padding:8px;cursor:pointer;color:var(--ai-navy);display:none}
+
+    .offcanvas__nav ul{list-style:none;margin:8px 0 0;padding:10px 18px}
+    .offcanvas__nav li{opacity:0;transform:translateY(8px);animation:menuItem .5s var(--ease) forwards;animation-delay: calc(.05s * var(--d));}
+    .offcanvas__nav a{display:block;padding:12px 6px;text-decoration:none;color:var(--ai-navy);border-radius:8px}
+    .offcanvas__nav a:hover{background:#f6f7fb}
+
+    @keyframes menuItem{to{opacity:1;transform:translateY(0)}}
+
+    /* Open states */
+    .offcanvas__area.is-open{transform:translateX(0);opacity:1}
+    .offcanvas__overlay.is-open{opacity:1;visibility:visible}
+    .offcanvas-close{display:inline-flex}
+
+    .ai-burger[aria-expanded="true"] .ai-burger__icon{opacity:0}
+    .ai-burger[aria-expanded="true"] .ai-burger__arrow{display:block;transform:translateY(1px)}
+    
+    @media (min-width: 992px){
+      .d-lg-block{display:block !important}
+      .d-lg-none{display:none !important}
+    }
+  </style>
+
+  <!-- Script (Header/Offcanvas) -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const btn     = document.querySelector('.ai-burger');
+      const panel   = document.querySelector('.offcanvas__area');
+      const overlay = document.querySelector('.offcanvas__overlay');
+      const close   = document.querySelector('.offcanvas-close');
+      const focusablesSel = 'a,button,input,textarea,select,[tabindex]:not([tabindex="-1"])';
+      let lastFocused = null;
+
+      function openMenu(){
+        lastFocused = document.activeElement;
+        panel.classList.add('is-open');
+        overlay.classList.add('is-open');
+        panel.setAttribute('aria-hidden','false');
+        btn.setAttribute('aria-expanded','true');
+        document.body.style.overflow='hidden';
+        const first = panel.querySelector(focusablesSel);
+        first && first.focus();
+      }
+      function closeMenu(){
+        panel.classList.remove('is-open');
+        overlay.classList.remove('is-open');
+        panel.setAttribute('aria-hidden','true');
+        btn.setAttribute('aria-expanded','false');
+        document.body.style.overflow='';
+        lastFocused && lastFocused.focus();
+      }
+
+      btn && btn.addEventListener('click', () => {
+        const open = btn.getAttribute('aria-expanded') === 'true';
+        open ? closeMenu() : openMenu();
+      });
+
+      close && close.addEventListener('click', closeMenu);
+      overlay && overlay.addEventListener('click', closeMenu);
+
+      document.addEventListener('keydown', (e) => {
+        if(e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') closeMenu();
+      });
+
+      panel.addEventListener('keydown', (e) => {
+        if(e.key !== 'Tab') return;
+        const focusables = panel.querySelectorAll(focusablesSel);
+        if(!focusables.length) return;
+        const first = focusables[0];
+        const last  = focusables[focusables.length - 1];
+        if(e.shiftKey && document.activeElement === first){ last.focus(); e.preventDefault(); }
+        else if(!e.shiftKey && document.activeElement === last){ first.focus(); e.preventDefault(); }
+      });
+    });
+  </script>
+  <!-- =================== /HEADER wie Startseite =================== -->
+
   <!-- Body -->
   <div id="smooth-wrapper">
     <div id="smooth-content">
@@ -210,7 +276,7 @@
       background:
         linear-gradient(to bottom, #0F172A 0, #0F172A 80px, rgba(15,23,42,0) 80px, rgba(15,23,42,0) 100%),
         url('assets/imgs/images/navy-colour.png') center/cover no-repeat;
-      padding: 160px 0 100px;   /* Titel weiter unten: erste Zahl erhöhen/verringern */
+      padding: 160px 0 100px;
       text-align: center;
     "
   >
@@ -230,15 +296,12 @@
 
 <!-- Animation (CSS + JS Trigger) -->
 <style>
-  /* sanftes Einblenden mit Blur + Up-Motion */
   @keyframes aiFadeUp {
     0%   { opacity:0; transform:translateY(24px) scale(.98); filter:blur(6px); }
     60%  { opacity:1; transform:translateY(0)    scale(1);   filter:blur(0);   }
     100% { opacity:1; }
   }
   .breadcrumb__title { opacity:0; will-change: transform, filter, opacity; }
-
-  /* Unterstreichung, die „wächst“ */
   .underline-sweep { position:relative; display:inline-block; }
   .underline-sweep::after{
     content:""; position:absolute; left:50%; bottom:-16px;
@@ -247,12 +310,8 @@
     transform:translateX(-50%); border-radius:2px;
     transition:width .6s ease .2s;
   }
-
-  /* Endzustand wenn im Viewport */
   .breadcrumb__title.is-in { animation: aiFadeUp .9s cubic-bezier(.2,.8,.2,1) both; }
   .underline-sweep.is-in::after { width: 220px; }
-
-  /* Barrierefreiheit: keine Animation für Nutzer mit „reduced motion“ */
   @media (prefers-reduced-motion: reduce){
     .breadcrumb__title, .underline-sweep::after { animation:none !important; transition:none !important; opacity:1; }
     .underline-sweep::after { width:220px; }
@@ -260,16 +319,15 @@
 </style>
 
 <script>
-  // Startet die Animation, sobald der Titel sichtbar ist
   document.addEventListener('DOMContentLoaded', () => {
     const title = document.querySelector('.breadcrumb__title');
     if (!title) return;
     const io = new IntersectionObserver((entries) => {
       entries.forEach(e => {
         if (e.isIntersecting) {
-          title.classList.add('is-in');          // Text-Animation
-          title.classList.add('underline-sweep'); // stellt sicher, dass die Linie existiert
-          title.classList.add('is-in');          // Linie wächst
+          title.classList.add('is-in');
+          title.classList.add('underline-sweep');
+          title.classList.add('is-in');
           io.disconnect();
         }
       });
@@ -476,15 +534,13 @@
 
 <div id="scroll-percentage"><span id="scroll-percentage-value"></span></div>
 
-<!-- JS (nur Nötiges aktiv; problematische Smooth-Scroll-Plugins auskommentiert) -->
+<!-- JS -->
 <script src="assets/js/vendor/jquery-3.7.1.min.js"></script>
 <script src="assets/js/vendor/bootstrap.bundle.min.js"></script>
 <script src="assets/js/plugins/meanmenu.min.js"></script>
 <script src="assets/js/vendor/magnific-popup.min.js"></script>
 <script src="assets/js/vendor/jquery-ui.min.js"></script>
 
-<!-- Optional: wenn dein main.js andere Plugins erwartet, lass diese drin;
-     wenn es ruckelt, die drei GSAP-Plugins unten auskommentiert lassen. -->
 <script src="assets/js/plugins/waypoints.min.js"></script>
 <script src="assets/js/plugins/swiper.min.js"></script>
 <script src="assets/js/plugins/gsap.js"></script>
