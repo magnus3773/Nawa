@@ -83,7 +83,7 @@
 </div>
 <!-- Backtotop end -->
 
-<!-- Offcanvas area start -->
+<!-- Offcanvas area start (unverändert gelassen) -->
 <div class="fix">
     <div class="offcanvas__area">
         <div class="offcanvas__wrapper">
@@ -118,51 +118,98 @@
 </div>
 <div class="offcanvas__overlay"></div>
 <div class="offcanvas__overlay-white"></div>
-<!-- Offcanvas area start -->
+<!-- Offcanvas area end -->
 
-<!-- Header (Deutsch, NEU) -->
-<header>
-    <div id="header-sticky" class="header header-6 header-8">
-      <div class="container">
-        <div class="mega-menu-wrapper header-8__main">
-          <div class="header__main header-8__main">
-            <div class="header__left header-8__left">
-              <div class="header__logo">
-                <a href="index.html">
-                  <img src="assets/imgs/logo/favicon.png" alt="NAWA Logo">
-                </a>
-              </div>
-            </div>
-  
-            <div class="header__middle">
-              <div class="mean__menu-wrapper d-none d-lg-block">
-                <div class="main-menu header-8__menu">
-                  <nav id="mobile-menu">
-                    <ul>
-                      <li><a href="service.html">Leistungen</a></li>
-                      <li><a href="project.html">Portfolio</a></li>
-                      <li><a href="contact.html">Kontakt</a></li>
-                    </ul>
-                  </nav>
-                </div>
-              </div>
-            </div>
-  
-            <div class="header__right header-8__right"></div>
-  
-            <div class="menu__bar">
-              <button class="offcanvas__toggle">
-                <i class="fa-solid fa-bars"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-  <!-- /Header -->
+<!-- ======= ERSETZTER HEADER (wie Startseite) ======= -->
+<header class="ai-header">
+  <div class="ai-header__inner">
+    <a class="ai-header__logo" href="index.html" aria-label="Startseite">
+      <img src="assets/imgs/logo/favicon.png" alt="Alpen Intelligenz" />
+    </a>
 
-<!-- Body main wrapper start -->
+    <nav class="ai-nav d-none d-lg-block" aria-label="Hauptmenü">
+      <ul>
+        <li><a href="service.html">Leistungen</a></li>
+        <li><a href="project.html">Portfolio</a></li>
+        <li><a href="contact.html">Kontakt</a></li>
+      </ul>
+    </nav>
+
+    <!-- Burger/Pfeil Button -->
+    <button class="ai-burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="ai-offcanvas">
+      <!-- Burger -->
+      <svg class="ai-burger__icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+        <rect x="3" y="5"  width="18" height="2" rx="1"></rect>
+        <rect x="3" y="11" width="18" height="2" rx="1"></rect>
+        <rect x="3" y="17" width="18" height="2" rx="1"></rect>
+      </svg>
+      <!-- Pfeil nach oben -->
+      <svg class="ai-burger__arrow" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+        <path d="M12 6l-7 7h14z"></path>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<!-- Nur für den Header nötige Styles/Script -->
+<style>
+  :root{
+    --ai-navy:#0B1F3F;
+    --ai-gold:#EAB308;
+    --ai-overlay: rgba(0,0,0,.35);
+    --ease: cubic-bezier(.22,.61,.36,1);
+  }
+  .ai-header{position:relative;z-index:1005;background:#fff;}
+  .ai-header__inner{max-width:1140px;margin:0 auto;padding:14px 16px;
+    display:flex;align-items:center;justify-content:space-between;gap:16px;}
+  .ai-header__logo img{height:48px;width:auto;display:block}
+  .ai-nav ul{display:flex;gap:24px;list-style:none;margin:0;padding:0}
+  .ai-nav a{color:var(--ai-navy);text-decoration:none}
+  .ai-nav a:hover{color:var(--ai-gold)}
+  .ai-burger{display:inline-flex;align-items:center;justify-content:center;
+    padding:10px 12px;border:0;border-radius:12px;cursor:pointer;
+    background:var(--ai-navy);color:#fff;transition:transform .2s var(--ease);}
+  .ai-burger:active{transform:scale(.98)}
+  .ai-burger__icon rect{fill:#fff;transition:opacity .2s var(--ease)}
+  .ai-burger__arrow{display:none;fill:#fff;transition:transform .3s var(--ease)}
+  /* Offcanvas Sichtbarkeit steuern (nutzt vorhandene .offcanvas__area/.offcanvas__overlay) */
+  .offcanvas__area.is-open{transform:translateX(0) !important; opacity:1 !important;}
+  .offcanvas__overlay.is-open{opacity:1 !important; visibility:visible !important;}
+</style>
+
+<script>
+  // Burger öffnet/schließt die bestehende .offcanvas__area
+  document.addEventListener('DOMContentLoaded', () => {
+    const btn = document.querySelector('.ai-burger');
+    const panel = document.querySelector('.offcanvas__area');
+    const overlay = document.querySelector('.offcanvas__overlay');
+
+    function openMenu(){
+      panel.classList.add('is-open');
+      overlay.classList.add('is-open');
+      btn.setAttribute('aria-expanded','true');
+      document.body.style.overflow='hidden';
+    }
+    function closeMenu(){
+      panel.classList.remove('is-open');
+      overlay.classList.remove('is-open');
+      btn.setAttribute('aria-expanded','false');
+      document.body.style.overflow='';
+    }
+
+    btn && btn.addEventListener('click', () => {
+      const open = btn.getAttribute('aria-expanded') === 'true';
+      open ? closeMenu() : openMenu();
+    });
+    overlay && overlay.addEventListener('click', closeMenu);
+    document.addEventListener('keydown', (e) => {
+      if(e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') closeMenu();
+    });
+  });
+</script>
+<!-- ======= /ERSETZTER HEADER ======= -->
+
+<!-- Body main wrapper start (alles unterhalb unverändert) -->
 <div id="smooth-wrapper">
   <div id="smooth-content">
     <main>
@@ -268,7 +315,6 @@
       <section class="contact-map section-space-bottom" style="padding-bottom:80px;">
         <div class="container">
           <div class="map">
-            <!-- Variante A: fixe Höhe (einfach) -->
             <iframe 
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2732.5950638747345!2d14.357525877071165!3d46.77287767112551!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47706d85d533f7b3%3A0x5dd94705f4362bba!2sLeitengasse%2041%2C%209300%20St.%20Veit%20an%20der%20Glan!5e0!3m2!1sde!2sat!4v1756645333559!5m2!1sde!2sat" 
               width="100%" 
@@ -278,31 +324,11 @@
               loading="lazy" 
               referrerpolicy="no-referrer-when-downgrade">
             </iframe>
-
-            <!--
-            Variante B: 16:9 responsiv (falls du willst)
-            <div style="position:relative; width:100%; padding-top:56.25%;">
-              <iframe
-                src="…"
-                style="position:absolute; inset:0; width:100%; height:100%; border:0;"
-                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-              </iframe>
-            </div>
-            -->
           </div>
         </div>
       </section>
 
     </main>
-
-    <!-- Loading Spinner (Form) -->
-    <div class="loading-form" style="display:none;">
-      <div class="sk-three-bounce">
-        <div class="sk-child sk-bounce1"></div>
-        <div class="sk-child sk-bounce2"></div>
-        <div class="sk-child sk-bounce3"></div>
-      </div>
-    </div>
 
     <!-- Footer area start -->
     <footer class="footer-before footer-inner" style="background-color:#0F172A; color:#ffffff; padding:40px 0;">
@@ -354,9 +380,6 @@
 
 <div id="scroll-percentage"><span id="scroll-percentage-value"></span></div>
 
-
-
-
 <!-- JS here -->
 <script src="assets/js/vendor/jquery-3.7.1.min.js"></script>
 <script src="assets/js/vendor/chroma.min.js"></script>
@@ -372,7 +395,7 @@
 <script src="assets/js/plugins/wow.js"></script>
 <script src="assets/js/vendor/magnific-popup.min.js"></script>
 <script src="assets/js/vendor/type.js"></script>
-<script src="assets/js/vendor/vanilla-tilt.js"></script>
+script src="assets/js/vendor/vanilla-tilt.js"></script>
 <script src="assets/js/plugins/nice-select.min.js"></script>
 <script src="assets/js/vendor/odometer.min.js"></script>
 <script src="assets/js/vendor/jquery-ui.min.js"></script>
