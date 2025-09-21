@@ -1,6 +1,5 @@
 <!doctype html>
 <html class="no-js" lang="de">
-
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -27,37 +26,34 @@
   <link rel="stylesheet" href="assets/css/vendor/odometer.min.css">
   <link rel="stylesheet" href="assets/css/plugins/swiper.min.css">
   <link rel="stylesheet" href="assets/css/vendor/magnific-popup.css">
-  <link rel="stylesheet" href="assets/css/vendor/fontawesome-pro.css"> 
+  <link rel="stylesheet" href="assets/css/vendor/fontawesome-pro.css">
   <link rel="stylesheet" href="assets/css/vendor/spacing.css">
   <link rel="stylesheet" href="assets/css/vendor/custom-font.css">
   <link rel="stylesheet" href="assets/css/main.css">
 
   <!-- Alpen Intelligenz overrides -->
   <style>
-      :root{
-        --alpen-navy:#0B1F3F;
-        --alpen-gold:#EAB308;
-      }
-      body{ background:#fff !important; color:var(--alpen-navy) !important; }
-      h1,h2,h3,h4,h5,h6{ color:var(--alpen-navy) !important; }
-      a{ color:var(--alpen-navy); }
-      a:hover{ color:#0b1222; }
-      .header, .header-6, .header-8, .menu-area{ background:#ffffff !important; }
-      .main-menu ul li > a{ color:var(--alpen-navy) !important; }
-      .main-menu ul li > a:hover{ color:var(--alpen-gold) !important; }
-      .rr-btn, .btn, .btn-primary{ background:var(--alpen-navy) !important; border-color:var(--alpen-navy) !important; color:#fff !important; }
-      .rr-btn:hover, .btn:hover{ background:#0c1223 !important; border-color:#0c1223 !important; }
-      .price-bg, .badge, .highlight{ background:var(--alpen-gold) !important; }
-      .color-theme-primary, .text-primary{ color:var(--alpen-navy) !important; }
-      .border-accent{ border-color:var(--alpen-gold) !important; }
-      .underline-accent{ text-decoration-color:var(--alpen-gold) !important; }
-      /* remove header shadows */
-      .header__main, .header-6__main{ box-shadow:none !important; }
-      /* Banner Text Weiß */
-      .banner8__title-wrapper-title,
-      .banner8__title-wrapper-dec {
-        color: white !important;
-      }
+    :root{
+      --alpen-navy:#0B1F3F;
+      --alpen-gold:#EAB308;
+    }
+    body{ background:#fff !important; color:var(--alpen-navy) !important; }
+    h1,h2,h3,h4,h5,h6{ color:var(--alpen-navy) !important; }
+    a{ color:var(--alpen-navy); }
+    a:hover{ color:#0b1222; }
+    .header, .header-6, .header-8, .menu-area{ background:#ffffff !important; }
+    .main-menu ul li > a{ color:var(--alpen-navy) !important; }
+    .main-menu ul li > a:hover{ color:var(--alpen-gold) !important; }
+    .rr-btn, .btn, .btn-primary{ background:var(--alpen-navy) !important; border-color:var(--alpen-navy) !important; color:#fff !important; }
+    .rr-btn:hover, .btn:hover{ background:#0c1223 !important; border-color:#0c1223 !important; }
+    .price-bg, .badge, .highlight{ background:var(--alpen-gold) !important; }
+    .color-theme-primary, .text-primary{ color:var(--alpen-navy) !important; }
+    .border-accent{ border-color:var(--alpen-gold) !important; }
+    .underline-accent{ text-decoration-color:var(--alpen-gold) !important; }
+    .header__main, .header-6__main{ box-shadow:none !important; }
+
+    /* Sicherheitsnetz: selbst wenn Back-to-top/Scroll-Widget irgendwo injiziert wird */
+    .backtotop-wrap, #scroll-percentage { display:none !important; visibility:hidden !important; }
   </style>
 </head>
 
@@ -126,7 +122,7 @@
   </div>
 </header>
 
-<!-- =============== Styles =============== -->
+<!-- =============== Styles (Header/Offcanvas) =============== -->
 <style>
   :root{
     --ai-navy:#0B1F3F;
@@ -134,18 +130,13 @@
     --ai-overlay: rgba(0,0,0,.35);
     --ease: cubic-bezier(.22,.61,.36,1);
   }
-
-  /* Header */
   .ai-header{position:relative;z-index:1005;background:#fff;}
   .ai-header__inner{max-width:1140px;margin:0 auto;padding:14px 16px;
     display:flex;align-items:center;justify-content:space-between;gap:16px;}
   .ai-header__logo img{height:48px;width:auto;display:block}
-
   .ai-nav ul{display:flex;gap:24px;list-style:none;margin:0;padding:0}
   .ai-nav a{color:var(--ai-navy);text-decoration:none}
   .ai-nav a:hover{color:var(--ai-gold)}
-
-  /* Burger */
   .ai-burger{display:inline-flex;align-items:center;justify-content:center;
     padding:10px 12px;border:0;border-radius:12px;cursor:pointer;
     background:var(--ai-navy);color:#fff;transition:transform .2s var(--ease);}
@@ -153,7 +144,6 @@
   .ai-burger__icon rect{fill:#fff;transition:opacity .2s var(--ease)}
   .ai-burger__arrow{display:none;fill:#fff;transition:transform .3s var(--ease)}
 
-  /* Offcanvas */
   .offcanvas__area{
     position:fixed;top:0;right:0;height:100dvh;width:min(86vw,360px);
     background:#fff;z-index:1200;
@@ -166,33 +156,26 @@
     position:fixed;inset:0;background:var(--ai-overlay);z-index:1190;
     opacity:0;visibility:hidden;transition:opacity .35s var(--ease), visibility .35s var(--ease);
   }
-
   .offcanvas__top{display:flex;align-items:center;justify-content:space-between;padding:18px}
   .offcanvas__logo img{height:40px;width:auto;display:block}
   .offcanvas-close{background:#f3f5f9;border:0;border-radius:10px;padding:8px;cursor:pointer;color:var(--ai-navy);display:none}
-
   .offcanvas__nav ul{list-style:none;margin:8px 0 0;padding:10px 18px}
   .offcanvas__nav li{opacity:0;transform:translateY(8px);animation:menuItem .5s var(--ease) forwards;animation-delay: calc(.05s * var(--d));}
   .offcanvas__nav a{display:block;padding:12px 6px;text-decoration:none;color:var(--ai-navy);border-radius:8px}
   .offcanvas__nav a:hover{background:#f6f7fb}
-
   @keyframes menuItem{to{opacity:1;transform:translateY(0)}}
-
-  /* Open states */
   .offcanvas__area.is-open{transform:translateX(0);opacity:1}
   .offcanvas__overlay.is-open{opacity:1;visibility:visible}
   .offcanvas-close{display:inline-flex}
-
   .ai-burger[aria-expanded="true"] .ai-burger__icon{opacity:0}
   .ai-burger[aria-expanded="true"] .ai-burger__arrow{display:block;transform:translateY(1px)}
-  
   @media (min-width: 992px){
     .d-lg-block{display:block !important}
     .d-lg-none{display:none !important}
   }
 </style>
 
-<!-- =============== Script =============== -->
+<!-- =============== Script (Header/Offcanvas) =============== -->
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const btn     = document.querySelector('.ai-burger');
@@ -245,384 +228,301 @@
   });
 </script>
 <!-- =================== /HEADER + OFFCANVAS (Animated) =================== -->
+
 <!-- Body main wrapper start -->
 <div id="smooth-wrapper">
-    <div id="smooth-content">
-        <main>
-    
-           <!-- Banner area start -->
-<section class="banner8__area p-relative overflow-hidden z-1" 
-style="background:url('assets/imgs/images/background-herosection.jpg') center center/cover no-repeat; height:100vh;">
+  <div id="smooth-content">
+    <main>
 
-<!-- Dunkler Overlay für bessere Lesbarkeit -->
-<div style="position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.35); z-index:1;"></div>
+      <!-- Banner area start -->
+      <section class="banner8__area p-relative overflow-hidden z-1"
+        style="background:url('assets/imgs/images/background-herosection.jpg') center center/cover no-repeat; height:100vh;">
 
-<div class="container" style="position:relative; z-index:2;">
-<div class="row align-items-center">
-<div class="col-xl-6">
-<div class="banner8__title-wrapper hero">
- <h1 class="banner8__title-wrapper-title _split_text" style="color:white;">Weniger Stress. Mehr Erfolg.</h1>
- <p class="banner8__title-wrapper-dec rr_title_anim" style="color:white;">
-   Wir entlasten Sie mit KI-Automatisierung – zuverlässig, verständlich und maßgeschneidert für Ihr Unternehmen.
- </p>
- <div class="banner8__btn">
-   <a href="contact.html" class="rr-btn">Jetzt kontaktieren <i class="fa-sharp fa-regular fa-arrow-right"></i></a>
- </div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Banner area end -->
+        <!-- Dunkler Overlay für bessere Lesbarkeit -->
+        <div style="position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.35); z-index:1;"></div>
 
-            <section class="services-8__area section-space-12 fade-wrapper">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="section__title-wrapper text-center hero mb-45">
-                                <h2 class="section__title-wrapper-title _split_text">Wir automatisieren - Sie profitieren.
-                                </h2>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row mb-minus-30">
-                        <div class="col-xl-3 col-lg-4 col-sm-6">
-                            <div class="services-8__item mb-30 fade-top">
-                                <div class="services-8__icon">
-                                    <span><svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <rect x="46" y="46" width="4" height="4" rx="2" fill="#C3C9D7" />
-                                        <rect y="46" width="4" height="4" rx="2" fill="#C3C9D7" />
-                                        <rect x="46" width="4" height="4" rx="2" fill="#C3C9D7" />
-                                        <rect width="4" height="4" rx="2" fill="#C3C9D7" />
-                                        <path opacity="0.24"
-                                            d="M25.1539 14.2388V40C24.8793 40 24.5885 39.9518 24.3624 39.8232L24.2977 39.7911C21.1962 38.1037 15.7846 36.3359 12.2792 35.8698L11.8108 35.8056C10.26 35.6127 9 34.1664 9 32.6236V13.2103C9 11.2978 10.5669 9.85149 12.4892 10.0122C15.8816 10.2854 21.0185 11.9889 23.8939 13.7727L24.2977 14.0138C24.54 14.1584 24.847 14.2388 25.1539 14.2388Z"
-                                            fill="#050513" />
-                                        <path
-                                            d="M41.3062 13.227V32.6242C41.3062 34.167 40.0462 35.6134 38.4955 35.8062L37.9624 35.8705C34.4408 36.3365 29.0131 38.1204 25.9116 39.8239C25.7016 39.9524 25.4431 40.0006 25.1523 40.0006V14.2394C25.4593 14.2394 25.7662 14.1591 26.0085 14.0144L26.2831 13.8377C29.1585 12.0377 34.3116 10.3182 37.7039 10.0289H37.8008C39.7232 9.86821 41.3062 11.2985 41.3062 13.227Z"
-                                            fill="#050513" />
-                                        <path
-                                            d="M18.2905 20.5717H14.6559C13.9936 20.5717 13.4443 20.0253 13.4443 19.3664C13.4443 18.7075 13.9936 18.1611 14.6559 18.1611H18.2905C18.9528 18.1611 19.502 18.7075 19.502 19.3664C19.502 20.0253 18.9528 20.5717 18.2905 20.5717Z"
-                                            fill="#050513" />
-                                        <path
-                                            d="M19.502 25.3911H14.6559C13.9936 25.3911 13.4443 24.8447 13.4443 24.1858C13.4443 23.5269 13.9936 22.9805 14.6559 22.9805H19.502C20.1644 22.9805 20.7136 23.5269 20.7136 24.1858C20.7136 24.8447 20.1644 25.3911 19.502 25.3911Z"
-                                            fill="#050513" />
-                                    </svg>
-                                    </span>
-                                </div>
-                                <h2 class="services-8__content__title"><a href="service-details.html">Abläufe automatisieren
-                             </a></h2>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-sm-6">
-                            <div class="services-8__item mb-30 fade-top">
-                                <div class="services-8__icon">
-                                    <span><svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <rect x="46" y="46" width="4" height="4" rx="2" fill="#C3C9D7" />
-                                        <rect y="46" width="4" height="4" rx="2" fill="#C3C9D7" />
-                                        <rect x="46" width="4" height="4" rx="2" fill="#C3C9D7" />
-                                        <rect width="4" height="4" rx="2" fill="#C3C9D7" />
-                                        <path
-                                            d="M29.2516 42C28.5546 42 27.9766 41.422 27.9766 40.725V9.275C27.9766 8.578 28.5546 8 29.2516 8C29.9486 8 30.5266 8.578 30.5266 9.275V40.725C30.5266 41.422 29.9486 42 29.2516 42Z"
-                                            fill="#C3C9D7" />
-                                        <path opacity="0.3"
-                                            d="M14.8 38.5984H25V11.3984H14.8C11.043 11.3984 8 14.4414 8 18.1984V31.7984C8 35.5554 11.043 38.5984 14.8 38.5984Z"
-                                            fill="#050513" />
-                                        <path opacity="0.3"
-                                            d="M34.35 38.5984H29.25V11.3984H34.35C38.107 11.3984 41.15 14.4414 41.15 18.1984V31.7984C41.15 35.5554 38.107 38.5984 34.35 38.5984Z"
-                                            fill="#050513" />
-                                        <path
-                                            d="M13.5242 26.7003C13.3032 26.7003 13.0822 26.6493 12.8782 26.5643C12.6742 26.4793 12.4872 26.3603 12.3172 26.2073C12.1642 26.0373 12.0452 25.8503 11.9432 25.6463C11.8582 25.4423 11.8242 25.2213 11.8242 25.0003C11.8242 24.5583 12.0112 24.1163 12.3172 23.7933C12.4022 23.7253 12.4872 23.6573 12.5722 23.5893C12.6742 23.5213 12.7762 23.4703 12.8782 23.4363C12.9802 23.3853 13.0822 23.3513 13.1842 23.3343C13.7622 23.2153 14.3402 23.4023 14.7312 23.7933C15.0372 24.1163 15.2242 24.5583 15.2242 25.0003C15.2242 25.2213 15.1732 25.4423 15.0882 25.6463C15.0032 25.8503 14.8842 26.0373 14.7312 26.2073C14.5612 26.3603 14.3742 26.4793 14.1702 26.5643C13.9662 26.6493 13.7452 26.7003 13.5242 26.7003Z"
-                                            fill="#C3C9D7" />
-                                        <path
-                                            d="M19.4734 26.6991C19.2524 26.6991 19.0314 26.6481 18.8274 26.5631C18.6234 26.4781 18.4364 26.3591 18.2664 26.2061C17.9434 25.8831 17.7734 25.4581 17.7734 24.9991C17.7734 24.7781 17.8244 24.5571 17.9094 24.3531C17.9944 24.1321 18.1134 23.9621 18.2664 23.7921C18.8954 23.1631 20.0344 23.1631 20.6804 23.7921C20.9864 24.1151 21.1734 24.5571 21.1734 24.9991C21.1734 25.2201 21.1224 25.4411 21.0374 25.6451C20.9524 25.8491 20.8334 26.0361 20.6804 26.2061C20.5104 26.3591 20.3234 26.4781 20.1194 26.5631C19.9154 26.6481 19.6944 26.6991 19.4734 26.6991Z"
-                                            fill="#C3C9D7" />
-                                    </svg>
-                                    </span>
-                                </div>
-                                    <h2 class="services-8__content__title"><a href="service-details.html">Verbesserte Effizienz
-                                </a></h2>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-sm-6">
-                            <div class="services-8__item mb-30 fade-top">
-                                <div class="services-8__icon">
-                                    <span><svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <rect x="46" y="46" width="4" height="4" rx="2" fill="#C3C9D7" />
-                                        <rect y="46" width="4" height="4" rx="2" fill="#C3C9D7" />
-                                        <rect x="46" width="4" height="4" rx="2" fill="#C3C9D7" />
-                                        <rect width="4" height="4" rx="2" fill="#C3C9D7" />
-                                        <path opacity="0.24"
-                                            d="M7 26.5849V23.4151C7 21.542 8.52924 19.9931 10.4183 19.9931C13.6747 19.9931 15.006 17.6877 13.3688 14.86C12.4333 13.2391 12.991 11.1319 14.6282 10.1953L17.7406 8.41226C19.1619 7.56577 20.997 8.07006 21.8426 9.4929L22.0405 9.8351C23.6597 12.6628 26.3223 12.6628 27.9595 9.8351L28.1574 9.4929C29.003 8.07006 30.8381 7.56577 32.2594 8.41226L35.3718 10.1953C37.009 11.1319 37.5667 13.2391 36.6312 14.86C34.994 17.6877 36.3253 19.9931 39.5817 19.9931C41.4528 19.9931 43 21.524 43 23.4151V26.5849C43 28.458 41.4708 30.0069 39.5817 30.0069C36.3253 30.0069 34.994 32.3123 36.6312 35.1399C37.5667 36.7789 37.009 38.8681 35.3718 39.8047L32.2594 41.5877C30.8381 42.4342 29.003 41.9299 28.1574 40.5071L27.9595 40.1649C26.3403 37.3372 23.6777 37.3372 22.0405 40.1649L21.8426 40.5071C20.997 41.9299 19.1619 42.4342 17.7406 41.5877L14.6282 39.8047C12.991 38.8681 12.4333 36.7609 13.3688 35.1399C15.006 32.3123 13.6747 30.0069 10.4183 30.0069C8.52924 30.0069 7 28.458 7 26.5849Z"
-                                            fill="#050513" />
-                                        <path
-                                            d="M25 32C28.866 32 32 28.866 32 25C32 21.134 28.866 18 25 18C21.134 18 18 21.134 18 25C18 28.866 21.134 32 25 32Z"
-                                            fill="#050513" />
-                                    </svg>
-                                    </span>
-                                </div>
-                                <h2 class="services-8__content__title"><a href="service-details.html">Individuelle Lösungen
-                                </a></h2>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-sm-6">
-                            <div class="services-8__item mb-30 fade-top">
-                                <div class="services-8__icon">
-                                    <span><svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <rect x="46" y="46" width="4" height="4" rx="2" fill="#C3C9D7" />
-                                        <rect y="46" width="4" height="4" rx="2" fill="#C3C9D7" />
-                                        <rect x="46" width="4" height="4" rx="2" fill="#C3C9D7" />
-                                        <rect width="4" height="4" rx="2" fill="#C3C9D7" />
-                                        <path
-                                            d="M13.8063 16.8438L8.55628 11.5937C7.97503 11.0125 8.3875 10 9.23125 10H15.9625C16.2062 10 16.45 10.0938 16.6188 10.2813L25.9938 19.6562C26.575 20.2375 26.1625 21.25 25.3375 21.25H19.1688C15.55 21.25 12.6063 24.1938 12.6063 27.8125C12.6063 31.4312 15.55 34.375 19.1688 34.375H21.9813L26.0125 38.4062C26.5938 38.9875 26.1813 40 25.3563 40H19.1875C12.4562 40 7 34.5438 7 27.8125C7 23.1438 9.625 19.075 13.5063 17.0312L13.8063 16.8438Z"
-                                            fill="#050513" />
-                                        <path opacity="0.24"
-                                            d="M37.6188 33.1562L42.8688 38.4062C43.45 38.9875 43.0375 40 42.2125 40H35.4813C35.2375 40 34.9938 39.9062 34.825 39.7188L25.45 30.3438C24.8688 29.7625 25.2813 28.75 26.1063 28.75H32.2751C35.8938 28.75 38.8376 25.8062 38.8376 22.1875C38.8376 18.5688 35.8938 15.625 32.2751 15.625H29.4626L25.4313 11.5937C24.8501 11.0125 25.2625 10 26.1063 10H32.2751C39.0063 10 44.4626 15.4563 44.4626 22.1875C44.4626 26.8563 41.8376 30.925 37.9563 32.9688L37.6188 33.1562Z"
-                                            fill="#050513" />
-                                    </svg>
-                                    </span>
-                                </div>
-                                <h2 class="services-8__content__title"><a href="service-details.html">Einfache Integration
-                                </a></h2>
-                            </div>
-                        </div>
+        <div class="container" style="position:relative; z-index:2;">
+          <div class="row align-items-center">
+            <div class="col-xl-6">
+              <div class="banner8__title-wrapper hero">
+                <h1 class="banner8__title-wrapper-title _split_text" style="color:white;">Weniger Stress. Mehr Erfolg.</h1>
+                <p class="banner8__title-wrapper-dec rr_title_anim" style="color:white;">
+                  Wir entlasten Sie mit KI-Automatisierung – zuverlässig, verständlich und maßgeschneidert für Ihr Unternehmen.
+                </p>
+                <div class="banner8__btn">
+                  <a href="contact.html" class="rr-btn">Jetzt kontaktieren <i class="fa-sharp fa-regular fa-arrow-right"></i></a>
                 </div>
-            </section>
-            <section class="banner-8-thumb__area banner-8-thumb section-space-top-5 section-space-bottom">
-              <div class="container">
-                <div class="row align-items-start">
-                  
-                <!-- Linke Spalte -->
-<div class="col-lg-6">
-  <div class="banner-8-thumb__content__left">
-    <div class="section__title-wrapper hero mb-40 mb-sm-30 mb-xs-30">
-      <h2 class="section__title-wrapper-title _split_text">Warum wir?</h2>
-      <p class="section__title-wrapper-dec mt-20 rr_title_anim">
-        Wir machen KI-Automatisierung für Unternehmen verständlich, nutzbar und rentabel – ohne Technik-Chaos.
-      </p>
-    </div>
-    <a href="contact.html" class="rr-btn">Jetzt kontaktieren <i class="fa-regular fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Banner area end -->
 
-    <!-- Panorama-Bild direkt unter Button, aber innerhalb der linken Spalte -->
-    <div style="margin-top:20px;">
-      <img src="assets/imgs/images/panorama.png" 
-           alt="Berg Panorama" 
-           style="width:90%; max-width:600px; height:auto; border-radius:8px; display:block;">
-    </div>
+      <section class="services-8__area section-space-12 fade-wrapper">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="section__title-wrapper text-center hero mb-45">
+                <h2 class="section__title-wrapper-title _split_text">Wir automatisieren - Sie profitieren.</h2>
+              </div>
+            </div>
+          </div>
+          <div class="row mb-minus-30">
+            <div class="col-xl-3 col-lg-4 col-sm-6">
+              <div class="services-8__item mb-30 fade-top">
+                <div class="services-8__icon">
+                  <span><!-- icon svg --></span>
+                </div>
+                <h2 class="services-8__content__title"><a href="service-details.html">Abläufe automatisieren</a></h2>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-sm-6">
+              <div class="services-8__item mb-30 fade-top">
+                <div class="services-8__icon">
+                  <span><!-- icon svg --></span>
+                </div>
+                <h2 class="services-8__content__title"><a href="service-details.html">Verbesserte Effizienz</a></h2>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-sm-6">
+              <div class="services-8__item mb-30 fade-top">
+                <div class="services-8__icon">
+                  <span><!-- icon svg --></span>
+                </div>
+                <h2 class="services-8__content__title"><a href="service-details.html">Individuelle Lösungen</a></h2>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-sm-6">
+              <div class="services-8__item mb-30 fade-top">
+                <div class="services-8__icon">
+                  <span><!-- icon svg --></span>
+                </div>
+                <h2 class="services-8__content__title"><a href="service-details.html">Einfache Integration</a></h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="banner-8-thumb__area banner-8-thumb section-space-top-5 section-space-bottom">
+        <div class="container">
+          <div class="row align-items-start">
+
+            <!-- Linke Spalte -->
+            <div class="col-lg-6">
+              <div class="banner-8-thumb__content__left">
+                <div class="section__title-wrapper hero mb-40 mb-sm-30 mb-xs-30">
+                  <h2 class="section__title-wrapper-title _split_text">Warum wir?</h2>
+                  <p class="section__title-wrapper-dec mt-20 rr_title_anim">
+                    Wir machen KI-Automatisierung für Unternehmen verständlich, nutzbar und rentabel – ohne Technik-Chaos.
+                  </p>
+                </div>
+                <a href="contact.html" class="rr-btn">Jetzt kontaktieren <i class="fa-regular fa-arrow-right"></i></a>
+
+                <!-- Panorama-Bild -->
+                <div style="margin-top:20px;">
+                  <img src="assets/imgs/images/panorama.png"
+                       alt="Berg Panorama"
+                       style="width:90%; max-width:600px; height:auto; border-radius:8px; display:block;">
+                </div>
+              </div>
+            </div>
+
+            <!-- Rechte Spalte -->
+            <div class="col-lg-6">
+              <div class="tbanner-8-thumb__content__right fade-wrapper">
+
+                <div class="banner-8-thumb__item fade-top">
+                  <h2 class="banner-8-thumb__title">Zeit sparen.</h2>
+                  <p class="banner-8-thumb__dec">Wiederkehrende Aufgaben wie Terminvergabe, Dokumentation oder erste Kundenanfragen laufen automatisch ab. Ihr Team gewinnt wertvolle Zeit für die Dinge, die wirklich Umsatz bringen.</p>
+                </div>
+
+                <div class="banner-8-thumb__item fade-top">
+                  <h2 class="banner-8-thumb__title">Kosten senken.</h2>
+                  <p class="banner-8-thumb__dec">Automatisierte Prozesse reduzieren Personalkosten, vermeiden Fehler und sorgen für reibungslose Abläufe.</p>
+                </div>
+
+                <div class="banner-8-thumb__item fade-top">
+                  <h2 class="banner-8-thumb__title">Einfach starten.</h2>
+                  <p class="banner-8-thumb__dec">Wir übernehmen die Einrichtung und passen die Lösungen an Ihr Unternehmen an. Sie starten sofort – ohne komplizierte Technik, ohne lange Umstellung.</p>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="faq-4__area faq-8 section-space-bottom ask-question-4 p-relative" style="overflow:visible;">
+        <div class="container">
+          <div class="row">
+
+            <!-- Linke Spalte -->
+            <div class="col-lg-5">
+              <div class="faq-4__thumb">
+                <div class="section__title-wrapper mb-20 hero">
+                  <h2 class="section__title-wrapper-title-2 _split_text">
+                    Häufige Fragen unserer Kunden
+                  </h2>
+                </div>
+
+                <div class="faq-8__thumb-media img-custom-anim-left wow text-end mb-md-30 mb-sm-30 mb-xs-30 pr-60">
+                  <img src="assets/imgs/images/trailblazing-ai-8.jpg"
+                       alt="FAQ Bild"
+                       style="width:100%; height:auto; display:block; max-height:none; border-radius:12px;">
+                </div>
+              </div>
+            </div>
+
+            <!-- Rechte Spalte -->
+            <div class="col-lg-7">
+              <div class="ask-question-4__faq-4">
+                <div class="accordion" id="accordionExample">
+
+                  <!-- Frage 1 -->
+                  <div class="accordion-item ask-question-4__faq-4-item faq-4__item wow fadeInLeft animated" data-wow-delay=".2s">
+                    <h5 class="accordion-header" id="headingOne">
+                      <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                              data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Wie kann KI meinem Unternehmen konkret helfen?
+                      </button>
+                    </h5>
+                    <div id="collapseOne" class="accordion-collapse collapse show"
+                         aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        <p>KI übernimmt wiederkehrende Aufgaben wie Terminplanung, Dokumentation oder Kundenanfragen. So sparen Sie Zeit, senken Kosten und gewinnen mehr Freiraum für Ihr Kerngeschäft.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Frage 2 -->
+                  <div class="accordion-item ask-question-4__faq-4-item faq-4__item wow fadeInLeft animated" data-wow-delay=".3s">
+                    <h5 class="accordion-header" id="headingTwo">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                              data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Ist KI nicht viel zu kompliziert für mein Team?
+                      </button>
+                    </h5>
+                    <div id="collapseTwo" class="accordion-collapse collapse"
+                         aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        <p>Nein. Wir richten die Lösungen so ein, dass Ihre Mitarbeiter sie einfach nutzen können – ohne technisches Vorwissen.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Frage 3 -->
+                  <div class="accordion-item ask-question-4__faq-4-item faq-4__item wow fadeInLeft animated" data-wow-delay=".4s">
+                    <h5 class="accordion-header" id="headingThree">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                              data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Welche Kosten entstehen für mich?
+                      </button>
+                    </h5>
+                    <div id="collapseThree" class="accordion-collapse collapse"
+                         aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        <p>Die Höhe der Kosten hängt von den gewünschten Prozessen ab. Oft übersteigen die monatlichen Einsparungen durch weniger manuellen Aufwand die Investition schon nach kurzer Zeit.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Frage 4 -->
+                  <div class="accordion-item ask-question-4__faq-4-item faq-4__item wow fadeInLeft animated" data-wow-delay=".5s">
+                    <h5 class="accordion-header" id="headingFour">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                              data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        Muss meine bestehende IT komplett erneuert werden?
+                      </button>
+                    </h5>
+                    <div id="collapseFour" class="accordion-collapse collapse"
+                         aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        <p>Nein. Wir integrieren KI-Lösungen in Ihre vorhandenen Systeme und passen sie individuell an Ihre Abläufe an.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Frage 5 -->
+                  <div class="accordion-item ask-question-4__faq-4-item faq-4__item wow fadeInLeft animated" data-wow-delay=".6s">
+                    <h5 class="accordion-header" id="headingFive">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                              data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                        Wie lange dauert es, bis alles umgesetzt ist?
+                      </button>
+                    </h5>
+                    <div id="collapseFive" class="accordion-collapse collapse"
+                         aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        <p>In der Regel nur wenige Tage. Da ein bewährtes System an Ihre Anforderungen angepasst wird, ist die Umsetzung zügig erledigt.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                </div><!-- /accordion -->
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="footer-before footer-inner" style="background-color:#0B1F3F; color:#ffffff; padding:40px 0;">
+        <section class="footer__area footer-1">
+          <div class="container">
+            <div class="row footer__wrap align-items-start">
+
+              <!-- Kontakt -->
+              <div class="col-lg-6 col-md-6 col-sm-12 mb-30">
+                <div class="footer__widget">
+                  <h5 class="title" style="color:#EAB308; margin-bottom:15px;">Kontakt</h5>
+                  <p>
+                    Alpen Intelligenz<br>
+                    Leitengasse 41<br>
+                    9300 St. Veit an der Glan, Österreich
+                  </p>
+                  <p>
+                    <a href="mailto:magnus_business@outlook.com" style="color:#ffffff; text-decoration:none;">magnus_business@outlook.com</a><br>
+                    <span style="color:#ffffff;">+43 670 4081412</span>
+                  </p>
+                </div>
+              </div>
+
+              <!-- Navigation -->
+              <div class="col-lg-6 col-md-6 col-sm-12 mb-30">
+                <div class="footer__widget">
+                  <h5 class="title" style="color:#EAB308; margin-bottom:15px;">Navigation</h5>
+                  <ul style="list-style:none; padding:0; margin:0;">
+                    <li><a href="index.html" style="color:#ffffff; text-decoration:none;">Startseite</a></li>
+                    <li><a href="service.html" style="color:#ffffff; text-decoration:none;">Leistungen</a></li>
+                    <li><a href="project.html" style="color:#ffffff; text-decoration:none;">Portfolio</a></li>
+                    <li><a href="contact.html" style="color:#ffffff; text-decoration:none;">Kontakt</a></li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Copyright -->
+            <div class="footer__bottom-wrapper mt-40">
+              <div class="footer__bottom text-center">
+                <p style="color:#ffffff; margin:0;">© 2025 Alpen Intelligenz – KI-Automatisierung & Agentur. Alle Rechte vorbehalten.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </footer>
+      <!-- /Footer -->
+
+    </main>
   </div>
 </div>
-                  
-                  <!-- Rechte Spalte -->
-                  <div class="col-lg-6">
-                    <div class="tbanner-8-thumb__content__right fade-wrapper">
-            
-                      <div class="banner-8-thumb__item fade-top">
-                        <h2 class="banner-8-thumb__title">Zeit sparen.</h2>
-                        <p class="banner-8-thumb__dec">Wiederkehrende Aufgaben wie Terminvergabe, Dokumentation oder erste Kundenanfragen laufen automatisch ab. Ihr Team gewinnt wertvolle Zeit für die Dinge, die wirklich Umsatz bringen.</p>
-                      </div>
-            
-                      <div class="banner-8-thumb__item fade-top">
-                        <h2 class="banner-8-thumb__title">Kosten senken.</h2>
-                        <p class="banner-8-thumb__dec">Automatisierte Prozesse reduzieren Personalkosten, vermeiden Fehler und sorgen für reibungslose Abläufe.</p>
-                      </div>
-            
-                      <div class="banner-8-thumb__item fade-top">
-                        <h2 class="banner-8-thumb__title">Einfach starten.</h2>
-                        <p class="banner-8-thumb__dec">Wir übernehmen die Einrichtung und passen die Lösungen an Ihr Unternehmen an. Sie starten sofort – ohne komplizierte Technik, ohne lange Umstellung.</p>
-                      </div>
-            
-                    </div>
-                  </div>
-            
-                </div>
-              </div>
-            </section>
-           
 
-            
-
-            <!--faq-8-->
-            <section class="faq-4__area faq-8 section-space-bottom ask-question-4 p-relative" style="overflow:visible;">
-              <div class="container">
-                <div class="row">
-                  
-                  <!-- Linke Spalte mit Bild + Überschrift -->
-                  <div class="col-lg-5">
-                    <div class="faq-4__thumb">
-                      <div class="section__title-wrapper mb-20 hero">
-                        <h2 class="section__title-wrapper-title-2 _split_text">
-                          Häufige Fragen unserer Kunden
-                        </h2>
-                      </div>
-            
-                      <!-- Bild -->
-                      <div class="faq-8__thumb-media img-custom-anim-left wow text-end mb-md-30 mb-sm-30 mb-xs-30 pr-60">
-                        <img src="assets/imgs/images/trailblazing-ai-8.jpg"
-                             alt="FAQ Bild"
-                             style="width:100%; height:auto; display:block; max-height:none; border-radius:12px;">
-                      </div>
-                    </div>
-                  </div>
-            
-                  <!-- Rechte Spalte mit Fragen -->
-                  <div class="col-lg-7">
-                    <div class="ask-question-4__faq-4">
-                      <div class="accordion" id="accordionExample">
-            
-                        <!-- Frage 1 -->
-                        <div class="accordion-item ask-question-4__faq-4-item faq-4__item wow fadeInLeft animated"
-                             data-wow-delay=".2s">
-                          <h5 class="accordion-header" id="headingOne">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                              Wie kann KI meinem Unternehmen konkret helfen?
-                            </button>
-                          </h5>
-                          <div id="collapseOne" class="accordion-collapse collapse show"
-                               aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                              <p>KI übernimmt wiederkehrende Aufgaben wie Terminplanung, Dokumentation oder Kundenanfragen. 
-                                 So sparen Sie Zeit, senken Kosten und gewinnen mehr Freiraum für Ihr Kerngeschäft.</p>
-                            </div>
-                          </div>
-                        </div>
-            
-                        <!-- Frage 2 -->
-                        <div class="accordion-item ask-question-4__faq-4-item faq-4__item wow fadeInLeft animated"
-                             data-wow-delay=".3s">
-                          <h5 class="accordion-header" id="headingTwo">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                              Ist KI nicht viel zu kompliziert für mein Team?
-                            </button>
-                          </h5>
-                          <div id="collapseTwo" class="accordion-collapse collapse"
-                               aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                              <p>Nein. Wir richten die Lösungen so ein, dass Ihre Mitarbeiter sie einfach nutzen können – 
-                                 ohne technisches Vorwissen.</p>
-                            </div>
-                          </div>
-                        </div>
-            
-                        <!-- Frage 3 -->
-                        <div class="accordion-item ask-question-4__faq-4-item faq-4__item wow fadeInLeft animated"
-                             data-wow-delay=".4s">
-                          <h5 class="accordion-header" id="headingThree">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                              Welche Kosten entstehen für mich?
-                            </button>
-                          </h5>
-                          <div id="collapseThree" class="accordion-collapse collapse"
-                               aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                              <p>Die Höhe der Kosten hängt von den gewünschten Prozessen ab. In vielen Fällen übersteigen die 
-                                 monatlichen Einsparungen durch weniger manuellen Aufwand und effizientere Abläufe bereits 
-                                 nach kurzer Zeit die Investition.</p>
-                            </div>
-                          </div>
-                        </div>
-            
-                        <!-- Frage 4 -->
-                        <div class="accordion-item ask-question-4__faq-4-item faq-4__item wow fadeInLeft animated"
-                             data-wow-delay=".5s">
-                          <h5 class="accordion-header" id="headingFour">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                              Muss meine bestehende IT komplett erneuert werden?
-                            </button>
-                          </h5>
-                          <div id="collapseFour" class="accordion-collapse collapse"
-                               aria-labelledby="headingFour" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                              <p>Nein. Wir integrieren KI-Lösungen in Ihre vorhandenen Systeme und passen sie individuell 
-                                 an Ihre Abläufe an.</p>
-                            </div>
-                          </div>
-                        </div>
-                           <!-- Frage 5 -->
-                           <div class="accordion-item ask-question-4__faq-4-item faq-4__item wow fadeInLeft animated"
-                           data-wow-delay=".5s">
-                        <h5 class="accordion-header" id="headingFour">
-                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                  data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                  Wie lange dauert es, bis alles umgesetzt ist?
-                          </button>
-                        </h5>
-                        <div id="collapseFour" class="accordion-collapse collapse"
-                             aria-labelledby="headingFour" data-bs-parent="#accordionExample">
-                          <div class="accordion-body">
-                            <p>In der Regel nur wenige Tage. Da kein komplett neues System entwickelt werden muss, sondern ein bewährtes System lediglich an die Anforderungen Ihres Betriebs angepasst wird, ist die Umsetzung vergleichsweise schnell abgeschlossen.</p>
-            
-                      </div> <!-- /accordion -->
-                    </div>
-                  </div>
-            
-                </div>
-              </div>
-            </section>
-
-            
-        
-           
-        
-            
-        
-<!-- Footer area start -->
-<footer class="footer-before footer-inner" style="background-color:#0B1F3F; color:#ffffff; padding:40px 0;">
-    <section class="footer__area footer-1">
-      <div class="container">
-        <div class="row footer__wrap align-items-start">
-          
-          <!-- Kontakt -->
-          <div class="col-lg-6 col-md-6 col-sm-12 mb-30">
-            <div class="footer__widget">
-              <h5 class="title" style="color:#EAB308; margin-bottom:15px;">Kontakt</h5>
-              <p>
-                Alpen Intelligenz<br>
-                Leitengasse 41<br>
-                9300 St. Veit an der Glan, Österreich
-              </p>
-              <p>
-                <a href="mailto:magnus_business@outlook.com" style="color:#ffffff; text-decoration:none;">magnus_business@outlook.com</a><br>
-                <span style="color:#ffffff;">+43 670 4081412</span>
-              </p>
-            </div>
-          </div>
-          
-          <!-- Navigation -->
-          <div class="col-lg-6 col-md-6 col-sm-12 mb-30">
-            <div class="footer__widget">
-              <h5 class="title" style="color:#EAB308; margin-bottom:15px;">Navigation</h5>
-              <ul style="list-style:none; padding:0; margin:0;">
-                <li><a href="index.html" style="color:#ffffff; text-decoration:none;">Startseite</a></li>
-                <li><a href="service.html" style="color:#ffffff; text-decoration:none;">Leistungen</a></li>
-                <li><a href="project.html" style="color:#ffffff; text-decoration:none;">Portfolio</a></li>
-                <li><a href="contact.html" style="color:#ffffff; text-decoration:none;">Kontakt</a></li>
-              </ul>
-            </div>
-          </div>
-  
-        </div>
-  
-        <!-- Copyright -->
-        <div class="footer__bottom-wrapper mt-40">
-          <div class="footer__bottom text-center">
-            <p style="color:#ffffff; margin:0;">© 2025 Alpen Intelligenz – KI-Automatisierung & Agentur. Alle Rechte vorbehalten.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </footer>
-  <!-- Footer area end -->
-    </div>
- </div>
-  <!-- Footer area end -->
-</div>
-</div>
-<div id="scroll-percentage"><span id="scroll-percentage-value"></span></div>
-
-<!-- Widget Configuration -->
+<!-- Chat-Widget -->
 <script>
   window.ChatWidgetConfig = {
     webhook: {
@@ -635,23 +535,15 @@ style="background:url('assets/imgs/images/background-herosection.jpg') center ce
       welcomeText: 'Sofort eine Antwort',
     },
     style: {
-      primaryColor: '#0b1f3f',   // Navy
-      secondaryColor: '#163a6b', // Helleres Navy
+      primaryColor: '#0b1f3f',
+      secondaryColor: '#163a6b',
       position: 'right',
       backgroundColor: '#0b1f3f',
       fontColor: '#ffffff',
     },
-    // Add suggested questions that users can click
   };
-  </script>
-  
-  <script
-  src="https://magnus3773.github.io/Alpen-Intelligenz-Chatbot-Design/design.js"></script>
-</body>
-</html>
-
-<div id="scroll-percentage"><span id="scroll-percentage-value"></span></div>
-
+</script>
+<script src="https://magnus3773.github.io/Alpen-Intelligenz-Chatbot-Design/design.js"></script>
 
 <!-- JS here -->
 <script src="assets/js/vendor/jquery-3.7.1.min.js"></script>
@@ -678,5 +570,4 @@ style="background:url('assets/imgs/images/background-herosection.jpg') center ce
 <script src="assets/js/vendor/ajax-form.js"></script>
 <script src="assets/js/main.js"></script>
 </body>
-
 </html>
