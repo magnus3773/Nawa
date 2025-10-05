@@ -51,9 +51,7 @@
       .color-theme-primary, .text-primary{ color:var(--alpen-navy) !important; }
       .border-accent{ border-color:var(--alpen-gold) !important; }
       .underline-accent{ text-decoration-color:var(--alpen-gold) !important; }
-      /* remove header shadows */
       .header__main, .header-6__main{ box-shadow:none !important; }
-      /* Banner Text Weiß */
       .banner8__title-wrapper-title,
       .banner8__title-wrapper-dec {
         color: white !important;
@@ -63,350 +61,197 @@
 
 <body>
 
-
-<!-- preloader start -->
+<!-- preloader -->
 <div id="preloader">
-    <div class="preloader-close">x</div>
-    <div class="sk-three-bounce">
-        <div class="sk-child sk-bounce1"></div>
-        <div class="sk-child sk-bounce2"></div>
-        <div class="sk-child sk-bounce3"></div>
-    </div>
+  <div class="preloader-close">x</div>
+  <div class="sk-three-bounce">
+    <div class="sk-child sk-bounce1"></div>
+    <div class="sk-child sk-bounce2"></div>
+    <div class="sk-child sk-bounce3"></div>
+  </div>
 </div>
-<!-- preloader start -->
 
-<!-- Backtotop start -->
+<!-- Backtotop -->
 <div class="backtotop-wrap cursor-pointer">
-    <svg class="backtotop-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
-    </svg>
+  <svg class="backtotop-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+    <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+  </svg>
 </div>
-<!-- Backtotop end -->
 
-<!-- Offcanvas area start (unverändert gelassen) -->
+<!-- Offcanvas -->
 <div class="fix">
-    <div class="offcanvas__area">
-        <div class="offcanvas__wrapper">
-            <div class="offcanvas__content">
-                <div class="offcanvas__top d-flex justify-content-between align-items-center">
-                    <div class="offcanvas__logo">
-                        <a href="index.html">
-                            <img src="assets/imgs/logo/favicon.png" alt="logo not found">
-                        </a>
-                    </div>
-                    <div class="offcanvas__close">
-                        <button class="offcanvas-close-icon animation--flip">
-                                <span class="offcanvas-m-lines">
-                              <span class="offcanvas-m-line line--1"></span><span class="offcanvas-m-line line--2"></span><span class="offcanvas-m-line line--3"></span>
-                                </span>
-                        </button>
-                    </div>
-                </div>
-                <div class="mobile-menu fix"></div>
-                <div class="offcanvas__social">
-                    <h3 class="offcanvas__title mb-20">Subscribe & Follow</h3>
-                    <ul>
-                        <li><a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="https://pinterest.com/"><i class="fa-brands fa-pinterest-p"></i></a></li>
-                        <li><a href="https://youtube.com/"><i class="fab fa-youtube"></i></a></li>
-                        <li><a href="https://linkedin.com/"><i class="fab fa-linkedin"></i></a></li>
-                    </ul>
-                </div>
-            </div>
+  <div class="offcanvas__area">
+    <div class="offcanvas__wrapper">
+      <div class="offcanvas__content">
+        <div class="offcanvas__top d-flex justify-content-between align-items-center">
+          <div class="offcanvas__logo">
+            <a href="index.html"><img src="assets/imgs/logo/favicon.png" alt="logo"></a>
+          </div>
+          <div class="offcanvas__close">
+            <button class="offcanvas-close-icon animation--flip">
+              <span class="offcanvas-m-lines">
+                <span class="offcanvas-m-line line--1"></span>
+                <span class="offcanvas-m-line line--2"></span>
+                <span class="offcanvas-m-line line--3"></span>
+              </span>
+            </button>
+          </div>
         </div>
+        <div class="mobile-menu fix"></div>
+      </div>
     </div>
+  </div>
 </div>
 <div class="offcanvas__overlay"></div>
-<div class="offcanvas__overlay-white"></div>
-<!-- Offcanvas area end -->
 
-<!-- ======= ERSETZTER HEADER (wie Startseite) ======= -->
+<!-- Header -->
 <header class="ai-header">
   <div class="ai-header__inner">
-    <a class="ai-header__logo" href="index.html" aria-label="Startseite">
-      <img src="assets/imgs/logo/favicon.png" alt="Alpen Intelligenz" />
-    </a>
-
-    <nav class="ai-nav d-none d-lg-block" aria-label="Hauptmenü">
+    <a class="ai-header__logo" href="index.html"><img src="assets/imgs/logo/favicon.png" alt="Alpen Intelligenz" /></a>
+    <nav class="ai-nav d-none d-lg-block">
       <ul>
         <li><a href="service.html">Leistungen</a></li>
         <li><a href="project.html">Portfolio</a></li>
         <li><a href="contact.html">Kontakt</a></li>
       </ul>
     </nav>
-
-    <!-- Burger/Pfeil Button -->
-    <button class="ai-burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="ai-offcanvas">
-      <!-- Burger -->
-      <svg class="ai-burger__icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+    <button class="ai-burger" aria-label="Menü öffnen" aria-expanded="false">
+      <svg class="ai-burger__icon" viewBox="0 0 24 24" width="22" height="22">
         <rect x="3" y="5"  width="18" height="2" rx="1"></rect>
         <rect x="3" y="11" width="18" height="2" rx="1"></rect>
         <rect x="3" y="17" width="18" height="2" rx="1"></rect>
-      </svg>
-      <!-- Pfeil nach oben -->
-      <svg class="ai-burger__arrow" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
-        <path d="M12 6l-7 7h14z"></path>
       </svg>
     </button>
   </div>
 </header>
 
-<!-- Nur für den Header nötige Styles/Script -->
-<style>
-  :root{
-    --ai-navy:#0B1F3F;
-    --ai-gold:#EAB308;
-    --ai-overlay: rgba(0,0,0,.35);
-    --ease: cubic-bezier(.22,.61,.36,1);
-  }
-  .ai-header{position:relative;z-index:1005;background:#fff;}
-  .ai-header__inner{max-width:1140px;margin:0 auto;padding:14px 16px;
-    display:flex;align-items:center;justify-content:space-between;gap:16px;}
-  .ai-header__logo img{height:48px;width:auto;display:block}
-  .ai-nav ul{display:flex;gap:24px;list-style:none;margin:0;padding:0}
-  .ai-nav a{color:var(--ai-navy);text-decoration:none}
-  .ai-nav a:hover{color:var(--ai-gold)}
-  .ai-burger{display:inline-flex;align-items:center;justify-content:center;
-    padding:10px 12px;border:0;border-radius:12px;cursor:pointer;
-    background:var(--ai-navy);color:#fff;transition:transform .2s var(--ease);}
-  .ai-burger:active{transform:scale(.98)}
-  .ai-burger__icon rect{fill:#fff;transition:opacity .2s var(--ease)}
-  .ai-burger__arrow{display:none;fill:#fff;transition:transform .3s var(--ease)}
-  /* Offcanvas Sichtbarkeit steuern (nutzt vorhandene .offcanvas__area/.offcanvas__overlay) */
-  .offcanvas__area.is-open{transform:translateX(0) !important; opacity:1 !important;}
-  .offcanvas__overlay.is-open{opacity:1 !important; visibility:visible !important;}
-</style>
-
-<script>
-  // Burger öffnet/schließt die bestehende .offcanvas__area
-  document.addEventListener('DOMContentLoaded', () => {
-    const btn = document.querySelector('.ai-burger');
-    const panel = document.querySelector('.offcanvas__area');
-    const overlay = document.querySelector('.offcanvas__overlay');
-
-    function openMenu(){
-      panel.classList.add('is-open');
-      overlay.classList.add('is-open');
-      btn.setAttribute('aria-expanded','true');
-      document.body.style.overflow='hidden';
-    }
-    function closeMenu(){
-      panel.classList.remove('is-open');
-      overlay.classList.remove('is-open');
-      btn.setAttribute('aria-expanded','false');
-      document.body.style.overflow='';
-    }
-
-    btn && btn.addEventListener('click', () => {
-      const open = btn.getAttribute('aria-expanded') === 'true';
-      open ? closeMenu() : openMenu();
-    });
-    overlay && overlay.addEventListener('click', closeMenu);
-    document.addEventListener('keydown', (e) => {
-      if(e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') closeMenu();
-    });
-  });
-</script>
-<!-- ======= /ERSETZTER HEADER ======= -->
-
-<!-- Body main wrapper start (alles unterhalb unverändert) -->
+<!-- Body -->
 <div id="smooth-wrapper">
   <div id="smooth-content">
     <main>
 
-      <!-- breadcrumb area (Kontakt, clean) -->
+      <!-- Breadcrumb -->
       <section class="breadcrumb__before p-relative">
-        <div class="breadcrumb__area position-relative"
-             style="background: url('assets/imgs/images/navy-colour.png') center/cover no-repeat;
-                    padding: 140px 0 90px;">
-          <div class="container">
-            <div class="row">
-              <div class="col-12 text-center">
-                <div class="breadcrumb__content">
-                  <div class="breadcrumb__title-wrapper" style="margin-bottom:16px;">
-                    <h1 class="breadcrumb__title" style="color:#fff; margin:0;">Kontakt</h1>
-                  </div>
-                  <div class="breadcrumb__menu">
-                    <nav aria-label="Breadcrumb">
-                      <ul style="list-style:none; padding:0; margin:0; display:inline-flex; gap:10px; align-items:center;">
-                        <li>
-                          <span>
-                            <a href="index.html" style="color:#fff; text-decoration:none;">
-                              <img src="assets/imgs/icon/home-icon.png" alt="" style="filter:invert(1) brightness(2); vertical-align:middle; margin-right:6px;">
-                              Startseite
-                            </a>
-                          </span>
-                        </li>
-                        <li style="color:#fff;">/</li>
-                        <li class="active"><span style="color:#fff;">Kontakt</span></li>
-                      </ul>
-                    </nav>
-                  </div>
-                </div>
-              </div>
-            </div>
+        <div class="breadcrumb__area position-relative" style="background:url('assets/imgs/images/navy-colour.png') center/cover no-repeat;padding:140px 0 90px;">
+          <div class="container text-center">
+            <h1 class="breadcrumb__title" style="color:#fff;">Kontakt</h1>
           </div>
         </div>
       </section>
 
-      <!-- Contact Section -->
+      <!-- Contact -->
       <section class="contact__area section-space" style="padding:80px 0;">
         <div class="container">
           <div class="row g-4 align-items-center">
             <div class="col-md-6">
-              <div class="contact__media">
-                <img src="assets/imgs/images/kontakt-image.png" alt="Kontakt" style="width:100%; height:auto; display:block;">
-              </div>
+              <img src="assets/imgs/images/kontakt-image.png" alt="Kontakt" style="width:100%;border-radius:8px;">
             </div>
 
             <div class="col-md-6">
-              <div class="contact__title-wrapper">
-                <div class="section__title-wrapper">
-                  <h2 class="section__title-wrapper-title" style="margin-bottom:16px;">Kontaktieren Sie uns</h2>
-                  <p style="margin-bottom:24px;">Schreiben Sie uns kurz Ihr Anliegen – wir melden uns zeitnah.</p>
-                </div>
+              <h2 style="margin-bottom:16px;">Kontaktieren Sie uns</h2>
+              <p style="margin-bottom:24px;">Schreiben Sie uns kurz Ihr Anliegen – wir melden uns zeitnah.</p>
 
-                <div class="contact__form-wrapper">
-                  <form class="contact__form" id="contact__form" method="POST" action="./mail.php" novalidate>
-                    <div class="row g-3">
-                      <div class="col-sm-6">
-                        <div class="contact__input">
-                          <input type="text" name="name" placeholder="Ihr Name" required>
-                        </div>
-                      </div>
-                      <div class="col-sm-6">
-                        <div class="contact__input">
-                          <input type="email" name="email" placeholder="Ihre E-Mail" required>
-                        </div>
-                      </div>
-                      <div class="col-sm-6">
-                        <div class="contact__input">
-                          <input type="tel" name="phone" placeholder="Telefon (optional)">
-                        </div>
-                      </div>
-                      <div class="col-sm-6">
-                        <div class="contact__input">
-                          <input type="text" name="subject" placeholder="Betreff" required>
-                        </div>
-                      </div>
-                      <div class="col-12">
-                        <div class="contact__textarea">
-                          <textarea name="textarea" id="textarea" cols="30" rows="6" placeholder="Ihre Nachricht…" required></textarea>
-                          <div class="wrap" style="margin-top:10px; display:flex; align-items:center; gap:8px;">
-                            <input type="checkbox" class="form-check-input" id="agree">
-                            <label class="form-check-label" for="agree">Ja, ich möchte Updates zu Ihren Angeboten erhalten.</label>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-12">
-                        <button type="submit" class="rr-btn mt-10">Senden</button>
+              <div class="contact__form-wrapper">
+                <form class="contact__form" id="contact__form" method="POST" action="https://formspree.io/f/xwprqona">
+                  <div class="row g-3">
+                    <div class="col-sm-6"><input type="text" name="name" placeholder="Ihr Name" required></div>
+                    <div class="col-sm-6"><input type="email" name="email" placeholder="Ihre E-Mail" required></div>
+                    <div class="col-sm-6"><input type="tel" name="phone" placeholder="Telefon (optional)"></div>
+                    <div class="col-sm-6"><input type="text" name="subject" placeholder="Betreff" required></div>
+                    <div class="col-12">
+                      <textarea name="message" rows="6" placeholder="Ihre Nachricht…" required></textarea>
+                      <div class="wrap" style="margin-top:10px;display:flex;align-items:center;gap:8px;">
+                        <input type="checkbox" class="form-check-input" id="agree">
+                        <label class="form-check-label" for="agree">Ja, ich möchte Updates zu Ihren Angeboten erhalten.</label>
                       </div>
                     </div>
-                  </form>
-                </div>
-
+                    <div class="col-12">
+                      <button type="submit" class="rr-btn mt-10">Senden</button>
+                      <p id="form-status" style="margin-top:10px;"></p>
+                    </div>
+                  </div>
+                </form>
               </div>
+
+              <script>
+              document.getElementById("contact__form").addEventListener("submit", async (e) => {
+                e.preventDefault();
+                const form = e.target;
+                const status = document.getElementById("form-status");
+                status.textContent = "Sende ...";
+
+                try {
+                  const res = await fetch(form.action, {
+                    method: form.method,
+                    headers: { "Accept": "application/json" },
+                    body: new FormData(form)
+                  });
+
+                  if (res.ok) {
+                    form.reset();
+                    status.textContent = "Danke! Ihre Nachricht wurde erfolgreich gesendet.";
+                  } else {
+                    status.textContent = "Fehler beim Senden. Bitte versuchen Sie es später erneut.";
+                  }
+                } catch {
+                  status.textContent = "Netzwerkfehler. Bitte später erneut versuchen.";
+                }
+              });
+              </script>
+
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Google Map -->
+      <!-- Map -->
       <section class="contact-map section-space-bottom" style="padding-bottom:80px;">
         <div class="container">
-          <div class="map">
-            <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2732.5950638747345!2d14.357525877071165!3d46.77287767112551!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47706d85d533f7b3%3A0x5dd94705f4362bba!2sLeitengasse%2041%2C%209300%20St.%20Veit%20an%20der%20Glan!5e0!3m2!1sde!2sat!4v1756645333559!5m2!1sde!2sat" 
-              width="100%" 
-              height="450" 
-              style="border:0;" 
-              allowfullscreen="" 
-              loading="lazy" 
-              referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-          </div>
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2732.5950638747345!2d14.357525877071165!3d46.77287767112551!"
+            width="100%" height="450" style="border:0;" allowfullscreen loading="lazy">
+          </iframe>
         </div>
       </section>
 
     </main>
+
 <!-- Footer -->
-<footer class="footer-before footer-inner" style="background-color:#0B1F3F; color:#ffffff; padding:40px 0;">
+<footer class="footer-before footer-inner" style="background-color:#0B1F3F;color:#ffffff;padding:40px 0;">
   <section class="footer__area footer-1">
     <div class="container">
       <div class="row footer__wrap align-items-start">
-
-        <!-- Kontakt -->
-        <div class="col-lg-6 col-md-6 col-sm-12 mb-30">
-          <div class="footer__widget">
-            <h5 class="title" style="color:#ffffff; margin-bottom:15px;">Kontakt</h5>
-            <p>
-              Alpen Intelligenz<br>
-              Leitengasse 41<br>
-              9300 St. Veit an der Glan, Österreich
-            </p>
-            <p>
-              <a href="mailto:magnus_business@outlook.com" style="color:#ffffff; text-decoration:none;">kontakt@alpen-intelligenz.at</a><br>
-              <span style="color:#ffffff;">+43 670 4081412</span>
-            </p>
-          </div>
+        <div class="col-lg-6 mb-30">
+          <h5>Kontakt</h5>
+          <p>Alpen Intelligenz<br>Leitengasse 41<br>9300 St. Veit an der Glan, Österreich</p>
+          <p><a href="mailto:kontakt@alpen-intelligenz.at" style="color:#fff;text-decoration:none;">kontakt@alpen-intelligenz.at</a><br>
+          <span>+43 670 4081412</span></p>
         </div>
-
-        <!-- Navigation -->
-        <div class="col-lg-6 col-md-6 col-sm-12 mb-30">
-          <div class="footer__widget">
-            <h5 class="title" style="color:#ffffff; margin-bottom:15px;">Navigation</h5>
-            <ul style="list-style:none; padding:0; margin:0;">
-              <li><a href="index.html" style="color:#ffffff; text-decoration:none;">Startseite</a></li>
-              <li><a href="service.html" style="color:#ffffff; text-decoration:none;">Leistungen</a></li>
-              <li><a href="project.html" style="color:#ffffff; text-decoration:none;">Portfolio</a></li>
-              <li><a href="contact.html" style="color:#ffffff; text-decoration:none;">Kontakt</a></li>
-            </ul>
-          </div>
+        <div class="col-lg-6 mb-30">
+          <h5>Navigation</h5>
+          <ul style="list-style:none;padding:0;">
+            <li><a href="index.html" style="color:#fff;text-decoration:none;">Startseite</a></li>
+            <li><a href="service.html" style="color:#fff;text-decoration:none;">Leistungen</a></li>
+            <li><a href="project.html" style="color:#fff;text-decoration:none;">Portfolio</a></li>
+            <li><a href="contact.html" style="color:#fff;text-decoration:none;">Kontakt</a></li>
+          </ul>
         </div>
-
       </div>
-
-      <!-- Copyright -->
-      <div class="footer__bottom-wrapper mt-40">
-        <div class="footer__bottom text-center">
-          <p style="color:#ffffff; margin:0;">© 2025 Alpen Intelligenz – KI-Automatisierung & Agentur. Alle Rechte vorbehalten.</p>
-        </div>
+      <div class="text-center mt-40">
+        <p style="margin:0;">© 2025 Alpen Intelligenz – KI-Automatisierung & Agentur. Alle Rechte vorbehalten.</p>
       </div>
     </div>
   </section>
 </footer>
-<!-- Footer end -->
 
   </div>
 </div>
 
-<div id="scroll-percentage"><span id="scroll-percentage-value"></span></div>
-
-<!-- JS here -->
+<!-- JS -->
 <script src="assets/js/vendor/jquery-3.7.1.min.js"></script>
-<script src="assets/js/vendor/chroma.min.js"></script>
-<script src="assets/js/plugins/waypoints.min.js"></script>
 <script src="assets/js/vendor/bootstrap.bundle.min.js"></script>
-<script src="assets/js/plugins/meanmenu.min.js"></script>
 <script src="assets/js/plugins/swiper.min.js"></script>
-<script src="assets/js/plugins/gsap.js"></script>
-<script src="assets/js/plugins/ScrollSmoother.js"></script>
-<script src="assets/js/plugins/ScrollToPlugin.js"></script>
-<script src="assets/js/plugins/ScrollTrigger.js"></script>
-<script src="assets/js/plugins/SplitText.js"></script>
-<script src="assets/js/plugins/wow.js"></script>
-<script src="assets/js/vendor/magnific-popup.min.js"></script>
-<script src="assets/js/vendor/type.js"></script>
-<!-- FIX: fehlendes '<' ergänzt -->
-<script src="assets/js/vendor/vanilla-tilt.js"></script>
-<script src="assets/js/plugins/nice-select.min.js"></script>
-<script src="assets/js/vendor/odometer.min.js"></script>
-<script src="assets/js/vendor/jquery-ui.min.js"></script>
-<script src="assets/js/plugins/parallax-scroll.js"></script>
-<script src="assets/js/plugins/jquery.countdown.min.js"></script>
-<script src="assets/js/plugins/isotope-docs.min.js"></script>
-<script src="assets/js/vendor/ajax-form.js"></script>
 <script src="assets/js/main.js"></script>
-</body>
 
+</body>
 </html>
