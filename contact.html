@@ -12,9 +12,6 @@
   <link rel="shortcut icon" type="image/x-icon" href="assets/imgs/logo/favicon.png">
   <link rel="icon" href="assets/imgs/logo/favicon.png">
 
-  <!-- Logo preload -->
-  <link rel="preload" as="image" href="assets/imgs/logo/favicon.png" imagesizes="140px">
-
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,14 +30,10 @@
 
   <!-- Alpen Intelligenz overrides -->
   <style>
-    :root{
-      --alpen-navy:#0F172A;
-      --alpen-gold:#EAB308;
-    }
+    :root{ --alpen-navy:#0F172A; --alpen-gold:#EAB308; }
     body{ background:#fff !important; color:var(--alpen-navy) !important; }
     h1,h2,h3,h4,h5,h6{ color:var(--alpen-navy) !important; }
-    a{ color:var(--alpen-navy); }
-    a:hover{ color:#0b1222; }
+    a{ color:var(--alpen-navy); } a:hover{ color:#0b1222; }
     .header, .header-6, .header-8, .menu-area{ background:#ffffff !important; }
     .main-menu ul li > a{ color:var(--alpen-navy) !important; }
     .main-menu ul li > a:hover{ color:var(--alpen-gold) !important; }
@@ -51,21 +44,21 @@
     .border-accent{ border-color:var(--alpen-gold) !important; }
     .underline-accent{ text-decoration-color:var(--alpen-gold) !important; }
     .header__main, .header-6__main{ box-shadow:none !important; }
-    .banner8__title-wrapper-title,
-    .banner8__title-wrapper-dec { color: white !important; }
+    .banner8__title-wrapper-title, .banner8__title-wrapper-dec { color: white !important; }
   </style>
 </head>
 
 <body>
-<!-- preloader -->
-<div id="preloader">
-  <div class="preloader-close">x</div>
+<!-- preloader (mit Fallback) -->
+<div id="preloader" aria-hidden="true">
+  <div class="preloader-close" aria-label="Schließen">x</div>
   <div class="sk-three-bounce">
     <div class="sk-child sk-bounce1"></div>
     <div class="sk-child sk-bounce2"></div>
     <div class="sk-child sk-bounce3"></div>
   </div>
 </div>
+<noscript><style>#preloader{display:none!important;}</style></noscript>
 
 <!-- Backtotop -->
 <div class="backtotop-wrap cursor-pointer" aria-label="Nach oben">
@@ -74,16 +67,14 @@
   </svg>
 </div>
 
-<!-- Offcanvas (vorhandene Struktur) -->
+<!-- Offcanvas -->
 <div class="fix">
   <div class="offcanvas__area" aria-hidden="true">
     <div class="offcanvas__wrapper">
       <div class="offcanvas__content">
         <div class="offcanvas__top d-flex justify-content-between align-items-center">
           <div class="offcanvas__logo">
-            <a href="index.html">
-              <img src="assets/imgs/logo/favicon.png" alt="logo">
-            </a>
+            <a href="index.html"><img src="assets/imgs/logo/favicon.png" alt="logo"></a>
           </div>
           <div class="offcanvas__close">
             <button class="offcanvas-close-icon animation--flip" aria-label="Menü schließen">
@@ -108,7 +99,6 @@
     <a class="ai-header__logo" href="index.html" aria-label="Startseite">
       <img src="assets/imgs/logo/favicon.png" alt="Alpen Intelligenz" />
     </a>
-
     <nav class="ai-nav d-none d-lg-block" aria-label="Hauptmenü">
       <ul>
         <li><a href="service.html">Leistungen</a></li>
@@ -116,7 +106,6 @@
         <li><a href="contact.html">Kontakt</a></li>
       </ul>
     </nav>
-
     <button class="ai-burger" aria-label="Menü öffnen" aria-expanded="false">
       <svg class="ai-burger__icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
         <rect x="3" y="5"  width="18" height="2" rx="1"></rect>
@@ -201,8 +190,19 @@
             </form>
           </div>
 
-          <!-- AJAX Submit für hübsche Statusmeldung -->
+          <!-- AJAX Submit + Preloader-Failsafe -->
           <script>
+          // Preloader sicher entfernen – immer nach Load, plus Fallback nach 3s
+          (function(){
+            function hidePreloader(){
+              var p = document.getElementById('preloader');
+              if (p) p.style.display = 'none';
+            }
+            window.addEventListener('load', hidePreloader);
+            setTimeout(hidePreloader, 3000);
+          })();
+
+          // Formular AJAX-Submit
           document.addEventListener('DOMContentLoaded', function(){
             const form = document.getElementById("contact__form");
             if(!form) return;
@@ -244,19 +244,14 @@
   </div>
 </section>
 
-<!-- Google Map (gültiger Embed-Link) -->
+<!-- Google Map -->
 <section class="contact-map section-space-bottom" style="padding-bottom:80px;">
   <div class="container">
     <div class="map">
       <iframe
         src="https://www.google.com/maps?q=Leitengasse%2041,%209300%20St.%20Veit%20an%20der%20Glan,%20Österreich&output=embed"
-        width="100%"
-        height="450"
-        style="border:0;"
-        allowfullscreen
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-      ></iframe>
+        width="100%" height="450" style="border:0;" allowfullscreen loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </div>
 </section>
@@ -266,22 +261,14 @@
   <section class="footer__area footer-1">
     <div class="container">
       <div class="row footer__wrap align-items-start">
-
         <div class="col-lg-6 col-md-6 col-sm-12 mb-30">
           <div class="footer__widget">
             <h5 class="title" style="color:#ffffff; margin-bottom:15px;">Kontakt</h5>
-            <p>
-              Alpen Intelligenz<br>
-              Leitengasse 41<br>
-              9300 St. Veit an der Glan, Österreich
-            </p>
-            <p>
-              <a href="mailto:kontakt@alpen-intelligenz.at" style="color:#ffffff; text-decoration:none;">kontakt@alpen-intelligenz.at</a><br>
-              <span style="color:#ffffff;">+43 670 4081412</span>
-            </p>
+            <p>Alpen Intelligenz<br>Leitengasse 41<br>9300 St. Veit an der Glan, Österreich</p>
+            <p><a href="mailto:kontakt@alpen-intelligenz.at" style="color:#ffffff; text-decoration:none;">kontakt@alpen-intelligenz.at</a><br>
+            <span style="color:#ffffff;">+43 670 4081412</span></p>
           </div>
         </div>
-
         <div class="col-lg-6 col-md-6 col-sm-12 mb-30">
           <div class="footer__widget">
             <h5 class="title" style="color:#ffffff; margin-bottom:15px;">Navigation</h5>
@@ -293,7 +280,6 @@
             </ul>
           </div>
         </div>
-
       </div>
       <div class="footer__bottom-wrapper mt-40">
         <div class="footer__bottom text-center">
@@ -304,7 +290,7 @@
   </section>
 </footer>
 
-<!-- JS (nur stabile, übliche Dateien eingebunden) -->
+<!-- JS (nur stabile Dateien; wenn du weitere einbindest, prüfe Pfade/404) -->
 <script src="assets/js/vendor/jquery-3.7.1.min.js"></script>
 <script src="assets/js/vendor/bootstrap.bundle.min.js"></script>
 <script src="assets/js/plugins/swiper.min.js"></script>
