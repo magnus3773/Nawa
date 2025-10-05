@@ -55,7 +55,6 @@
       .border-accent{ border-color:var(--alpen-gold) !important; }
       .underline-accent{ text-decoration-color:var(--alpen-gold) !important; }
       .header__main, .header-6__main{ box-shadow:none !important; }
-      /* Banner Text Weiß */
       .banner8__title-wrapper-title,
       .banner8__title-wrapper-dec { color: white !important; }
 
@@ -86,6 +85,12 @@
       .ai-burger[aria-expanded="true"] .ai-burger__icon{opacity:0}
       .ai-burger[aria-expanded="true"] .ai-burger__arrow{display:block;transform:translateY(1px)}
       @media (min-width: 992px){ .d-lg-block{display:block !important} .d-lg-none{display:none !important} }
+
+      /* === Sticky Footer Fix === */
+      html, body { height: 100%; }
+      body { min-height: 100vh; display: flex; flex-direction: column; }
+      #smooth-wrapper { flex: 1 0 auto; display: block; }
+      footer { margin-top: auto; }
   </style>
 </head>
 
@@ -109,7 +114,7 @@
     </svg>
 </div>
 
-<!-- ============== ORIGINAL: Offcanvas (mobiles Menü) ============== -->
+<!-- ORIGINAL: Offcanvas (mobiles Menü) -->
 <div class="fix">
   <div class="offcanvas__area" aria-hidden="true">
     <div class="offcanvas__wrapper">
@@ -137,7 +142,7 @@
 </div>
 <div class="offcanvas__overlay" tabindex="-1" aria-hidden="true"></div>
 
-<!-- ============== ORIGINAL: Header ============== -->
+<!-- ORIGINAL: Header -->
 <header class="ai-header">
   <div class="ai-header__inner">
     <a class="ai-header__logo" href="index.html" aria-label="Startseite">
@@ -154,13 +159,11 @@
 
     <!-- Burger/Pfeil Button -->
     <button class="ai-burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="ai-offcanvas">
-      <!-- Burger -->
       <svg class="ai-burger__icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
         <rect x="3" y="5"  width="18" height="2" rx="1"></rect>
         <rect x="3" y="11" width="18" height="2" rx="1"></rect>
         <rect x="3" y="17" width="18" height="2" rx="1"></rect>
       </svg>
-      <!-- Pfeil nach oben -->
       <svg class="ai-burger__arrow" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
         <path d="M12 6l-7 7h14z"></path>
       </svg>
@@ -226,7 +229,7 @@
   <div id="smooth-content">
     <main>
 
-      <!-- breadcrumb area -->
+      <!-- Breadcrumb -->
       <section class="breadcrumb__before p-relative">
         <div class="breadcrumb__area position-relative"
              style="background: url('assets/imgs/images/navy-colour.png') center/cover no-repeat;
@@ -279,7 +282,7 @@
                 </div>
 
                 <div class="contact__form-wrapper">
-                  <!-- Formspree-Formular (nur Funktion geändert, kein Design) -->
+                  <!-- Formspree-Formular -->
                   <form class="contact__form" id="contact__form" method="POST" action="https://formspree.io/f/xwprqona">
                     <div class="row g-3">
                       <div class="col-sm-6">
@@ -319,9 +322,8 @@
                   </form>
                 </div>
 
-                <!-- AJAX Submit + Preloader-Failsafe -->
                 <script>
-                // Preloader sicher entfernen – auch wenn irgendein Script patzt
+                // Preloader sicher entfernen
                 (function(){
                   function hidePreloader(){
                     var p = document.getElementById('preloader');
@@ -331,6 +333,7 @@
                   setTimeout(hidePreloader, 3000);
                 })();
 
+                // Formular AJAX-Submit
                 document.getElementById("contact__form").addEventListener("submit", async (e) => {
                   e.preventDefault();
                   const form = e.target;
@@ -443,7 +446,7 @@
 <script src="assets/js/plugins/ScrollSmoother.js"></script>
 <script src="assets/js/plugins/ScrollToPlugin.js"></script>
 <script src="assets/js/plugins/ScrollTrigger.js"></script>
-<script src="assets/js/plugins/SplitText.js"></script>
+script src="assets/js/plugins/SplitText.js"></script>
 <script src="assets/js/plugins/wow.js"></script>
 <script src="assets/js/vendor/magnific-popup.min.js"></script>
 <script src="assets/js/vendor/type.js"></script>
