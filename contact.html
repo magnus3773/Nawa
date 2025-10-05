@@ -26,101 +26,118 @@
   <link rel="stylesheet" href="assets/css/vendor/odometer.min.css">
   <link rel="stylesheet" href="assets/css/plugins/swiper.min.css">
   <link rel="stylesheet" href="assets/css/vendor/magnific-popup.css">
-  <link rel="stylesheet" href="assets/css/vendor/fontawesome-pro.css">
+  <link rel="stylesheet" href="assets/css/vendor/fontawesome-pro.css"> 
   <link rel="stylesheet" href="assets/css/vendor/spacing.css">
   <link rel="stylesheet" href="assets/css/vendor/custom-font.css">
   <link rel="stylesheet" href="assets/css/main.css">
 
   <!-- Alpen Intelligenz overrides -->
   <style>
-    :root{
-      --alpen-navy:#0F172A;
-      --alpen-gold:#EAB308;
-      --ai-navy:#0B1F3F;
-      --ai-overlay: rgba(0,0,0,.35);
-      --ease: cubic-bezier(.22,.61,.36,1);
-    }
-    body{ background:#fff !important; color:var(--alpen-navy) !important; }
-    h1,h2,h3,h4,h5,h6{ color:var(--alpen-navy) !important; }
-    a{ color:var(--alpen-navy); } a:hover{ color:#0b1222; }
-    .header, .header-6, .header-8, .menu-area{ background:#ffffff !important; }
-    .main-menu ul li > a{ color:var(--alpen-navy) !important; }
-    .main-menu ul li > a:hover{ color:var(--alpen-gold) !important; }
-    .rr-btn, .btn, .btn-primary{ background:var(--alpen-navy) !important; border-color:var(--alpen-navy) !important; color:#fff !important; }
-    .rr-btn:hover, .btn:hover{ background:#0c1223 !important; border-color:#0c1223 !important; }
-    .price-bg, .badge, .highlight{ background:var(--alpen-gold) !important; }
-    .color-theme-primary, .text-primary{ color:var(--alpen-navy) !important; }
-    .border-accent{ border-color:var(--alpen-gold) !important; }
-    .underline-accent{ text-decoration-color:var(--alpen-gold) !important; }
-    .header__main, .header-6__main{ box-shadow:none !important; }
-    .banner8__title-wrapper-title, .banner8__title-wrapper-dec { color: white !important; }
+      :root{
+        --alpen-navy:#0F172A;
+        --alpen-gold:#EAB308;
+        --ai-navy:#0B1F3F;
+        --ai-gold:#EAB308;
+        --ai-overlay: rgba(0,0,0,.35);
+        --ease: cubic-bezier(.22,.61,.36,1);
+      }
+      body{ background:#fff !important; color:var(--alpen-navy) !important; }
+      h1,h2,h3,h4,h5,h6{ color:var(--alpen-navy) !important; }
+      a{ color:var(--alpen-navy); }
+      a:hover{ color:#0b1222; }
+      .header, .header-6, .header-8, .menu-area{ background:#ffffff !important; }
+      .main-menu ul li > a{ color:var(--alpen-navy) !important; }
+      .main-menu ul li > a:hover{ color:var(--alpen-gold) !important; }
+      .rr-btn, .btn, .btn-primary{ background:var(--alpen-navy) !important; border-color:var(--alpen-navy) !important; color:#fff !important; }
+      .rr-btn:hover, .btn:hover{ background:#0c1223 !important; border-color:#0c1223 !important; }
+      .price-bg, .badge, .highlight{ background:var(--alpen-gold) !important; }
+      .color-theme-primary, .text-primary{ color:var(--alpen-navy) !important; }
+      .border-accent{ border-color:var(--alpen-gold) !important; }
+      .underline-accent{ text-decoration-color:var(--alpen-gold) !important; }
+      .header__main, .header-6__main{ box-shadow:none !important; }
+      /* Banner Text Weiß */
+      .banner8__title-wrapper-title,
+      .banner8__title-wrapper-dec { color: white !important; }
 
-    /* === Header & Offcanvas Styles (wichtig) === */
-    .ai-header{position:relative;z-index:1005;background:#fff;}
-    .ai-header__inner{max-width:1140px;margin:0 auto;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
-    .ai-header__logo img{height:48px;width:auto;display:block}
-    .ai-nav ul{display:flex;gap:24px;list-style:none;margin:0;padding:0}
-    .ai-nav a{color:var(--ai-navy);text-decoration:none}
-    .ai-nav a:hover{color:var(--alpen-gold)}
-    .ai-burger{display:inline-flex;align-items:center;justify-content:center;padding:10px 12px;border:0;border-radius:12px;cursor:pointer;background:var(--ai-navy);color:#fff;transition:transform .2s var(--ease);}
-    .ai-burger:active{transform:scale(.98)}
-    .ai-burger__icon rect{fill:#fff}
+      /* === Header & Offcanvas Styles (Original) === */
+      .ai-header{position:relative;z-index:1005;background:#fff;}
+      .ai-header__inner{max-width:1140px;margin:0 auto;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+      .ai-header__logo img{height:48px;width:auto;display:block}
+      .ai-nav ul{display:flex;gap:24px;list-style:none;margin:0;padding:0}
+      .ai-nav a{color:var(--ai-navy);text-decoration:none}
+      .ai-nav a:hover{color:var(--ai-gold)}
+      .ai-burger{display:inline-flex;align-items:center;justify-content:center;padding:10px 12px;border:0;border-radius:12px;cursor:pointer;background:var(--ai-navy);color:#fff;transition:transform .2s var(--ease);}
+      .ai-burger:active{transform:scale(.98)}
+      .ai-burger__icon rect{fill:#fff;transition:opacity .2s var(--ease)}
+      .ai-burger__arrow{display:none;fill:#fff;transition:transform .3s var(--ease)}
 
-    /* Offcanvas Panel (unabhängig vom Template funktionsfähig) */
-    .offcanvas__area{position:fixed;top:0;right:0;height:100dvh;width:min(86vw,360px);background:#fff;z-index:1200;transform:translateX(100%);opacity:0;transition:transform .45s var(--ease), opacity .45s var(--ease);box-shadow:-12px 0 32px rgba(0,0,0,.08);}
-    .offcanvas__overlay{position:fixed;inset:0;background:var(--ai-overlay);z-index:1190;opacity:0;visibility:hidden;transition:opacity .35s var(--ease), visibility .35s var(--ease);}
-    .offcanvas__area.is-open{transform:translateX(0);opacity:1}
-    .offcanvas__overlay.is-open{opacity:1;visibility:visible}
-    @media (min-width: 992px){ .d-lg-block{display:block !important} }
+      .offcanvas__area{position:fixed;top:0;right:0;height:100dvh;width:min(86vw,360px);background:#fff;z-index:1200;transform:translateX(100%);opacity:0;transition:transform .45s var(--ease), opacity .45s var(--ease);will-change:transform,opacity;box-shadow:-12px 0 32px rgba(0,0,0,.08);}
+      .offcanvas__overlay{position:fixed;inset:0;background:var(--ai-overlay);z-index:1190;opacity:0;visibility:hidden;transition:opacity .35s var(--ease), visibility .35s var(--ease);}
+      .offcanvas__top{display:flex;align-items:center;justify-content:space-between;padding:18px}
+      .offcanvas__logo img{height:40px;width:auto;display:block}
+      .offcanvas-close{background:#f3f5f9;border:0;border-radius:10px;padding:8px;cursor:pointer;color:var(--ai-navy);display:inline-flex}
+      .offcanvas__nav ul{list-style:none;margin:8px 0 0;padding:10px 18px}
+      .offcanvas__nav li{opacity:0;transform:translateY(8px);animation:menuItem .5s var(--ease) forwards;animation-delay: calc(.05s * var(--d));}
+      .offcanvas__nav a{display:block;padding:12px 6px;text-decoration:none;color:var(--ai-navy);border-radius:8px}
+      .offcanvas__nav a:hover{background:#f6f7fb}
+      @keyframes menuItem{to{opacity:1;transform:translateY(0)}}
+      .offcanvas__area.is-open{transform:translateX(0);opacity:1}
+      .offcanvas__overlay.is-open{opacity:1;visibility:visible}
+      .ai-burger[aria-expanded="true"] .ai-burger__icon{opacity:0}
+      .ai-burger[aria-expanded="true"] .ai-burger__arrow{display:block;transform:translateY(1px)}
+      @media (min-width: 992px){ .d-lg-block{display:block !important} .d-lg-none{display:none !important} }
   </style>
 </head>
 
 <body>
-<!-- preloader (mit Fallback) -->
-<div id="preloader" aria-hidden="true">
-  <div class="preloader-close" aria-label="Schließen">x</div>
-  <div class="sk-three-bounce">
-    <div class="sk-child sk-bounce1"></div>
-    <div class="sk-child sk-bounce2"></div>
-    <div class="sk-child sk-bounce3"></div>
-  </div>
+
+<!-- preloader -->
+<div id="preloader">
+    <div class="preloader-close">x</div>
+    <div class="sk-three-bounce">
+        <div class="sk-child sk-bounce1"></div>
+        <div class="sk-child sk-bounce2"></div>
+        <div class="sk-child sk-bounce3"></div>
+    </div>
 </div>
 <noscript><style>#preloader{display:none!important;}</style></noscript>
 
 <!-- Backtotop -->
-<div class="backtotop-wrap cursor-pointer" aria-label="Nach oben">
-  <svg class="backtotop-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102" aria-hidden="true">
-    <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
-  </svg>
+<div class="backtotop-wrap cursor-pointer">
+    <svg class="backtotop-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+    </svg>
 </div>
 
-<!-- Offcanvas -->
+<!-- ============== ORIGINAL: Offcanvas (mobiles Menü) ============== -->
 <div class="fix">
   <div class="offcanvas__area" aria-hidden="true">
     <div class="offcanvas__wrapper">
       <div class="offcanvas__content">
-        <div class="offcanvas__top d-flex justify-content-between align-items-center">
-          <div class="offcanvas__logo">
-            <a href="index.html"><img src="assets/imgs/logo/favicon.png" alt="logo"></a>
-          </div>
-          <div class="offcanvas__close">
-            <button class="offcanvas-close-icon animation--flip" aria-label="Menü schließen">
-              <span class="offcanvas-m-lines">
-                <span class="offcanvas-m-line line--1"></span>
-                <span class="offcanvas-m-line line--2"></span>
-                <span class="offcanvas-m-line line--3"></span>
-              </span>
-            </button>
-          </div>
+        <div class="offcanvas__top">
+          <a class="offcanvas__logo" href="index.html" aria-label="Startseite">
+            <img src="assets/imgs/logo/favicon.png" alt="Alpen Intelligenz" />
+          </a>
+          <button class="offcanvas-close" aria-label="Menü schließen">
+            <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+              <path d="M12 6l-7 7h14z" fill="currentColor"></path>
+            </svg>
+          </button>
         </div>
-        <div class="mobile-menu fix"></div>
+        <nav class="offcanvas__nav" aria-label="Mobiles Menü">
+          <ul>
+            <li style="--d:0"><a href="service.html">Leistungen</a></li>
+            <li style="--d:1"><a href="project.html">Portfolio</a></li>
+            <li style="--d:2"><a href="contact.html">Kontakt</a></li>
+          </ul>
+        </nav>
       </div>
     </div>
   </div>
 </div>
 <div class="offcanvas__overlay" tabindex="-1" aria-hidden="true"></div>
 
-<!-- Header -->
+<!-- ============== ORIGINAL: Header ============== -->
 <header class="ai-header">
   <div class="ai-header__inner">
     <a class="ai-header__logo" href="index.html" aria-label="Startseite">
@@ -135,12 +152,15 @@
       </ul>
     </nav>
 
-    <button class="ai-burger" aria-label="Menü öffnen" aria-expanded="false">
+    <!-- Burger/Pfeil Button -->
+    <button class="ai-burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="ai-offcanvas">
+      <!-- Burger -->
       <svg class="ai-burger__icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
         <rect x="3" y="5"  width="18" height="2" rx="1"></rect>
         <rect x="3" y="11" width="18" height="2" rx="1"></rect>
         <rect x="3" y="17" width="18" height="2" rx="1"></rect>
       </svg>
+      <!-- Pfeil nach oben -->
       <svg class="ai-burger__arrow" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
         <path d="M12 6l-7 7h14z"></path>
       </svg>
@@ -148,182 +168,246 @@
   </div>
 </header>
 
-<!-- Breadcrumb -->
-<section class="breadcrumb__before p-relative">
-  <div class="breadcrumb__area position-relative" style="background:url('assets/imgs/images/navy-colour.png') center/cover no-repeat; padding:140px 0 90px;">
-    <div class="container">
-      <div class="row"><div class="col-12 text-center">
-        <div class="breadcrumb__content">
-          <h1 class="breadcrumb__title" style="color:#fff; margin:0;">Kontakt</h1>
-        </div>
-      </div></div>
-    </div>
-  </div>
-</section>
+<!-- Header/Offcanvas Script (Original) -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const btn     = document.querySelector('.ai-burger');
+    const panel   = document.querySelector('.offcanvas__area');
+    const overlay = document.querySelector('.offcanvas__overlay');
+    const close   = document.querySelector('.offcanvas-close');
+    const focusablesSel = 'a,button,input,textarea,select,[tabindex]:not([tabindex="-1"])';
+    let lastFocused = null;
 
-<!-- Contact Section -->
-<section class="contact__area section-space" style="padding:80px 0;">
-  <div class="container">
-    <div class="row g-4 align-items-center">
-      <div class="col-md-6">
-        <div class="contact__media">
-          <img src="assets/imgs/images/kontakt-image.png" alt="Kontakt" style="width:100%; height:auto; display:block;">
-        </div>
-      </div>
+    function openMenu(){
+      lastFocused = document.activeElement;
+      panel.classList.add('is-open');
+      overlay.classList.add('is-open');
+      panel.setAttribute('aria-hidden','false');
+      btn.setAttribute('aria-expanded','true');
+      document.body.style.overflow='hidden';
+      const first = panel.querySelector(focusablesSel);
+      first && first.focus();
+    }
+    function closeMenu(){
+      panel.classList.remove('is-open');
+      overlay.classList.remove('is-open');
+      panel.setAttribute('aria-hidden','true');
+      btn.setAttribute('aria-expanded','false');
+      document.body.style.overflow='';
+      lastFocused && lastFocused.focus();
+    }
 
-      <div class="col-md-6">
-        <div class="contact__title-wrapper">
-          <div class="section__title-wrapper">
-            <h2 class="section__title-wrapper-title" style="margin-bottom:16px;">Kontaktieren Sie uns</h2>
-            <p style="margin-bottom:24px;">Schreiben Sie uns kurz Ihr Anliegen – wir melden uns zeitnah.</p>
-          </div>
+    btn && btn.addEventListener('click', () => {
+      const open = btn.getAttribute('aria-expanded') === 'true';
+      open ? closeMenu() : openMenu();
+    });
 
-          <div class="contact__form-wrapper">
-            <!-- Formspree-Formular -->
-            <form class="contact__form" id="contact__form" method="POST" action="https://formspree.io/f/xwprqona">
-              <div class="row g-3">
-                <div class="col-sm-6">
-                  <div class="contact__input">
-                    <input type="text" name="name" placeholder="Ihr Name" required>
+    close && close.addEventListener('click', closeMenu);
+    overlay && overlay.addEventListener('click', closeMenu);
+
+    document.addEventListener('keydown', (e) => {
+      if(e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') closeMenu();
+    });
+
+    panel.addEventListener('keydown', (e) => {
+      if(e.key !== 'Tab') return;
+      const focusables = panel.querySelectorAll(focusablesSel);
+      if(!focusables.length) return;
+      const first = focusables[0];
+      const last  = focusables[focusables.length - 1];
+      if(e.shiftKey && document.activeElement === first){ last.focus(); e.preventDefault(); }
+      else if(!e.shiftKey && document.activeElement === last){ first.focus(); e.preventDefault(); }
+    });
+  });
+</script>
+
+<!-- Body -->
+<div id="smooth-wrapper">
+  <div id="smooth-content">
+    <main>
+
+      <!-- breadcrumb area -->
+      <section class="breadcrumb__before p-relative">
+        <div class="breadcrumb__area position-relative"
+             style="background: url('assets/imgs/images/navy-colour.png') center/cover no-repeat;
+                    padding: 140px 0 90px;">
+          <div class="container">
+            <div class="row">
+              <div class="col-12 text-center">
+                <div class="breadcrumb__content">
+                  <div class="breadcrumb__title-wrapper" style="margin-bottom:16px;">
+                    <h1 class="breadcrumb__title" style="color:#fff; margin:0;">Kontakt</h1>
                   </div>
-                </div>
-                <div class="col-sm-6">
-                  <div class="contact__input">
-                    <input type="email" name="email" placeholder="Ihre E-Mail" required>
+                  <div class="breadcrumb__menu">
+                    <nav aria-label="Breadcrumb">
+                      <ul style="list-style:none; padding:0; margin:0; display:inline-flex; gap:10px; align-items:center;">
+                        <li>
+                          <span>
+                            <a href="index.html" style="color:#fff; text-decoration:none;">
+                              <img src="assets/imgs/icon/home-icon.png" alt="" style="filter:invert(1) brightness(2); vertical-align:middle; margin-right:6px;">
+                              Startseite
+                            </a>
+                          </span>
+                        </li>
+                        <li style="color:#fff;">/</li>
+                        <li class="active"><span style="color:#fff;">Kontakt</span></li>
+                      </ul>
+                    </nav>
                   </div>
-                </div>
-                <div class="col-sm-6">
-                  <div class="contact__input">
-                    <input type="tel" name="phone" placeholder="Telefon (optional)">
-                  </div>
-                </div>
-                <div class="col-sm-6">
-                  <div class="contact__input">
-                    <input type="text" name="subject" placeholder="Betreff" required>
-                  </div>
-                </div>
-                <div class="col-12">
-                  <div class="contact__textarea">
-                    <textarea name="message" id="message" cols="30" rows="6" placeholder="Ihre Nachricht…" required></textarea>
-                    <div class="wrap" style="margin-top:10px; display:flex; align-items:center; gap:8px;">
-                      <input type="checkbox" class="form-check-input" id="agree">
-                      <label class="form-check-label" for="agree">Ja, ich möchte Updates zu Ihren Angeboten erhalten.</label>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-12">
-                  <button type="submit" class="rr-btn mt-10">Senden</button>
-                  <p id="form-status" style="margin-top:10px;"></p>
                 </div>
               </div>
-            </form>
+            </div>
           </div>
-
-          <!-- JS: Preloader Failsafe + Offcanvas-Steuerung + AJAX-Submit -->
-          <script>
-          // Preloader sicher entfernen
-          (function(){
-            function hidePreloader(){ var p=document.getElementById('preloader'); if(p) p.style.display='none'; }
-            window.addEventListener('load', hidePreloader);
-            setTimeout(hidePreloader, 3000);
-          })();
-
-          // Offcanvas öffnen/schließen
-          document.addEventListener('DOMContentLoaded', () => {
-            const btn = document.querySelector('.ai-burger');
-            const panel = document.querySelector('.offcanvas__area');
-            const overlay = document.querySelector('.offcanvas__overlay');
-            const closeBtn = document.querySelector('.offcanvas-close-icon');
-
-            function openMenu(){
-              panel.classList.add('is-open');
-              overlay.classList.add('is-open');
-              btn.setAttribute('aria-expanded','true');
-              document.body.style.overflow='hidden';
-            }
-            function closeMenu(){
-              panel.classList.remove('is-open');
-              overlay.classList.remove('is-open');
-              btn.setAttribute('aria-expanded','false');
-              document.body.style.overflow='';
-            }
-
-            btn && btn.addEventListener('click', () => {
-              const open = btn.getAttribute('aria-expanded') === 'true';
-              open ? closeMenu() : openMenu();
-            });
-            overlay && overlay.addEventListener('click', closeMenu);
-            closeBtn && closeBtn.addEventListener('click', closeMenu);
-            document.addEventListener('keydown', (e) => { if(e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') closeMenu(); });
-          });
-
-          // Formular AJAX-Submit
-          document.addEventListener('DOMContentLoaded', function(){
-            const form = document.getElementById("contact__form");
-            if(!form) return;
-            form.addEventListener("submit", async (e) => {
-              e.preventDefault();
-              const status = document.getElementById("form-status");
-              status.textContent = "Sende ...";
-              status.style.color = "";
-
-              try {
-                const res = await fetch(form.action, {
-                  method: form.method,
-                  headers: { "Accept": "application/json" },
-                  body: new FormData(form)
-                });
-
-                if (res.ok) {
-                  form.reset();
-                  status.textContent = "Danke! Ihre Nachricht wurde erfolgreich gesendet.";
-                  status.style.color = "green";
-                } else {
-                  const data = await res.json().catch(()=> ({}));
-                  status.textContent = (data && data.errors && data.errors[0] && data.errors[0].message)
-                    ? data.errors[0].message
-                    : "Fehler beim Senden. Bitte später erneut versuchen.";
-                  status.style.color = "red";
-                }
-              } catch (err) {
-                status.textContent = "Netzwerkfehler. Bitte später erneut versuchen.";
-                status.style.color = "red";
-              }
-            });
-          });
-          </script>
-
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
 
-<!-- Google Map -->
-<section class="contact-map section-space-bottom" style="padding-bottom:80px;">
-  <div class="container">
-    <div class="map">
-      <iframe
-        src="https://www.google.com/maps?q=Leitengasse%2041,%209300%20St.%20Veit%20an%20der%20Glan,%20Österreich&output=embed"
-        width="100%" height="450" style="border:0;" allowfullscreen loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
+      <!-- Contact Section -->
+      <section class="contact__area section-space" style="padding:80px 0;">
+        <div class="container">
+          <div class="row g-4 align-items-center">
+            <div class="col-md-6">
+              <div class="contact__media">
+                <img src="assets/imgs/images/kontakt-image.png" alt="Kontakt" style="width:100%; height:auto; display:block;">
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="contact__title-wrapper">
+                <div class="section__title-wrapper">
+                  <h2 class="section__title-wrapper-title" style="margin-bottom:16px;">Kontaktieren Sie uns</h2>
+                  <p style="margin-bottom:24px;">Schreiben Sie uns kurz Ihr Anliegen – wir melden uns zeitnah.</p>
+                </div>
+
+                <div class="contact__form-wrapper">
+                  <!-- Formspree-Formular (nur Funktion geändert, kein Design) -->
+                  <form class="contact__form" id="contact__form" method="POST" action="https://formspree.io/f/xwprqona">
+                    <div class="row g-3">
+                      <div class="col-sm-6">
+                        <div class="contact__input">
+                          <input type="text" name="name" placeholder="Ihr Name" required>
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="contact__input">
+                          <input type="email" name="email" placeholder="Ihre E-Mail" required>
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="contact__input">
+                          <input type="tel" name="phone" placeholder="Telefon (optional)">
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="contact__input">
+                          <input type="text" name="subject" placeholder="Betreff" required>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="contact__textarea">
+                          <textarea name="message" id="message" cols="30" rows="6" placeholder="Ihre Nachricht…" required></textarea>
+                          <div class="wrap" style="margin-top:10px; display:flex; align-items:center; gap:8px;">
+                            <input type="checkbox" class="form-check-input" id="agree">
+                            <label class="form-check-label" for="agree">Ja, ich möchte Updates zu Ihren Angeboten erhalten.</label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <button type="submit" class="rr-btn mt-10">Senden</button>
+                        <p id="form-status" style="margin-top:10px;"></p>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+
+                <!-- AJAX Submit + Preloader-Failsafe -->
+                <script>
+                // Preloader sicher entfernen – auch wenn irgendein Script patzt
+                (function(){
+                  function hidePreloader(){
+                    var p = document.getElementById('preloader');
+                    if (p) p.style.display = 'none';
+                  }
+                  window.addEventListener('load', hidePreloader);
+                  setTimeout(hidePreloader, 3000);
+                })();
+
+                document.getElementById("contact__form").addEventListener("submit", async (e) => {
+                  e.preventDefault();
+                  const form = e.target;
+                  const status = document.getElementById("form-status");
+                  status.textContent = "Sende ...";
+                  status.style.color = "";
+
+                  try {
+                    const res = await fetch(form.action, {
+                      method: form.method,
+                      headers: { "Accept": "application/json" },
+                      body: new FormData(form)
+                    });
+
+                    if (res.ok) {
+                      form.reset();
+                      status.textContent = "Danke! Ihre Nachricht wurde erfolgreich gesendet.";
+                      status.style.color = "green";
+                    } else {
+                      const data = await res.json().catch(()=> ({}));
+                      status.textContent = (data && data.errors && data.errors[0] && data.errors[0].message)
+                        ? data.errors[0].message
+                        : "Fehler beim Senden. Bitte später erneut versuchen.";
+                      status.style.color = "red";
+                    }
+                  } catch (err) {
+                    status.textContent = "Netzwerkfehler. Bitte später erneut versuchen.";
+                    status.style.color = "red";
+                  }
+                });
+                </script>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Google Map -->
+      <section class="contact-map section-space-bottom" style="padding-bottom:80px;">
+        <div class="container">
+          <div class="map">
+            <iframe 
+              src="https://www.google.com/maps?q=Leitengasse%2041,%209300%20St.%20Veit%20an%20der%20Glan,%20Österreich&output=embed" 
+              width="100%" height="450" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+      </section>
+
+    </main>
   </div>
-</section>
+</div>
 
 <!-- Footer -->
 <footer class="footer-before footer-inner" style="background-color:#0B1F3F; color:#ffffff; padding:40px 0;">
   <section class="footer__area footer-1">
     <div class="container">
       <div class="row footer__wrap align-items-start">
+
+        <!-- Kontakt -->
         <div class="col-lg-6 col-md-6 col-sm-12 mb-30">
           <div class="footer__widget">
             <h5 class="title" style="color:#ffffff; margin-bottom:15px;">Kontakt</h5>
-            <p>Alpen Intelligenz<br>Leitengasse 41<br>9300 St. Veit an der Glan, Österreich</p>
-            <p><a href="mailto:kontakt@alpen-intelligenz.at" style="color:#ffffff; text-decoration:none;">kontakt@alpen-intelligenz.at</a><br>
-            <span style="color:#ffffff;">+43 670 4081412</span></p>
+            <p>
+              Alpen Intelligenz<br>
+              Leitengasse 41<br>
+              9300 St. Veit an der Glan, Österreich
+            </p>
+            <p>
+              <a href="mailto:kontakt@alpen-intelligenz.at" style="color:#ffffff; text-decoration:none;">kontakt@alpen-intelligenz.at</a><br>
+              <span style="color:#ffffff;">+43 670 4081412</span>
+            </p>
           </div>
         </div>
+
+        <!-- Navigation -->
         <div class="col-lg-6 col-md-6 col-sm-12 mb-30">
           <div class="footer__widget">
             <h5 class="title" style="color:#ffffff; margin-bottom:15px;">Navigation</h5>
@@ -335,7 +419,10 @@
             </ul>
           </div>
         </div>
+
       </div>
+
+      <!-- Copyright -->
       <div class="footer__bottom-wrapper mt-40">
         <div class="footer__bottom text-center">
           <p style="color:#ffffff; margin:0;">© 2025 Alpen Intelligenz – KI-Automatisierung & Agentur. Alle Rechte vorbehalten.</p>
@@ -345,14 +432,29 @@
   </section>
 </footer>
 
-<!-- JS -->
+<!-- JS hier -->
 <script src="assets/js/vendor/jquery-3.7.1.min.js"></script>
-<script src="assets/js/vendor/bootstrap.bundle.min.js"></script>
-<script src="assets/js/plugins/swiper.min.js"></script>
-<script src="assets/js/vendor/magnific-popup.min.js"></script>
+<script src="assets/js/vendor/chroma.min.js"></script>
 <script src="assets/js/plugins/waypoints.min.js"></script>
+<script src="assets/js/vendor/bootstrap.bundle.min.js"></script>
+<script src="assets/js/plugins/meanmenu.min.js"></script>
+<script src="assets/js/plugins/swiper.min.js"></script>
+<script src="assets/js/plugins/gsap.js"></script>
+<script src="assets/js/plugins/ScrollSmoother.js"></script>
+<script src="assets/js/plugins/ScrollToPlugin.js"></script>
+<script src="assets/js/plugins/ScrollTrigger.js"></script>
+<script src="assets/js/plugins/SplitText.js"></script>
+<script src="assets/js/plugins/wow.js"></script>
+<script src="assets/js/vendor/magnific-popup.min.js"></script>
+<script src="assets/js/vendor/type.js"></script>
+<script src="assets/js/vendor/vanilla-tilt.js"></script>
+<script src="assets/js/plugins/nice-select.min.js"></script>
 <script src="assets/js/vendor/odometer.min.js"></script>
+<script src="assets/js/vendor/jquery-ui.min.js"></script>
+<script src="assets/js/plugins/parallax-scroll.js"></script>
+<script src="assets/js/plugins/jquery.countdown.min.js"></script>
+<script src="assets/js/plugins/isotope-docs.min.js"></script>
+<script src="assets/js/vendor/ajax-form.js"></script>
 <script src="assets/js/main.js"></script>
-
 </body>
 </html>
