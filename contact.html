@@ -34,30 +34,29 @@
     :root{
       --alpen-navy:#0F172A; --alpen-gold:#EAB308;
       --ai-navy:#0B1F3F; --ai-gold:#EAB308; --ai-overlay: rgba(0,0,0,.35);
-      --ease: cubic-bezier(.22,.61,.36,1);
+      --ease:cubic-bezier(.22,.61,.36,1);
     }
-    /* Farben/Buttons wie gehabt */
     body{ background:#fff !important; color:var(--alpen-navy) !important; }
     h1,h2,h3,h4,h5,h6{ color:var(--alpen-navy) !important; }
     a{ color:var(--alpen-navy); } a:hover{ color:#0b1222; }
     .main-menu ul li > a{ color:var(--alpen-navy) !important; }
     .main-menu ul li > a:hover{ color:var(--alpen-gold) !important; }
-    .rr-btn, .btn, .btn-primary{ background:var(--alpen-navy) !important; border-color:var(--alpen-navy) !important; color:#fff !important; }
-    .rr-btn:hover, .btn:hover{ background:#0c1223 !important; border-color:#0c1223 !important; }
-    .price-bg, .badge, .highlight{ background:var(--alpen-gold) !important; }
-    .color-theme-primary, .text-primary{ color:var(--alpen-navy) !important; }
+    .rr-btn,.btn,.btn-primary{ background:var(--alpen-navy) !important; border-color:var(--alpen-navy) !important; color:#fff !important; }
+    .rr-btn:hover,.btn:hover{ background:#0c1223 !important; border-color:#0c1223 !important; }
+    .price-bg,.badge,.highlight{ background:var(--alpen-gold) !important; }
+    .color-theme-primary,.text-primary{ color:var(--alpen-navy) !important; }
     .border-accent{ border-color:var(--alpen-gold) !important; }
     .underline-accent{ text-decoration-color:var(--alpen-gold) !important; }
-    .header__main, .header-6__main{ box-shadow:none !important; }
-    .banner8__title-wrapper-title, .banner8__title-wrapper-dec { color:#fff !important; }
+    .header__main,.header-6__main{ box-shadow:none !important; }
+    .banner8__title-wrapper-title,.banner8__title-wrapper-dec{ color:#fff !important; }
 
-    /* ===== Sticky-Footer (final) ===== */
-    html, body { height: 100%; }
-    body { display:flex; flex-direction:column; min-height:100vh; }
-    main { flex: 1 0 auto; }
-    footer { flex-shrink:0; }
+    /* Sticky-Footer */
+    html,body{ height:100%; }
+    body{ display:flex; flex-direction:column; min-height:100vh; }
+    main{ flex:1 0 auto; }
+    footer{ flex-shrink:0; }
 
-    /* ===== Original Header + Offcanvas Styles (unverändert) ===== */
+    /* Header + Offcanvas (Original) */
     .ai-header{position:relative;z-index:1005;background:#fff;}
     .ai-header__inner{max-width:1140px;margin:0 auto;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
     .ai-header__logo img{height:48px;width:auto;display:block}
@@ -67,13 +66,13 @@
     .ai-burger{display:inline-flex;align-items:center;justify-content:center;padding:10px 12px;border:0;border-radius:12px;cursor:pointer;background:var(--ai-navy);color:#fff;transition:transform .2s var(--ease);}
     .ai-burger__icon rect{fill:#fff;transition:opacity .2s var(--ease)}
     .ai-burger__arrow{display:none;fill:#fff;transition:transform .3s var(--ease)}
-    .offcanvas__area{position:fixed;top:0;right:0;height:100dvh;width:min(86vw,360px);background:#fff;z-index:1200;transform:translateX(100%);opacity:0;transition:transform .45s var(--ease), opacity .45s var(--ease);will-change:transform,opacity;box-shadow:-12px 0 32px rgba(0,0,0,.08);}
-    .offcanvas__overlay{position:fixed;inset:0;background:var(--ai-overlay);z-index:1190;opacity:0;visibility:hidden;transition:opacity .35s var(--ease), visibility .35s var(--ease);}
+    .offcanvas__area{position:fixed;top:0;right:0;height:100dvh;width:min(86vw,360px);background:#fff;z-index:1200;transform:translateX(100%);opacity:0;transition:transform .45s var(--ease),opacity .45s var(--ease);box-shadow:-12px 0 32px rgba(0,0,0,.08);}
+    .offcanvas__overlay{position:fixed;inset:0;background:var(--ai-overlay);z-index:1190;opacity:0;visibility:hidden;transition:opacity .35s var(--ease),visibility .35s var(--ease);}
     .offcanvas__top{display:flex;align-items:center;justify-content:space-between;padding:18px}
     .offcanvas__logo img{height:40px;width:auto;display:block}
     .offcanvas-close{background:#f3f5f9;border:0;border-radius:10px;padding:8px;cursor:pointer;color:var(--ai-navy);display:inline-flex}
     .offcanvas__nav ul{list-style:none;margin:8px 0 0;padding:10px 18px}
-    .offcanvas__nav li{opacity:0;transform:translateY(8px);animation:menuItem .5s var(--ease) forwards;animation-delay: calc(.05s * var(--d));}
+    .offcanvas__nav li{opacity:0;transform:translateY(8px);animation:menuItem .5s var(--ease) forwards;animation-delay:calc(.05s * var(--d));}
     .offcanvas__nav a{display:block;padding:12px 6px;text-decoration:none;color:var(--ai-navy);border-radius:8px}
     .offcanvas__nav a:hover{background:#f6f7fb}
     @keyframes menuItem{to{opacity:1;transform:translateY(0)}}
@@ -81,7 +80,10 @@
     .offcanvas__overlay.is-open{opacity:1;visibility:visible}
     .ai-burger[aria-expanded="true"] .ai-burger__icon{opacity:0}
     .ai-burger[aria-expanded="true"] .ai-burger__arrow{display:block;transform:translateY(1px)}
-    @media (min-width: 992px){ .d-lg-block{display:block !important} .d-lg-none{display:none !important} }
+    @media (min-width:992px){ .d-lg-block{display:block!important} .d-lg-none{display:none!important} }
+
+    /* Nur auf dieser Seite: Progress-Bar unten ausblenden */
+    #scroll-percentage, #scroll-percentage-value { display:none !important; }
   </style>
 </head>
 
@@ -104,7 +106,7 @@
   </svg>
 </div>
 
-<!-- Offcanvas (original) -->
+<!-- Offcanvas (Original) -->
 <div class="fix">
   <div class="offcanvas__area" aria-hidden="true">
     <div class="offcanvas__wrapper">
@@ -132,13 +134,12 @@
 </div>
 <div class="offcanvas__overlay" tabindex="-1" aria-hidden="true"></div>
 
-<!-- Header (original) -->
+<!-- Header (Original) -->
 <header class="ai-header">
   <div class="ai-header__inner">
     <a class="ai-header__logo" href="index.html" aria-label="Startseite">
       <img src="assets/imgs/logo/favicon.png" alt="Alpen Intelligenz" />
     </a>
-
     <nav class="ai-nav d-none d-lg-block" aria-label="Hauptmenü">
       <ul>
         <li><a href="service.html">Leistungen</a></li>
@@ -146,10 +147,9 @@
         <li><a href="contact.html">Kontakt</a></li>
       </ul>
     </nav>
-
     <button class="ai-burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="ai-offcanvas">
       <svg class="ai-burger__icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
-        <rect x="3" y="5"  width="18" height="2" rx="1"></rect>
+        <rect x="3" y="5" width="18" height="2" rx="1"></rect>
         <rect x="3" y="11" width="18" height="2" rx="1"></rect>
         <rect x="3" y="17" width="18" height="2" rx="1"></rect>
       </svg>
@@ -160,13 +160,13 @@
   </div>
 </header>
 
-<!-- Header/Offcanvas Script (original) -->
+<!-- Header/Offcanvas Script (Original) -->
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    const btn     = document.querySelector('.ai-burger');
-    const panel   = document.querySelector('.offcanvas__area');
+    const btn = document.querySelector('.ai-burger');
+    const panel = document.querySelector('.offcanvas__area');
     const overlay = document.querySelector('.offcanvas__overlay');
-    const close   = document.querySelector('.offcanvas-close');
+    const close = document.querySelector('.offcanvas-close');
     const focusablesSel = 'a,button,input,textarea,select,[tabindex]:not([tabindex="-1"])';
     let lastFocused = null;
 
@@ -177,8 +177,7 @@
       panel.setAttribute('aria-hidden','false');
       btn.setAttribute('aria-expanded','true');
       document.body.style.overflow='hidden';
-      const first = panel.querySelector(focusablesSel);
-      first && first.focus();
+      const first = panel.querySelector(focusablesSel); first && first.focus();
     }
     function closeMenu(){
       panel.classList.remove('is-open');
@@ -193,37 +192,21 @@
       const open = btn.getAttribute('aria-expanded') === 'true';
       open ? closeMenu() : openMenu();
     });
-
     close && close.addEventListener('click', closeMenu);
     overlay && overlay.addEventListener('click', closeMenu);
-    document.addEventListener('keydown', (e) => {
-      if(e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') closeMenu();
-    });
+    document.addEventListener('keydown', (e) => { if(e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') closeMenu(); });
 
-    panel.addEventListener('keydown', (e) => {
-      if(e.key !== 'Tab') return;
-      const focusables = panel.querySelectorAll(focusablesSel);
-      if(!focusables.length) return;
-      const first = focusables[0];
-      const last  = focusables[focusables.length - 1];
-      if(e.shiftKey && document.activeElement === first){ last.focus(); e.preventDefault(); }
-      else if(!e.shiftKey && document.activeElement === last){ first.focus(); e.preventDefault(); }
-    });
-  });
-
-  // Preloader-Fallback (falls ein Script patzt)
-  (function(){
+    // Preloader-Fallback
     function hidePreloader(){ var p=document.getElementById('preloader'); if(p) p.style.display='none'; }
     window.addEventListener('load', hidePreloader);
     setTimeout(hidePreloader, 3000);
-  })();
+  });
 </script>
 
 <main>
   <!-- Breadcrumb -->
   <section class="breadcrumb__before p-relative">
-    <div class="breadcrumb__area position-relative"
-          style="background:url('assets/imgs/images/navy-colour.png') center/cover no-repeat; padding:140px 0 90px;">
+    <div class="breadcrumb__area position-relative" style="background:url('assets/imgs/images/navy-colour.png') center/cover no-repeat; padding:140px 0 90px;">
       <div class="container">
         <div class="row">
           <div class="col-12 text-center">
@@ -254,7 +237,7 @@
     </div>
   </section>
 
-  <!-- Contact Section -->
+  <!-- Kontakt -->
   <section class="contact__area section-space" style="padding:80px 0;">
     <div class="container">
       <div class="row g-4 align-items-center">
@@ -355,10 +338,9 @@
   <section class="contact-map section-space-bottom" style="padding-bottom:80px;">
     <div class="container">
       <div class="map">
-        <iframe 
-          src="https://www.google.com/maps?q=Leitengasse%2041,%209300%20St.%20Veit%20an%20der%20Glan,%20Österreich&output=embed" 
-          width="100%" height="450" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
+        <iframe
+          src="https://www.google.com/maps?q=Leitengasse%2041,%209300%20St.%20Veit%20an%20der%20Glan,%20Österreich&output=embed"
+          width="100%" height="450" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
   </section>
