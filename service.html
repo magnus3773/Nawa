@@ -66,6 +66,7 @@
       [data-anim="fade-left"].reveal{transform:translateX(-22px)}
       [data-anim="fade-right"].reveal{transform:translateX(22px)}
       [data-anim="zoom"].reveal{transform:scale(.95)}
+      [data-anim="appear"].reveal{transform:none;filter:none}
       /* Stagger über CSS-Variable --st */
       .reveal{transition-delay:var(--st,0s)}
 
@@ -279,7 +280,7 @@
       <div class="row">
         <div class="col-12">
           <div class="breadcrumb__content">
-            <h1 class="breadcrumb__title underline-sweep reveal" data-anim="zoom" style="color:#fff; font-size:48px; margin:0;">
+            <h1 class="breadcrumb__title underline-sweep reveal" data-anim="appear" style="color:#fff; font-size:48px; margin:0;">
               Leistungen
             </h1>
           </div>
@@ -295,32 +296,32 @@
     <div class="row align-items-center g-4">
       <!-- Bild rechts auf Desktop -->
       <div class="col-lg-6 order-lg-2">
-        <img class="img-fluid rounded-3 reveal" data-anim="fade-left" style="max-width:100%;height:auto;" src="assets/imgs/images/leistungen.jpg" alt="Leistungen" loading="lazy">
+        <img class="img-fluid rounded-3 reveal" data-anim="appear" style="max-width:100%;height:auto;" src="assets/imgs/images/leistungen.jpg" alt="Leistungen" loading="lazy">
       </div>
 
       <!-- Text links -->
       <div class="col-lg-6 order-lg-1">
         <div class="choose-us__content-wrap">
           <div class="section__title-wrapper hero">
-            <h2 class="section__title-wrapper-title _split_text reveal" data-anim="fade-up">Effizienz durch KI-Automatisierung</h2>
-            <p class="section__title-wrapper-dec rr_title_anim mt-20 reveal" data-anim="fade-up" style="--st:.06s">
+            <h2 class="section__title-wrapper-title _split_text reveal" data-anim="appear">Effizienz durch KI-Automatisierung</h2>
+            <p class="section__title-wrapper-dec rr_title_anim mt-20 reveal" data-anim="appear" style="--st:.06s">
               Wir entwickeln maßgeschneiderte Lösungen, die Abläufe in Ihrem Betrieb automatisieren.
               Das bedeutet: weniger Aufwand, weniger Kosten – und mehr Zeit für das Wesentliche.
             </p>
             <div class="choose-us__list-item">
               <ul>
-                <li class="rr_title_anim reveal" data-anim="fade-up" style="--st:.1s">
+                <li class="rr_title_anim reveal" data-anim="appear" style="--st:.1s">
                   <img src="assets/imgs/icon/choose-icon-1.png" alt="" loading="lazy">Schnelle Integration
                 </li>
-                <li class="rr_title_anim reveal" data-anim="fade-up" style="--st:.15s">
+                <li class="rr_title_anim reveal" data-anim="appear" style="--st:.15s">
                   <img src="assets/imgs/icon/choose-icon-1.png" alt="" loading="lazy">Leichte Bedienung
                 </li>
-                <li class="rr_title_anim reveal" data-anim="fade-up" style="--st:.2s">
+                <li class="rr_title_anim reveal" data-anim="appear" style="--st:.2s">
                   <img src="assets/imgs/icon/choose-icon-1.png" alt="" loading="lazy">Ständige Betreuung
                 </li>
               </ul>
             </div>
-            <a class="rr-btn btn-transparent mt-40 reveal" data-anim="fade-up" style="--st:.25s" href="contact.html">
+            <a class="rr-btn btn-transparent mt-40 reveal" data-anim="appear" style="--st:.25s" href="contact.html">
               Kontakt aufnehmen <i class="fa-solid fa-angle-right"></i>
             </a>
           </div>
@@ -336,22 +337,22 @@
 <section class="section-space-bottom">
   <div class="container">
     <div class="features-grid">
-      <div class="feature-card reveal" data-anim="fade-up">
+      <div class="feature-card reveal" data-anim="fade-left">
         <img src="assets/imgs/icon/fast-content-1.png" alt="" style="height:40px;width:auto;margin-bottom:12px;" loading="lazy">
         <h5>Assistent & Chat</h5>
         <p>Digitale Assistenten, die Termine, Anfragen und Standardprozesse zuverlässig abwickeln.</p>
       </div>
-      <div class="feature-card reveal" data-anim="fade-up" style="--st:.08s">
+      <div class="feature-card reveal" data-anim="fade-left" style="--st:.08s">
         <img src="assets/imgs/icon/fast-content-2.png" alt="" style="height:40px;width:auto;margin-bottom:12px;" loading="lazy">
         <h5>Prozess-Automatisierung</h5>
         <p>Von Ablage bis Abrechnung – Abläufe werden schlanker, schneller und fehlerärmer.</p>
       </div>
-      <div class="feature-card reveal" data-anim="fade-up" style="--st:.16s">
+      <div class="feature-card reveal" data-anim="fade-left" style="--st:.16s">
         <img src="assets/imgs/icon/fast-content-3.png" alt="" style="height:40px;width:auto;margin-bottom:12px;" loading="lazy">
         <h5>Individuelle Lösungen</h5>
         <p>Wir entwickeln Systeme exakt für Ihren Bedarf statt „One-Size-Fits-All“.</p>
       </div>
-      <div class="feature-card reveal" data-anim="fade-up" style="--st:.24s">
+      <div class="feature-card reveal" data-anim="fade-left" style="--st:.24s">
         <img src="assets/imgs/icon/fast-content-4.png" alt="" style="height:40px;width:auto;margin-bottom:12px;" loading="lazy">
         <h5>Integration & Betreuung</h5>
         <p>Einrichtung, Schulung und Support – damit Sie sorgenfrei profitieren.</p>
@@ -366,9 +367,9 @@
     <div class="row align-items-center">
       <div class="col-lg-6">
         <div class="section__title-wrapper hero mb-40">
-          <h2 class="section__title-wrapper-title _split_text reveal" data-anim="fade-up">Häufige Fragen & Antworten</h2>
+          <h2 class="section__title-wrapper-title _split_text reveal" data-anim="appear">Häufige Fragen & Antworten</h2>
         </div>
-        <div class="ask-question__faq reveal" data-anim="fade-up" style="--st:.08s">
+        <div class="ask-question__faq reveal" data-anim="appear" style="--st:.08s">
           <div class="accordion" id="accordionExample">
             <div class="accordion-item ask-question__faq-item faq__item">
               <h5 class="accordion-header" id="headingA">
@@ -426,7 +427,7 @@
         </div>
       </div>
       <div class="col-lg-6 text-end">
-        <img class="reveal" data-anim="fade-left" src="assets/imgs/images/faq-photo.jpg" alt="FAQ Bild" loading="lazy" style="max-width:70%; height:auto; border-radius:12px;">
+        <img class="reveal" data-anim="appear" src="assets/imgs/images/faq-photo.jpg" alt="FAQ Bild" loading="lazy" style="max-width:70%; height:auto; border-radius:12px;">
       </div>
       </div>
     </div>
@@ -441,7 +442,7 @@
       <div class="row footer__wrap align-items-start">
 
         <!-- Kontakt -->
-        <div class="col-lg-6 col-md-6 col-sm-12 mb-30 reveal" data-anim="fade-up">
+        <div class="col-lg-6 col-md-6 col-sm-12 mb-30">
           <div class="footer__widget">
             <h5 class="title" style="color:#ffffff; margin-bottom:15px;">Kontakt</h5>
             <p>
@@ -459,7 +460,7 @@
         </div>
 
         <!-- Navigation -->
-        <div class="col-lg-6 col-md-6 col-sm-12 mb-30 reveal" data-anim="fade-up" style="--st:.08s">
+        <div class="col-lg-6 col-md-6 col-sm-12 mb-30" style="--st:.08s">
           <div class="footer__widget">
             <h5 class="title" style="color:#ffffff; margin-bottom:15px;">Navigation</h5>
             <ul style="list-style:none; padding:0; margin:0;">
@@ -475,7 +476,7 @@
 
       <!-- Copyright -->
       <div class="footer__bottom-wrapper mt-40">
-        <div class="footer__bottom text-center reveal" data-anim="fade-up" style="--st:.12s">
+        <div class="footer__bottom text-center" style="--st:.12s">
           <p style="color:#ffffff; margin:0;">© 2025 Alpen Intelligenz – KI-Automatisierung & Agentur. Alle Rechte vorbehalten.</p>
         </div>
       </div>
