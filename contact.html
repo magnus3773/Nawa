@@ -12,6 +12,9 @@
   <link rel="shortcut icon" type="image/x-icon" href="assets/imgs/logo/favicon.png">
   <link rel="icon" href="assets/imgs/logo/favicon.png">
 
+  <!-- Logo preload -->
+  <link rel="preload" as="image" href="assets/imgs/logo/favicon.png" imagesizes="140px">
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,7 +33,13 @@
 
   <!-- Alpen Intelligenz overrides -->
   <style>
-    :root{ --alpen-navy:#0F172A; --alpen-gold:#EAB308; }
+    :root{
+      --alpen-navy:#0F172A;
+      --alpen-gold:#EAB308;
+      --ai-navy:#0B1F3F;
+      --ai-overlay: rgba(0,0,0,.35);
+      --ease: cubic-bezier(.22,.61,.36,1);
+    }
     body{ background:#fff !important; color:var(--alpen-navy) !important; }
     h1,h2,h3,h4,h5,h6{ color:var(--alpen-navy) !important; }
     a{ color:var(--alpen-navy); } a:hover{ color:#0b1222; }
@@ -45,6 +54,24 @@
     .underline-accent{ text-decoration-color:var(--alpen-gold) !important; }
     .header__main, .header-6__main{ box-shadow:none !important; }
     .banner8__title-wrapper-title, .banner8__title-wrapper-dec { color: white !important; }
+
+    /* === Header & Offcanvas Styles (wichtig) === */
+    .ai-header{position:relative;z-index:1005;background:#fff;}
+    .ai-header__inner{max-width:1140px;margin:0 auto;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+    .ai-header__logo img{height:48px;width:auto;display:block}
+    .ai-nav ul{display:flex;gap:24px;list-style:none;margin:0;padding:0}
+    .ai-nav a{color:var(--ai-navy);text-decoration:none}
+    .ai-nav a:hover{color:var(--alpen-gold)}
+    .ai-burger{display:inline-flex;align-items:center;justify-content:center;padding:10px 12px;border:0;border-radius:12px;cursor:pointer;background:var(--ai-navy);color:#fff;transition:transform .2s var(--ease);}
+    .ai-burger:active{transform:scale(.98)}
+    .ai-burger__icon rect{fill:#fff}
+
+    /* Offcanvas Panel (unabhängig vom Template funktionsfähig) */
+    .offcanvas__area{position:fixed;top:0;right:0;height:100dvh;width:min(86vw,360px);background:#fff;z-index:1200;transform:translateX(100%);opacity:0;transition:transform .45s var(--ease), opacity .45s var(--ease);box-shadow:-12px 0 32px rgba(0,0,0,.08);}
+    .offcanvas__overlay{position:fixed;inset:0;background:var(--ai-overlay);z-index:1190;opacity:0;visibility:hidden;transition:opacity .35s var(--ease), visibility .35s var(--ease);}
+    .offcanvas__area.is-open{transform:translateX(0);opacity:1}
+    .offcanvas__overlay.is-open{opacity:1;visibility:visible}
+    @media (min-width: 992px){ .d-lg-block{display:block !important} }
   </style>
 </head>
 
@@ -99,6 +126,7 @@
     <a class="ai-header__logo" href="index.html" aria-label="Startseite">
       <img src="assets/imgs/logo/favicon.png" alt="Alpen Intelligenz" />
     </a>
+
     <nav class="ai-nav d-none d-lg-block" aria-label="Hauptmenü">
       <ul>
         <li><a href="service.html">Leistungen</a></li>
@@ -106,6 +134,7 @@
         <li><a href="contact.html">Kontakt</a></li>
       </ul>
     </nav>
+
     <button class="ai-burger" aria-label="Menü öffnen" aria-expanded="false">
       <svg class="ai-burger__icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
         <rect x="3" y="5"  width="18" height="2" rx="1"></rect>
@@ -190,17 +219,43 @@
             </form>
           </div>
 
-          <!-- AJAX Submit + Preloader-Failsafe -->
+          <!-- JS: Preloader Failsafe + Offcanvas-Steuerung + AJAX-Submit -->
           <script>
-          // Preloader sicher entfernen – immer nach Load, plus Fallback nach 3s
+          // Preloader sicher entfernen
           (function(){
-            function hidePreloader(){
-              var p = document.getElementById('preloader');
-              if (p) p.style.display = 'none';
-            }
+            function hidePreloader(){ var p=document.getElementById('preloader'); if(p) p.style.display='none'; }
             window.addEventListener('load', hidePreloader);
             setTimeout(hidePreloader, 3000);
           })();
+
+          // Offcanvas öffnen/schließen
+          document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.querySelector('.ai-burger');
+            const panel = document.querySelector('.offcanvas__area');
+            const overlay = document.querySelector('.offcanvas__overlay');
+            const closeBtn = document.querySelector('.offcanvas-close-icon');
+
+            function openMenu(){
+              panel.classList.add('is-open');
+              overlay.classList.add('is-open');
+              btn.setAttribute('aria-expanded','true');
+              document.body.style.overflow='hidden';
+            }
+            function closeMenu(){
+              panel.classList.remove('is-open');
+              overlay.classList.remove('is-open');
+              btn.setAttribute('aria-expanded','false');
+              document.body.style.overflow='';
+            }
+
+            btn && btn.addEventListener('click', () => {
+              const open = btn.getAttribute('aria-expanded') === 'true';
+              open ? closeMenu() : openMenu();
+            });
+            overlay && overlay.addEventListener('click', closeMenu);
+            closeBtn && closeBtn.addEventListener('click', closeMenu);
+            document.addEventListener('keydown', (e) => { if(e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') closeMenu(); });
+          });
 
           // Formular AJAX-Submit
           document.addEventListener('DOMContentLoaded', function(){
@@ -290,7 +345,7 @@
   </section>
 </footer>
 
-<!-- JS (nur stabile Dateien; wenn du weitere einbindest, prüfe Pfade/404) -->
+<!-- JS -->
 <script src="assets/js/vendor/jquery-3.7.1.min.js"></script>
 <script src="assets/js/vendor/bootstrap.bundle.min.js"></script>
 <script src="assets/js/plugins/swiper.min.js"></script>
