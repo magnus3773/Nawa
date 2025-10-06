@@ -57,17 +57,15 @@
       .banner8__title-wrapper-title,
       .banner8__title-wrapper-dec { color: white !important; }
 
-      /* ===== Scroll-Reveal Animations (leichtgewichtig, ohne neue Libs) ===== */
+      /* ===== Scroll-Reveal Animations ===== */
       .reveal{opacity:0;transform:translateY(18px) scale(.98);filter:blur(4px);transition:opacity .7s var(--ease),transform .7s var(--ease),filter .7s var(--ease)}
       .reveal.in{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}
-      /* Varianten */
       [data-anim="fade-up"].reveal{transform:translateY(22px)}
       [data-anim="fade-down"].reveal{transform:translateY(-22px)}
       [data-anim="fade-left"].reveal{transform:translateX(-22px)}
       [data-anim="fade-right"].reveal{transform:translateX(22px)}
       [data-anim="zoom"].reveal{transform:scale(.95)}
       [data-anim="appear"].reveal{transform:none;filter:none}
-      /* Stagger über CSS-Variable --st */
       .reveal{transition-delay:var(--st,0s)}
 
       /* Underline Sweep used in Hero */
@@ -84,6 +82,9 @@
       /* Feature Cards subtle hover */
       .feature-card{transition:transform .3s var(--ease), box-shadow .3s var(--ease)}
       .feature-card:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(0,0,0,.06)}
+
+      /* Diese Seite: Scroll-Progress-Bar sicher ausblenden */
+      #scroll-percentage, #scroll-percentage-value { display:none !important; }
 
       @media (prefers-reduced-motion: reduce){
         .reveal{opacity:1 !important;transform:none !important;filter:none !important;transition:none !important}
@@ -485,8 +486,6 @@
 </footer>
 <!-- Footer end -->
 
-<div id="scroll-percentage"><span id="scroll-percentage-value"></span></div>
-
 <!-- JS -->
 <script src="assets/js/vendor/jquery-3.7.1.min.js"></script>
 <script src="assets/js/vendor/bootstrap.bundle.min.js"></script>
@@ -518,7 +517,7 @@
 <script>
   (function(){
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if(prefersReduced) return; // Nutzer-Wunsch respektieren
+    if(prefersReduced) return;
 
     const els = Array.from(document.querySelectorAll('.reveal'));
     if(!els.length) return;
@@ -527,9 +526,7 @@
       entries.forEach((entry) => {
         if(entry.isIntersecting){
           entry.target.classList.add('in');
-          // für ein Mal animieren
           io.unobserve(entry.target);
-          // spezielle Unterstreichung aktivieren, wenn vorhanden
           entry.target.classList.contains('underline-sweep') && entry.target.classList.add('is-in');
         }
       });
