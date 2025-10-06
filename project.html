@@ -145,6 +145,9 @@
     @media (max-width: 768px){
       :root { --slide-max-h: 62vh; }
     }
+
+    /* Nur auf dieser Seite: Scroll-Progress-Bar sicher ausblenden */
+    #scroll-percentage, #scroll-percentage-value { display:none !important; }
   </style>
 </head>
 
@@ -313,7 +316,7 @@
           <div class="swiper portfolioSwiper">
             <div class="swiper-wrapper">
 
-              <!-- Slide 1: Querformat -->
+              <!-- Slide 1 -->
               <div class="swiper-slide">
                 <div class="portfolio-slide">
                   <img src="assets/imgs/images/portfolio.1.png" alt="Projekt 1 – Portfolio Bild (Querformat)" loading="lazy">
@@ -324,7 +327,7 @@
                 </div>
               </div>
 
-              <!-- Slide 2: Hochformat -->
+              <!-- Slide 2 -->
               <div class="swiper-slide">
                 <div class="portfolio-slide">
                   <img src="assets/imgs/images/portfolio.2.png" alt="Projekt 2 – Portfolio Bild (Hochformat)" loading="lazy">
@@ -334,19 +337,6 @@
                   </div>
                 </div>
               </div>
-
-              <!-- Mehr Slides? Kopieren & Bildpfad anpassen -->
-              <!--
-              <div class="swiper-slide">
-                <div class="portfolio-slide">
-                  <img src="assets/imgs/project/dein-bild.jpg" alt="Projekt X" loading="lazy">
-                  <div class="portfolio-slide__caption">
-                    <p class="title">Projekt X</p>
-                    <p class="desc">Kurze Beschreibung</p>
-                  </div>
-                </div>
-              </div>
-              -->
 
             </div>
 
@@ -406,8 +396,6 @@
   </section>
 </footer>
 <!-- Footer end -->
-
-<div id="scroll-percentage"><span id="scroll-percentage-value"></span></div>
 
 <!-- JS -->
 <script src="assets/js/vendor/jquery-3.7.1.min.js"></script>
