@@ -349,24 +349,40 @@
 
     </main>
 
-    <!-- Footer -->
-<footer class="footer-before footer-inner" style="background-color:#0B1F3F; color:#ffffff; padding:40px 0;">
-  <section class="footer__area footer-1">
+<!-- Footer Styles: erzwingt überall weiße Schrift -->
+<style>
+  .footer-before,
+  .footer-before * {
+    color: #ffffff !important;
+  }
+  .footer-before a,
+  .footer-before a:visited,
+  .footer-before a:hover,
+  .footer-before a:active,
+  .footer-before a:focus {
+    color: #ffffff !important;
+    text-decoration: none;
+  }
+</style>
+
+<!-- Footer -->
+<footer class="footer-before footer-inner" style="background-color:#0B1F3F; padding:40px 0;">
+  <section class="footer__area footer-1" aria-label="Footer">
     <div class="container">
       <div class="row footer__wrap align-items-start">
 
         <!-- Kontakt -->
         <div class="col-lg-6 col-md-6 col-sm-12 mb-30">
           <div class="footer__widget">
-            <h5 class="title" style="color:#ffffff; margin-bottom:15px;">Kontakt</h5>
+            <h5 class="title" style="margin-bottom:15px;">Kontakt</h5>
             <p>
               Alpen Intelligenz<br>
               Leitengasse 41<br>
               9300 St. Veit an der Glan, Österreich
             </p>
             <p>
-              <a href="mailto:magnus_business@outlook.com" style="color:#ffffff; text-decoration:none;">kontakt@alpen-intelligenz.at</a><br>
-              <span style="color:#ffffff;">+43 670 4081412</span>
+              <a href="mailto:kontakt@alpenintelligenz.at">kontakt@alpenintelligenz.at</a><br>
+              <span>+43 670 4081412</span>
             </p>
           </div>
         </div>
@@ -374,12 +390,12 @@
         <!-- Navigation -->
         <div class="col-lg-6 col-md-6 col-sm-12 mb-30">
           <div class="footer__widget">
-            <h5 class="title" style="color:#ffffff; margin-bottom:15px;">Navigation</h5>
+            <h5 class="title" style="margin-bottom:15px;">Navigation</h5>
             <ul style="list-style:none; padding:0; margin:0;">
-              <li><a href="index.html" style="color:#ffffff; text-decoration:none;">Startseite</a></li>
-              <li><a href="service.html" style="color:#ffffff; text-decoration:none;">Leistungen</a></li>
-              <li><a href="project.html" style="color:#ffffff; text-decoration:none;">Portfolio</a></li>
-              <li><a href="contact.html" style="color:#ffffff; text-decoration:none;">Kontakt</a></li>
+              <li><a href="index.html">Startseite</a></li>
+              <li><a href="service.html">Leistungen</a></li>
+              <li><a href="project.html">Portfolio</a></li>
+              <li><a href="contact.html">Kontakt</a></li>
             </ul>
           </div>
         </div>
@@ -389,7 +405,7 @@
       <!-- Copyright -->
       <div class="footer__bottom-wrapper mt-40">
         <div class="footer__bottom text-center">
-          <p style="color:#ffffff; margin:0;">© 2025 Alpen Intelligenz – KI-Automatisierung & Agentur. Alle Rechte vorbehalten.</p>
+          <p style="margin:0;">© 2025 Alpen Intelligenz – KI-Automatisierung & Agentur. Alle Rechte vorbehalten.</p>
         </div>
       </div>
     </div>
