@@ -3,15 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Alpen Intelligenz – KI-Lösungen für Ihr Beauty Studio</title>
-  <meta name="description" content="Spezialisierte KI-Automatisierung für Beauty Studios: Kundenreaktivierung, Terminschutz und digitale Assistenten.">
-  <meta name="author" content="soukhinkhan">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Alpen Intelligenz – Leistungen</title>
+  <meta name="description" content="Spezialisierte KI-Automatisierung für Beauty Studios.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="shortcut icon" type="image/x-icon" href="assets/imgs/logo/favicon.png">
   <link rel="icon" href="assets/imgs/logo/favicon.png">
-
-  <link rel="preload" as="image" href="assets/imgs/logo/favicon.png" imagesizes="140px">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,61 +25,39 @@
   <link rel="stylesheet" href="assets/css/main.css">
 
   <style>
-      :root{
-        --alpen-navy:#0F172A;
-        --alpen-gold:#EAB308;
-        --ease:cubic-bezier(.22,.61,.36,1);
-      }
-
+      :root{ --alpen-navy:#0F172A; --alpen-gold:#EAB308; --ease:cubic-bezier(.22,.61,.36,1); }
       body{ background:#fff !important; color:var(--alpen-navy) !important; }
-      h1,h2,h3,h4,h5,h6{ color:var(--alpen-navy) !important; }
-      a{ color:var(--alpen-navy); }
-      a:hover{ color:#0b1222; }
+      h1,h2,h3,h4,h5,h6,a{ color:var(--alpen-navy) !important; }
+      a:hover{ color:#0b1222 !important; }
       .header, .header-6, .header-8, .menu-area{ background:#ffffff !important; }
-      .main-menu ul li > a{ color:var(--alpen-navy) !important; }
-      .main-menu ul li > a:hover{ color:var(--alpen-gold) !important; }
-      .rr-btn, .btn, .btn-primary{ background:var(--alpen-navy) !important; border-color:var(--alpen-navy) !important; color:#fff !important; }
-      .rr-btn:hover, .btn:hover{ background:#0c1223 !important; border-color:#0c1223 !important; }
-      .price-bg, .badge, .highlight{ background:var(--alpen-gold) !important; }
-      .color-theme-primary, .text-primary{ color:var(--alpen-navy) !important; }
-      .border-accent{ border-color:var(--alpen-gold) !important; }
-      .underline-accent{ text-decoration-color:var(--alpen-gold) !important; }
-      .header__main, .header-6__main{ box-shadow:none !important; }
-
-      /* Mobile Stability */
+      .rr-btn{ background:var(--alpen-navy) !important; color:#fff !important; border-color:var(--alpen-navy) !important; }
+      .header__main{ box-shadow:none !important; }
+      
+      /* Mobile Fixes */
       html, body { overflow-x: clip; }
-      #smooth-wrapper, #smooth-content, main { overflow-x: clip; }
-      section, header, footer, .breadcrumb__area { overflow-x: hidden; }
-      * { box-sizing: border-box; }
-
-      .reveal{
-        opacity:0;
-        transform:translateY(18px) scale(.98);
-        filter:blur(4px);
-        transition:opacity .7s var(--ease),transform .7s var(--ease),filter .7s var(--ease);
-        will-change: transform, opacity, filter;
-        contain: paint;
-      }
-      .reveal.in{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}
-      .underline-sweep { position:relative; display:inline-block; }
-      .underline-sweep::after{
-        content:""; position:absolute; left:50%; bottom:-16px;
-        height:3px; width:0;
-        background:linear-gradient(90deg, #EAB308, #60A5FA, #22D3EE);
-        transform:translateX(-50%); border-radius:2px;
-        transition:width .6s ease .2s;
-      }
-      .underline-sweep.is-in::after { width: 220px; }
-
-      .feature-card{transition:transform .3s var(--ease), box-shadow .3s var(--ease)}
-      .feature-card:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(0,0,0,.06)}
-      #scroll-percentage, #scroll-percentage-value { display:none !important; }
-
-      @media (max-width: 992px){ .reveal { filter:none !important; } }
+      .reveal{ opacity:0; transform:translateY(18px); transition:all .7s var(--ease); }
+      .reveal.in{ opacity:1; transform:translateY(0); }
+      .feature-card{ transition:transform .3s; }
+      .feature-card:hover{ transform:translateY(-5px); }
+      #scroll-percentage { display:none !important; }
+      
+      /* Navigation Styles */
+      .ai-header{position:relative;z-index:1005;background:#fff;}
+      .ai-header__inner{max-width:1140px;margin:0 auto;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;}
+      .ai-nav ul{display:flex;gap:24px;list-style:none;margin:0;padding:0}
+      .ai-nav a{text-decoration:none; font-weight:500;}
+      .ai-burger{padding:10px;border-radius:8px;background:var(--alpen-navy);color:#fff;border:none;}
+      
+      /* Offcanvas */
+      .offcanvas__area{position:fixed;top:0;right:0;height:100vh;width:300px;background:#fff;z-index:1200;transform:translateX(100%);transition:0.4s;}
+      .offcanvas__area.is-open{transform:translateX(0);}
+      .offcanvas__overlay{position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:1100;opacity:0;visibility:hidden;transition:0.3s;}
+      .offcanvas__overlay.is-open{opacity:1;visibility:visible;}
   </style>
 </head>
 
 <body>
+
   <div id="preloader">
     <div class="sk-three-bounce">
       <div class="sk-child sk-bounce1"></div>
@@ -91,28 +66,18 @@
     </div>
   </div>
 
-  <div class="backtotop-wrap cursor-pointer" aria-label="Nach oben">
-    <svg class="backtotop-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-      <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
-    </svg>
-  </div>
-
   <div class="fix">
-    <div class="offcanvas__area" aria-hidden="true">
+    <div class="offcanvas__area">
       <div class="offcanvas__wrapper">
         <div class="offcanvas__content">
-          <div class="offcanvas__top">
-            <a class="offcanvas__logo" href="index.html">
-              <img src="assets/imgs/logo/favicon.png" alt="Alpen Intelligenz" />
-            </a>
-            <button class="offcanvas-close">
-              <svg viewBox="0 0 24 24" width="22" height="22"><path d="M12 6l-7 7h14z" fill="currentColor"></path></svg>
-            </button>
+          <div class="offcanvas__top d-flex justify-content-between align-items-center p-3">
+            <a href="index.html"><img src="assets/imgs/logo/favicon.png" alt="Logo" style="height:40px;"></a>
+            <button class="offcanvas-close" style="background:none;border:none;"><i class="fa-light fa-xmark fa-xl"></i></button>
           </div>
-          <nav class="offcanvas__nav">
-            <ul>
-              <li style="--d:0"><a href="service.html">Leistungen</a></li>
-              <li style="--d:1"><a href="contact.html">Kontakt</a></li>
+          <nav class="offcanvas__nav p-3">
+            <ul style="list-style:none; padding:0;">
+              <li class="mb-3"><a href="service.html" class="h5">Leistungen</a></li>
+              <li class="mb-3"><a href="contact.html" class="h5">Kontakt</a></li>
             </ul>
           </nav>
         </div>
@@ -123,22 +88,15 @@
 
   <header class="ai-header">
     <div class="ai-header__inner">
-      <a class="ai-header__logo" href="index.html">
-        <img src="assets/imgs/logo/favicon.png" alt="Alpen Intelligenz" />
-      </a>
+      <a href="index.html"><img src="assets/imgs/logo/favicon.png" alt="Logo" style="height:48px;"></a>
       <nav class="ai-nav d-none d-lg-block">
         <ul>
           <li><a href="service.html">Leistungen</a></li>
           <li><a href="contact.html">Kontakt</a></li>
         </ul>
       </nav>
-      <button class="ai-burger">
-        <svg class="ai-burger__icon" viewBox="0 0 24 24" width="22" height="22">
-          <rect x="3" y="5"  width="18" height="2" rx="1"></rect>
-          <rect x="3" y="11" width="18" height="2" rx="1"></rect>
-          <rect x="3" y="17" width="18" height="2" rx="1"></rect>
-        </svg>
-        <svg class="ai-burger__arrow" viewBox="0 0 24 24" width="22" height="22"><path d="M12 6l-7 7h14z"></path></svg>
+      <button class="ai-burger d-lg-none" aria-label="Menü">
+        <i class="fa-regular fa-bars"></i>
       </button>
     </div>
   </header>
@@ -146,187 +104,168 @@
   <div id="smooth-wrapper">
     <div id="smooth-content">
       <main>
-  
-<section class="breadcrumb__before p-relative">
-  <div class="breadcrumb__area position-relative" style="background: url('assets/imgs/images/navy-colour.png') center/cover no-repeat; padding: 160px 0 100px; text-align: center;">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <div class="breadcrumb__content">
-            <h1 class="breadcrumb__title underline-sweep reveal" data-anim="appear" style="color:#fff; font-size:48px; margin:0;">Unsere Leistungen</h1>
+        
+        <section class="breadcrumb__before p-relative">
+          <div class="breadcrumb__area position-relative" style="background: url('assets/imgs/images/navy-colour.png') center/cover no-repeat; padding: 160px 0 100px; text-align: center;">
+            <div class="container">
+              <div class="row">
+                <div class="col-12">
+                  <h1 class="reveal" style="color:#fff; font-size:48px; margin:0;">Unsere Leistungen</h1>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+        </section>
 
-<section class="choose-us__area section-space">
-  <div class="container">
-    <div class="row align-items-center g-4">
-      <div class="col-lg-6 order-lg-2">
-        <img class="img-fluid rounded-3 reveal" data-anim="appear" style="max-width:100%;height:auto;" src="assets/imgs/images/leistungen.jpg" alt="Beauty Studio KI" loading="lazy">
-      </div>
-      <div class="col-lg-6 order-lg-1">
-        <div class="choose-us__content-wrap">
-          <div class="section__title-wrapper hero">
-            <h2 class="section__title-wrapper-title _split_text reveal" data-anim="appear">Mehr Zeit für Ihre Kunden – dank KI</h2>
-            <p class="section__title-wrapper-dec rr_title_anim mt-20 reveal" data-anim="appear" style="--st:.06s">
-              Wir entwickeln maßgeschneiderte Lösungen für Beauty-Expertinnen, die den stressigen Alltag im Studio automatisieren. 
-              Vom Terminschutz bis zur Kundenpflege – weniger Büroaufwand, mehr Fokus auf die Behandlung.
-            </p>
-            <div class="choose-us__list-item">
-              <ul>
-                <li class="rr_title_anim reveal" data-anim="appear" style="--st:.1s">
-                  <img src="assets/imgs/icon/choose-icon-1.png" alt="">Schnelle Einrichtung
-                </li>
-                <li class="rr_title_anim reveal" data-anim="appear" style="--st:.15s">
-                  <img src="assets/imgs/icon/choose-icon-1.png" alt="">Intuitive Bedienung
-                </li>
-                <li class="rr_title_anim reveal" data-anim="appear" style="--st:.2s">
-                  <img src="assets/imgs/icon/choose-icon-1.png" alt="">Persönlicher Support
-                </li>
+        <section class="choose-us__area section-space">
+          <div class="container">
+            <div class="row align-items-center g-4">
+              <div class="col-lg-6 order-lg-2">
+                <img class="img-fluid rounded-3 reveal" src="assets/imgs/images/leistungen.jpg" alt="Beauty Studio KI">
+              </div>
+              <div class="col-lg-6 order-lg-1">
+                <div class="section__title-wrapper hero">
+                  <h2 class="reveal">Mehr Zeit für Ihre Kunden – dank KI</h2>
+                  <p class="reveal mt-20">
+                    Wir entwickeln maßgeschneiderte Lösungen für Beauty-Expertinnen. Vom Terminschutz bis zur Kundenpflege – weniger Büroaufwand, mehr Fokus auf die Behandlung.
+                  </p>
+                  <a class="rr-btn btn-transparent mt-40 reveal" href="contact.html">
+                    Jetzt Beratung sichern <i class="fa-solid fa-angle-right"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-space-bottom">
+          <div class="container">
+            <div class="row g-4">
+              <div class="col-md-6 col-lg-3">
+                <div class="feature-card reveal p-4 border rounded">
+                  <img src="assets/imgs/icon/fast-content-1.png" alt="" style="height:40px; margin-bottom:15px;">
+                  <h5>Kundenreaktivierung</h5>
+                  <p>Wir wecken Ihre „schlafenden“ Kunden automatisch auf und füllen Ihren Terminkalender.</p>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-3">
+                <div class="feature-card reveal p-4 border rounded">
+                  <img src="assets/imgs/icon/fast-content-2.png" alt="" style="height:40px; margin-bottom:15px;">
+                  <h5>Termin-Schutz</h5>
+                  <p>Vergessene Termine kosten Geld. Unsere KI erinnert Ihre Kunden charmant via WhatsApp.</p>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-3">
+                <div class="feature-card reveal p-4 border rounded">
+                  <img src="assets/imgs/icon/fast-content-3.png" alt="" style="height:40px; margin-bottom:15px;">
+                  <h5>Reputation-Booster</h5>
+                  <p>Automatisierte Bewertungsanfragen sorgen für glänzende 5-Sterne-Rezensionen.</p>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-3">
+                <div class="feature-card reveal p-4 border rounded">
+                  <img src="assets/imgs/icon/fast-content-4.png" alt="" style="height:40px; margin-bottom:15px;">
+                  <h5>24/7 Assistent</h5>
+                  <p>Ein intelligenter Chat-Bot beantwortet Anfragen Ihrer Kunden rund um die Uhr.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="faq__area section-space-bottom">
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="col-lg-6">
+                <h2 class="reveal mb-40">Häufige Fragen</h2>
+                <div class="accordion" id="accordionExample">
+                  <div class="accordion-item mb-3">
+                    <h2 class="accordion-header" id="headingOne">
+                      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                        Warum KI im Studio?
+                      </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        Um Personalkosten zu sparen und Ausfälle zu minimieren. Mehr Zeit für Behandlungen.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item mb-3">
+                    <h2 class="accordion-header" id="headingTwo">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                        Muss ich technisch begabt sein?
+                      </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        Nein. Wir übernehmen die komplette Einrichtung. Sie müssen nichts weiter tun.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 text-end">
+                <img class="reveal rounded-3" src="assets/imgs/images/faq-photo.jpg" alt="FAQ" style="max-width:80%;">
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+      <footer style="background-color:#0B1F3F; padding:40px 0;">
+        <div class="container">
+          <div class="row" style="color:#fff;">
+            <div class="col-md-6 mb-4">
+              <h5 style="color:#fff;">Kontakt</h5>
+              <p>Alpen Intelligenz<br>Leitengasse 41, 9300 St. Veit an der Glan<br>
+              <a href="mailto:kontakt@alpenintelligenz.at" style="color:#fff;">kontakt@alpenintelligenz.at</a></p>
+            </div>
+            <div class="col-md-6 mb-4">
+              <h5 style="color:#fff;">Navigation</h5>
+              <ul style="list-style:none; padding:0;">
+                <li><a href="index.html" style="color:#fff;">Startseite</a></li>
+                <li><a href="service.html" style="color:#fff;">Leistungen</a></li>
+                <li><a href="contact.html" style="color:#fff;">Kontakt</a></li>
               </ul>
             </div>
-            <a class="rr-btn btn-transparent mt-40 reveal" data-anim="appear" style="--st:.25s" href="contact.html">
-              Jetzt Beratung sichern <i class="fa-solid fa-angle-right"></i>
-            </a>
+          </div>
+          <div class="text-center mt-4">
+            <p style="color:#fff; margin:0;">© 2025 Alpen Intelligenz. Alle Rechte vorbehalten.</p>
           </div>
         </div>
-      </div>
+      </footer>
     </div>
   </div>
-</section>
 
-<section class="section-space-bottom">
-  <div class="container">
-    <div class="features-grid">
-      <div class="feature-card reveal" data-anim="fade-left">
-        <img src="assets/imgs/icon/fast-content-1.png" alt="" style="height:40px;width:auto;margin-bottom:12px;" loading="lazy">
-        <h5>Kundenreaktivierung</h5>
-        <p>Wir wecken Ihre „schlafenden“ Kunden automatisch auf und füllen Ihren Terminkalender – ganz ohne Werbekosten.</p>
-      </div>
-      <div class="feature-card reveal" data-anim="fade-left" style="--st:.08s">
-        <img src="assets/imgs/icon/fast-content-2.png" alt="" style="height:40px;width:auto;margin-bottom:12px;" loading="lazy">
-        <h5>Termin- & No-Show-Schutz</h5>
-        <p>Vergessene Termine kosten Geld. Unsere KI erinnert Ihre Kunden charmant via WhatsApp oder SMS an ihren Besuch.</p>
-      </div>
-      <div class="feature-card reveal" data-anim="fade-left" style="--st:.16s">
-        <img src="assets/imgs/icon/fast-content-3.png" alt="" style="height:40px;width:auto;margin-bottom:12px;" loading="lazy">
-        <h5>Reputation-Booster</h5>
-        <p>Automatisierte Bewertungsanfragen sorgen für glänzende 5-Sterne-Rezensionen bei Google und stärken Ihr Ansehen.</p>
-      </div>
-      <div class="feature-card reveal" data-anim="fade-left" style="--st:.24s">
-        <img src="assets/imgs/icon/fast-content-4.png" alt="" style="height:40px;width:auto;margin-bottom:12px;" loading="lazy">
-        <h5>24/7 Buchungs-Assistent</h5>
-        <p>Ein intelligenter Chat-Bot beantwortet Anfragen Ihrer Kunden rund um die Uhr – auch wenn Sie gerade behandeln.</p>
-      </div>
-    </div>
-  </div>
-</section>
+  <script src="assets/js/vendor/jquery-3.7.1.min.js"></script>
+  <script src="assets/js/vendor/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/plugins/wow.js"></script>
+  <script src="assets/js/main.js"></script>
 
-<section class="faq__area ask-question p-relative overflow-hidden section-space-bottom">
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-lg-6">
-        <div class="section__title-wrapper hero mb-40">
-          <h2 class="section__title-wrapper-title _split_text reveal" data-anim="appear">Häufige Fragen unserer Studios</h2>
-        </div>
-        <div class="ask-question__faq reveal" data-anim="appear" style="--st:.08s">
-          <div class="accordion" id="accordionExample">
-            <div class="accordion-item ask-question__faq-item faq__item">
-              <h5 class="accordion-header" id="headingA">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseA" aria-expanded="true" aria-controls="collapseA">
-                  Warum sollte ich als Studio-Inhaberin in KI investieren?
-                </button>
-              </h5>
-              <div id="collapseA" class="accordion-collapse collapse show" aria-labelledby="headingA" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                  <p>Um Personalkosten zu sparen und Ausfälle zu minimieren. Die Automatisierung übernimmt lästige Büroaufgaben, damit Sie mehr wertvolle Zeit in der Kabine verbringen können.</p>
-                </div>
-              </div>
-            </div>
-            <div class="accordion-item ask-question__faq-item faq__item">
-              <h5 class="accordion-header" id="headingB">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseB" aria-expanded="false" aria-controls="collapseB">
-                  Muss ich technisch begabt sein?
-                </button>
-              </h5>
-              <div id="collapseB" class="accordion-collapse collapse" aria-labelledby="headingB" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                  <p>Nein. Wir übernehmen die komplette Einrichtung und Anpassung. Sie müssen nichts weiter tun, als Ihre Kunden wie gewohnt zu verwöhnen.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-6 text-end">
-        <img class="reveal" data-anim="appear" src="assets/imgs/images/faq-photo.jpg" alt="Studio FAQ" loading="lazy" style="max-width:70%; height:auto; border-radius:12px;">
-      </div>
-    </div>
-  </div>
-</section>
-
-    </main>
-
-<footer class="footer-before footer-inner" style="background-color:#0B1F3F; padding:40px 0;">
-  <section class="footer__area footer-1">
-    <div class="container">
-      <div class="row footer__wrap align-items-start">
-        <div class="col-lg-6 col-md-6 col-sm-12 mb-30">
-          <div class="footer__widget">
-            <h5 class="title" style="margin-bottom:15px; color:#fff !important;">Kontakt</h5>
-            <p style="color:#fff !important;">Alpen Intelligenz<br>Leitengasse 41<br>9300 St. Veit an der Glan, Österreich</p>
-            <p><a href="mailto:kontakt@alpenintelligenz.at" style="color:#fff !important;">kontakt@alpenintelligenz.at</a><br><span style="color:#fff !important;">+43 670 4081412</span></p>
-          </div>
-        </div>
-        <div class="col-lg-6 col-md-6 col-sm-12 mb-30">
-          <div class="footer__widget">
-            <h5 class="title" style="margin-bottom:15px; color:#fff !important;">Navigation</h5>
-            <ul style="list-style:none; padding:0; margin:0;">
-              <li><a href="index.html" style="color:#fff !important;">Startseite</a></li>
-              <li><a href="service.html" style="color:#fff !important;">Leistungen</a></li>
-              <li><a href="contact.html" style="color:#fff !important;">Kontakt</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="footer__bottom-wrapper mt-40">
-        <div class="footer__bottom text-center">
-          <p style="margin:0; color:#fff !important;">© 2025 Alpen Intelligenz – KI-Automatisierung & Agentur. Alle Rechte vorbehalten.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-</footer>
-
-<script src="assets/js/vendor/jquery-3.7.1.min.js"></script>
-<script src="assets/js/vendor/bootstrap.bundle.min.js"></script>
-<script src="assets/js/plugins/meanmenu.min.js"></script>
-<script src="assets/js/vendor/magnific-popup.min.js"></script>
-<script src="assets/js/plugins/waypoints.min.js"></script>
-<script src="assets/js/plugins/swiper.min.js"></script>
-<script src="assets/js/plugins/gsap.js"></script>
-<script src="assets/js/plugins/SplitText.js"></script>
-<script src="assets/js/plugins/wow.js"></script>
-<script src="assets/js/main.js"></script>
-
-<script>
-  (function(){
-    const els = Array.from(document.querySelectorAll('.reveal'));
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if(entry.isIntersecting){
-          entry.target.classList.add('in');
-          io.unobserve(entry.target);
-          entry.target.classList.contains('underline-sweep') && entry.target.classList.add('is-in');
-        }
+  <script>
+    // Simple Burger Menu Logic
+    $(document).ready(function(){
+      $('.ai-burger').click(function(){
+        $('.offcanvas__area').addClass('is-open');
+        $('.offcanvas__overlay').addClass('is-open');
       });
-    }, { threshold: 0.2 });
-    els.forEach((el) => io.observe(el));
-  })();
-</script>
+      $('.offcanvas-close, .offcanvas__overlay').click(function(){
+        $('.offcanvas__area').removeClass('is-open');
+        $('.offcanvas__overlay').removeClass('is-open');
+      });
 
+      // Simple Reveal Animation
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if(entry.isIntersecting){
+            entry.target.classList.add('in');
+          }
+        });
+      });
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    });
+  </script>
 </body>
 </html>
