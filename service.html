@@ -1,14 +1,18 @@
 <!doctype html>
 <html class="no-js" lang="de">
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>Alpen Intelligenz – Leistungen</title>
-  <meta name="description" content="Spezialisierte KI-Automatisierung für Beauty Studios.">
+  <meta name="description" content="Spezialisierte KI-Automatisierung für Beauty Studios: Kundenreaktivierung, Terminschutz und digitale Assistenten.">
+  <meta name="author" content="soukhinkhan">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="shortcut icon" type="image/x-icon" href="assets/imgs/logo/favicon.png">
   <link rel="icon" href="assets/imgs/logo/favicon.png">
+
+  <link rel="preload" as="image" href="assets/imgs/logo/favicon.png" imagesizes="140px">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,116 +23,221 @@
   <link rel="stylesheet" href="assets/css/vendor/odometer.min.css">
   <link rel="stylesheet" href="assets/css/plugins/swiper.min.css">
   <link rel="stylesheet" href="assets/css/vendor/magnific-popup.css">
-  <link rel="stylesheet" href="assets/css/vendor/fontawesome-pro.css"> 
+  <link rel="stylesheet" href="assets/css/vendor/fontawesome-pro.css">
   <link rel="stylesheet" href="assets/css/vendor/spacing.css">
   <link rel="stylesheet" href="assets/css/vendor/custom-font.css">
   <link rel="stylesheet" href="assets/css/main.css">
 
   <style>
-      :root{ --alpen-navy:#0F172A; --alpen-gold:#EAB308; --ease:cubic-bezier(.22,.61,.36,1); }
-      body{ background:#fff !important; color:var(--alpen-navy) !important; }
-      h1,h2,h3,h4,h5,h6,a{ color:var(--alpen-navy) !important; }
-      a:hover{ color:#0b1222 !important; }
-      .header, .header-6, .header-8, .menu-area{ background:#ffffff !important; }
-      .rr-btn{ background:var(--alpen-navy) !important; color:#fff !important; border-color:var(--alpen-navy) !important; }
-      .header__main{ box-shadow:none !important; }
-      
-      /* Mobile Fixes */
-      html, body { overflow-x: clip; }
-      .reveal{ opacity:0; transform:translateY(18px); transition:all .7s var(--ease); }
-      .reveal.in{ opacity:1; transform:translateY(0); }
-      .feature-card{ transition:transform .3s; }
-      .feature-card:hover{ transform:translateY(-5px); }
-      #scroll-percentage { display:none !important; }
-      
-      /* Navigation Styles */
-      .ai-header{position:relative;z-index:1005;background:#fff;}
-      .ai-header__inner{max-width:1140px;margin:0 auto;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;}
-      .ai-nav ul{display:flex;gap:24px;list-style:none;margin:0;padding:0}
-      .ai-nav a{text-decoration:none; font-weight:500;}
-      .ai-burger{padding:10px;border-radius:8px;background:var(--alpen-navy);color:#fff;border:none;}
-      
-      /* Offcanvas */
-      .offcanvas__area{position:fixed;top:0;right:0;height:100vh;width:300px;background:#fff;z-index:1200;transform:translateX(100%);transition:0.4s;}
-      .offcanvas__area.is-open{transform:translateX(0);}
-      .offcanvas__overlay{position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:1100;opacity:0;visibility:hidden;transition:0.3s;}
-      .offcanvas__overlay.is-open{opacity:1;visibility:visible;}
+    :root{
+      --alpen-navy:#0B1F3F;
+      --alpen-gold:#EAB308;
+      --ease:cubic-bezier(.22,.61,.36,1);
+    }
+    body{ background:#fff !important; color:var(--alpen-navy) !important; }
+    h1,h2,h3,h4,h5,h6{ color:var(--alpen-navy) !important; }
+    a{ color:var(--alpen-navy); }
+    a:hover{ color:#0b1222; }
+    .header, .header-6, .header-8, .menu-area{ background:#ffffff !important; }
+    .main-menu ul li > a{ color:var(--alpen-navy) !important; }
+    .main-menu ul li > a:hover{ color:var(--alpen-gold) !important; }
+    .rr-btn, .btn, .btn-primary{ background:var(--alpen-navy) !important; border-color:var(--alpen-navy) !important; color:#fff !important; }
+    .rr-btn:hover, .btn:hover{ background:#0c1223 !important; border-color:#0c1223 !important; }
+    .price-bg, .badge, .highlight{ background:var(--alpen-gold) !important; }
+    .color-theme-primary, .text-primary{ color:var(--alpen-navy) !important; }
+    .border-accent{ border-color:var(--alpen-gold) !important; }
+    .underline-accent{ text-decoration-color:var(--alpen-gold) !important; }
+    /* remove header shadows */
+    .header__main, .header-6__main{ box-shadow:none !important; }
+    
+    /* Reveal Animation Helper */
+    .reveal{ opacity:0; transform:translateY(18px); transition:all .7s var(--ease); }
+    .reveal.in{ opacity:1; transform:translateY(0); }
+    
+    /* Feature Card Hover */
+    .feature-card{ transition:transform .3s var(--ease), box-shadow .3s var(--ease); }
+    .feature-card:hover{ transform:translateY(-4px); box-shadow:0 12px 28px rgba(0,0,0,.06); }
   </style>
 </head>
 
 <body>
-
-  <div id="preloader">
-    <div class="sk-three-bounce">
-      <div class="sk-child sk-bounce1"></div>
-      <div class="sk-child sk-bounce2"></div>
-      <div class="sk-child sk-bounce3"></div>
-    </div>
-  </div>
-
-  <div class="fix">
-    <div class="offcanvas__area">
-      <div class="offcanvas__wrapper">
-        <div class="offcanvas__content">
-          <div class="offcanvas__top d-flex justify-content-between align-items-center p-3">
-            <a href="index.html"><img src="assets/imgs/logo/favicon.png" alt="Logo" style="height:40px;"></a>
-            <button class="offcanvas-close" style="background:none;border:none;"><i class="fa-light fa-xmark fa-xl"></i></button>
-          </div>
-          <nav class="offcanvas__nav p-3">
-            <ul style="list-style:none; padding:0;">
-              <li class="mb-3"><a href="service.html" class="h5">Leistungen</a></li>
-              <li class="mb-3"><a href="contact.html" class="h5">Kontakt</a></li>
-            </ul>
-          </nav>
+<div class="fix">
+  <div class="offcanvas__area" aria-hidden="true">
+    <div class="offcanvas__wrapper">
+      <div class="offcanvas__content">
+        <div class="offcanvas__top">
+          <a class="offcanvas__logo" href="index.html" aria-label="Startseite">
+            <img src="assets/imgs/logo/favicon.png" alt="Alpen Intelligenz" />
+          </a>
+          <button class="offcanvas-close" aria-label="Menü schließen">
+            <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+              <path d="M12 6l-7 7h14z" fill="currentColor"></path>
+            </svg>
+          </button>
         </div>
+        <nav class="offcanvas__nav" aria-label="Mobiles Menü">
+          <ul>
+            <li style="--d:0"><a href="service.html">Leistungen</a></li>
+            <li style="--d:1"><a href="contact.html">Kontakt</a></li>
+          </ul>
+        </nav>
       </div>
     </div>
   </div>
-  <div class="offcanvas__overlay"></div>
+</div>
+<div class="offcanvas__overlay" tabindex="-1" aria-hidden="true"></div>
 
-  <header class="ai-header">
-    <div class="ai-header__inner">
-      <a href="index.html"><img src="assets/imgs/logo/favicon.png" alt="Logo" style="height:48px;"></a>
-      <nav class="ai-nav d-none d-lg-block">
-        <ul>
-          <li><a href="service.html">Leistungen</a></li>
-          <li><a href="contact.html">Kontakt</a></li>
-        </ul>
-      </nav>
-      <button class="ai-burger d-lg-none" aria-label="Menü">
-        <i class="fa-regular fa-bars"></i>
-      </button>
-    </div>
-  </header>
+<header class="ai-header">
+  <div class="ai-header__inner">
+    <a class="ai-header__logo" href="index.html" aria-label="Startseite">
+      <img src="assets/imgs/logo/favicon.png" alt="Alpen Intelligenz" />
+    </a>
+    <nav class="ai-nav d-none d-lg-block" aria-label="Hauptmenü">
+      <ul>
+        <li><a href="service.html">Leistungen</a></li>
+        <li><a href="contact.html">Kontakt</a></li>
+      </ul>
+    </nav>
+    <button class="ai-burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="ai-offcanvas">
+      <svg class="ai-burger__icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+        <rect x="3" y="5"  width="18" height="2" rx="1"></rect>
+        <rect x="3" y="11" width="18" height="2" rx="1"></rect>
+        <rect x="3" y="17" width="18" height="2" rx="1"></rect>
+      </svg>
+      <svg class="ai-burger__arrow" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+        <path d="M12 6l-7 7h14z"></path>
+      </svg>
+    </button>
+  </div>
+</header>
 
-  <div id="smooth-wrapper">
-    <div id="smooth-content">
-      <main>
-        
-        <section class="breadcrumb__before p-relative">
-          <div class="breadcrumb__area position-relative" style="background: url('assets/imgs/images/navy-colour.png') center/cover no-repeat; padding: 160px 0 100px; text-align: center;">
-            <div class="container">
-              <div class="row">
-                <div class="col-12">
-                  <h1 class="reveal" style="color:#fff; font-size:48px; margin:0;">Unsere Leistungen</h1>
+<style>
+  :root{
+    --ai-navy:#0B1F3F;
+    --ai-gold:#EAB308;
+    --ai-overlay: rgba(0,0,0,.35);
+    --ease: cubic-bezier(.22,.61,.36,1);
+  }
+  .ai-header{position:relative;z-index:1005;background:#fff;}
+  .ai-header__inner{max-width:1140px;margin:0 auto;padding:14px 16px;
+    display:flex;align-items:center;justify-content:space-between;gap:16px;}
+  .ai-header__logo img{height:48px;width:auto;display:block}
+  .ai-nav ul{display:flex;gap:24px;list-style:none;margin:0;padding:0}
+  .ai-nav a{color:var(--ai-navy);text-decoration:none}
+  .ai-nav a:hover{color:var(--ai-gold)}
+  .ai-burger{display:inline-flex;align-items:center;justify-content:center;
+    padding:10px 12px;border:0;border-radius:12px;cursor:pointer;
+    background:var(--ai-navy);color:#fff;transition:transform .2s var(--ease);}
+  .ai-burger:active{transform:scale(.98)}
+  .ai-burger__icon rect{fill:#fff;transition:opacity .2s var(--ease)}
+  .ai-burger__arrow{display:none;fill:#fff;transition:transform .3s var(--ease)}
+  .offcanvas__area{
+    position:fixed;top:0;right:0;height:100dvh;width:min(86vw,360px);
+    background:#fff;z-index:1200;
+    transform:translateX(100%);opacity:0;
+    transition:transform .45s var(--ease), opacity .45s var(--ease);
+    will-change:transform,opacity;
+    box-shadow:-12px 0 32px rgba(0,0,0,.08);
+  }
+  .offcanvas__overlay{
+    position:fixed;inset:0;background:var(--ai-overlay);z-index:1190;
+    opacity:0;visibility:hidden;transition:opacity .35s var(--ease), visibility .35s var(--ease);
+  }
+  .offcanvas__top{display:flex;align-items:center;justify-content:space-between;padding:18px}
+  .offcanvas__logo img{height:40px;width:auto;display:block}
+  .offcanvas-close{background:#f3f5f9;border:0;border-radius:10px;padding:8px;cursor:pointer;color:var(--ai-navy);display:none}
+  .offcanvas__nav ul{list-style:none;margin:8px 0 0;padding:10px 18px}
+  .offcanvas__nav li{opacity:0;transform:translateY(8px);animation:menuItem .5s var(--ease) forwards;animation-delay: calc(.05s * var(--d));}
+  .offcanvas__nav a{display:block;padding:12px 6px;text-decoration:none;color:var(--ai-navy);border-radius:8px}
+  .offcanvas__nav a:hover{background:#f6f7fb}
+  @keyframes menuItem{to{opacity:1;transform:translateY(0)}}
+  .offcanvas__area.is-open{transform:translateX(0);opacity:1}
+  .offcanvas__overlay.is-open{opacity:1;visibility:visible}
+  .offcanvas-close{display:inline-flex}
+  .ai-burger[aria-expanded="true"] .ai-burger__icon{opacity:0}
+  .ai-burger[aria-expanded="true"] .ai-burger__arrow{display:block;transform:translateY(1px)}
+  @media (min-width: 992px){
+    .d-lg-block{display:block !important}
+    .d-lg-none{display:none !important}
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const btn     = document.querySelector('.ai-burger');
+    const panel   = document.querySelector('.offcanvas__area');
+    const overlay = document.querySelector('.offcanvas__overlay');
+    const close   = document.querySelector('.offcanvas-close');
+    const focusablesSel = 'a,button,input,textarea,select,[tabindex]:not([tabindex="-1"])';
+    let lastFocused = null;
+    function openMenu(){
+      lastFocused = document.activeElement;
+      panel.classList.add('is-open');
+      overlay.classList.add('is-open');
+      panel.setAttribute('aria-hidden','false');
+      btn.setAttribute('aria-expanded','true');
+      document.body.style.overflow='hidden';
+      const first = panel.querySelector(focusablesSel);
+      first && first.focus();
+    }
+    function closeMenu(){
+      panel.classList.remove('is-open');
+      overlay.classList.remove('is-open');
+      panel.setAttribute('aria-hidden','true');
+      btn.setAttribute('aria-expanded','false');
+      document.body.style.overflow='';
+      lastFocused && lastFocused.focus();
+    }
+    btn && btn.addEventListener('click', () => {
+      const open = btn.getAttribute('aria-expanded') === 'true';
+      open ? closeMenu() : openMenu();
+    });
+    close && close.addEventListener('click', closeMenu);
+    overlay && overlay.addEventListener('click', closeMenu);
+    document.addEventListener('keydown', (e) => {
+      if(e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') closeMenu();
+    });
+  });
+</script>
+<div id="smooth-wrapper">
+  <div id="smooth-content">
+    <main>
+      
+      <section class="breadcrumb__before p-relative">
+        <div class="breadcrumb__area position-relative" style="background: url('assets/imgs/images/navy-colour.png') center/cover no-repeat; padding: 160px 0 100px; text-align: center;">
+          <div class="container">
+            <div class="row">
+              <div class="col-12">
+                <div class="breadcrumb__content">
+                  <h1 class="breadcrumb__title reveal" style="color:#fff; font-size:48px; margin:0;">Unsere Leistungen</h1>
                 </div>
               </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section class="choose-us__area section-space">
-          <div class="container">
-            <div class="row align-items-center g-4">
-              <div class="col-lg-6 order-lg-2">
-                <img class="img-fluid rounded-3 reveal" src="assets/imgs/images/leistungen.jpg" alt="Beauty Studio KI">
-              </div>
-              <div class="col-lg-6 order-lg-1">
+      <section class="choose-us__area section-space">
+        <div class="container">
+          <div class="row align-items-center g-4">
+            <div class="col-lg-6 order-lg-2">
+              <img class="img-fluid rounded-3 reveal" style="max-width:100%;height:auto;" src="assets/imgs/images/leistungen.jpg" alt="Beauty Studio KI" loading="lazy">
+            </div>
+            <div class="col-lg-6 order-lg-1">
+              <div class="choose-us__content-wrap">
                 <div class="section__title-wrapper hero">
-                  <h2 class="reveal">Mehr Zeit für Ihre Kunden – dank KI</h2>
-                  <p class="reveal mt-20">
-                    Wir entwickeln maßgeschneiderte Lösungen für Beauty-Expertinnen. Vom Terminschutz bis zur Kundenpflege – weniger Büroaufwand, mehr Fokus auf die Behandlung.
+                  <h2 class="section__title-wrapper-title _split_text reveal">Mehr Zeit für Ihre Kunden – dank KI</h2>
+                  <p class="section__title-wrapper-dec rr_title_anim mt-20 reveal">
+                    Wir entwickeln maßgeschneiderte Lösungen für Beauty-Expertinnen, die den stressigen Alltag im Studio automatisieren. 
+                    Vom Terminschutz bis zur Kundenpflege – weniger Büroaufwand, mehr Fokus auf die Behandlung.
                   </p>
+                  <div class="choose-us__list-item">
+                    <ul>
+                      <li class="rr_title_anim reveal"><img src="assets/imgs/icon/choose-icon-1.png" alt="">Schnelle Einrichtung</li>
+                      <li class="rr_title_anim reveal"><img src="assets/imgs/icon/choose-icon-1.png" alt="">Intuitive Bedienung</li>
+                      <li class="rr_title_anim reveal"><img src="assets/imgs/icon/choose-icon-1.png" alt="">Persönlicher Support</li>
+                    </ul>
+                  </div>
                   <a class="rr-btn btn-transparent mt-40 reveal" href="contact.html">
                     Jetzt Beratung sichern <i class="fa-solid fa-angle-right"></i>
                   </a>
@@ -136,136 +245,200 @@
               </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section class="section-space-bottom">
-          <div class="container">
-            <div class="row g-4">
-              <div class="col-md-6 col-lg-3">
-                <div class="feature-card reveal p-4 border rounded">
-                  <img src="assets/imgs/icon/fast-content-1.png" alt="" style="height:40px; margin-bottom:15px;">
-                  <h5>Kundenreaktivierung</h5>
-                  <p>Wir wecken Ihre „schlafenden“ Kunden automatisch auf und füllen Ihren Terminkalender.</p>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-3">
-                <div class="feature-card reveal p-4 border rounded">
-                  <img src="assets/imgs/icon/fast-content-2.png" alt="" style="height:40px; margin-bottom:15px;">
-                  <h5>Termin-Schutz</h5>
-                  <p>Vergessene Termine kosten Geld. Unsere KI erinnert Ihre Kunden charmant via WhatsApp.</p>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-3">
-                <div class="feature-card reveal p-4 border rounded">
-                  <img src="assets/imgs/icon/fast-content-3.png" alt="" style="height:40px; margin-bottom:15px;">
-                  <h5>Reputation-Booster</h5>
-                  <p>Automatisierte Bewertungsanfragen sorgen für glänzende 5-Sterne-Rezensionen.</p>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-3">
-                <div class="feature-card reveal p-4 border rounded">
-                  <img src="assets/imgs/icon/fast-content-4.png" alt="" style="height:40px; margin-bottom:15px;">
-                  <h5>24/7 Assistent</h5>
-                  <p>Ein intelligenter Chat-Bot beantwortet Anfragen Ihrer Kunden rund um die Uhr.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="faq__area section-space-bottom">
-          <div class="container">
-            <div class="row align-items-center">
-              <div class="col-lg-6">
-                <h2 class="reveal mb-40">Häufige Fragen</h2>
-                <div class="accordion" id="accordionExample">
-                  <div class="accordion-item mb-3">
-                    <h2 class="accordion-header" id="headingOne">
-                      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
-                        Warum KI im Studio?
-                      </button>
-                    </h2>
-                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-                      <div class="accordion-body">
-                        Um Personalkosten zu sparen und Ausfälle zu minimieren. Mehr Zeit für Behandlungen.
-                      </div>
-                    </div>
-                  </div>
-                  <div class="accordion-item mb-3">
-                    <h2 class="accordion-header" id="headingTwo">
-                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
-                        Muss ich technisch begabt sein?
-                      </button>
-                    </h2>
-                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                      <div class="accordion-body">
-                        Nein. Wir übernehmen die komplette Einrichtung. Sie müssen nichts weiter tun.
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-6 text-end">
-                <img class="reveal rounded-3" src="assets/imgs/images/faq-photo.jpg" alt="FAQ" style="max-width:80%;">
-              </div>
-            </div>
-          </div>
-        </section>
-
-      </main>
-
-      <footer style="background-color:#0B1F3F; padding:40px 0;">
+      <section class="section-space-bottom">
         <div class="container">
-          <div class="row" style="color:#fff;">
-            <div class="col-md-6 mb-4">
-              <h5 style="color:#fff;">Kontakt</h5>
-              <p>Alpen Intelligenz<br>Leitengasse 41, 9300 St. Veit an der Glan<br>
-              <a href="mailto:kontakt@alpenintelligenz.at" style="color:#fff;">kontakt@alpenintelligenz.at</a></p>
+          <div class="features-grid row g-4">
+            
+            <div class="col-xl-3 col-lg-4 col-sm-6">
+              <div class="feature-card reveal p-4 border rounded h-100">
+                <img src="assets/imgs/icon/fast-content-1.png" alt="" style="height:40px;width:auto;margin-bottom:12px;" loading="lazy">
+                <h5>Kundenreaktivierung</h5>
+                <p>Wir wecken Ihre „schlafenden“ Kunden automatisch auf und füllen Ihren Terminkalender – ganz ohne Werbekosten.</p>
+              </div>
             </div>
-            <div class="col-md-6 mb-4">
-              <h5 style="color:#fff;">Navigation</h5>
-              <ul style="list-style:none; padding:0;">
-                <li><a href="index.html" style="color:#fff;">Startseite</a></li>
-                <li><a href="service.html" style="color:#fff;">Leistungen</a></li>
-                <li><a href="contact.html" style="color:#fff;">Kontakt</a></li>
-              </ul>
+
+            <div class="col-xl-3 col-lg-4 col-sm-6">
+              <div class="feature-card reveal p-4 border rounded h-100">
+                <img src="assets/imgs/icon/fast-content-2.png" alt="" style="height:40px;width:auto;margin-bottom:12px;" loading="lazy">
+                <h5>Termin- & No-Show-Schutz</h5>
+                <p>Vergessene Termine kosten Geld. Unsere KI erinnert Ihre Kunden charmant via WhatsApp oder SMS an ihren Besuch.</p>
+              </div>
             </div>
-          </div>
-          <div class="text-center mt-4">
-            <p style="color:#fff; margin:0;">© 2025 Alpen Intelligenz. Alle Rechte vorbehalten.</p>
+
+            <div class="col-xl-3 col-lg-4 col-sm-6">
+              <div class="feature-card reveal p-4 border rounded h-100">
+                <img src="assets/imgs/icon/fast-content-3.png" alt="" style="height:40px;width:auto;margin-bottom:12px;" loading="lazy">
+                <h5>Reputation-Booster</h5>
+                <p>Automatisierte Bewertungsanfragen sorgen für glänzende 5-Sterne-Rezensionen bei Google und stärken Ihr Ansehen.</p>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-4 col-sm-6">
+              <div class="feature-card reveal p-4 border rounded h-100">
+                <img src="assets/imgs/icon/fast-content-4.png" alt="" style="height:40px;width:auto;margin-bottom:12px;" loading="lazy">
+                <h5>24/7 Buchungs-Assistent</h5>
+                <p>Ein intelligenter Chat-Bot beantwortet Anfragen Ihrer Kunden rund um die Uhr – auch wenn Sie gerade behandeln.</p>
+              </div>
+            </div>
+
           </div>
         </div>
-      </footer>
-    </div>
+      </section>
+
+      <section class="faq__area ask-question p-relative overflow-hidden section-space-bottom">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-6">
+              <div class="section__title-wrapper hero mb-40">
+                <h2 class="section__title-wrapper-title _split_text reveal">Häufige Fragen unserer Studios</h2>
+              </div>
+              <div class="ask-question__faq reveal">
+                <div class="accordion" id="accordionExample">
+                  <div class="accordion-item ask-question__faq-item faq__item">
+                    <h5 class="accordion-header" id="headingA">
+                      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseA" aria-expanded="true" aria-controls="collapseA">
+                        Warum sollte ich als Studio-Inhaberin in KI investieren?
+                      </button>
+                    </h5>
+                    <div id="collapseA" class="accordion-collapse collapse show" aria-labelledby="headingA" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        <p>Um Personalkosten zu sparen und Ausfälle zu minimieren. Die Automatisierung übernimmt lästige Büroaufgaben, damit Sie mehr wertvolle Zeit in der Kabine verbringen können.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item ask-question__faq-item faq__item">
+                    <h5 class="accordion-header" id="headingB">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseB" aria-expanded="false" aria-controls="collapseB">
+                        Muss ich technisch begabt sein?
+                      </button>
+                    </h5>
+                    <div id="collapseB" class="accordion-collapse collapse" aria-labelledby="headingB" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        <p>Nein. Wir übernehmen die komplette Einrichtung und Anpassung. Sie müssen nichts weiter tun, als Ihre Kunden wie gewohnt zu verwöhnen.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item ask-question__faq-item faq__item">
+                    <h5 class="accordion-header" id="headingC">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseC" aria-expanded="false" aria-controls="collapseC">
+                        Wie schnell sehe ich Ergebnisse?
+                      </button>
+                    </h5>
+                    <div id="collapseC" class="accordion-collapse collapse" aria-labelledby="headingC" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        <p>Besonders bei der Kundenreaktivierung füllt sich der Kalender oft schon in den ersten Tagen nach dem Start. Sie sehen den Erfolg direkt in Ihren Buchungszahlen.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 text-end">
+              <img class="reveal" src="assets/imgs/images/faq-photo.jpg" alt="Studio FAQ" loading="lazy" style="max-width:70%; height:auto; border-radius:12px;">
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer-before footer-inner" style="background-color:#0B1F3F; padding:40px 0;">
+      <section class="footer__area footer-1" aria-label="Footer">
+        <div class="container">
+          <div class="row footer__wrap align-items-start">
+            <div class="col-lg-6 col-md-6 col-sm-12 mb-30">
+              <div class="footer__widget">
+                <h5 class="title" style="margin-bottom:15px; color:white;">Kontakt</h5>
+                <p style="color:white;">Alpen Intelligenz<br>Leitengasse 41<br>9300 St. Veit an der Glan, Österreich</p>
+                <p><a href="mailto:kontakt@alpenintelligenz.at" style="color:white;">kontakt@alpenintelligenz.at</a><br><span style="color:white;">+43 670 4081412</span></p>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 mb-30">
+              <div class="footer__widget">
+                <h5 class="title" style="margin-bottom:15px; color:white;">Navigation</h5>
+                <ul style="list-style:none; padding:0; margin:0;">
+                  <li><a href="index.html" style="color:white;">Startseite</a></li>
+                  <li><a href="service.html" style="color:white;">Leistungen</a></li>
+                  <li><a href="contact.html" style="color:white;">Kontakt</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer__bottom-wrapper mt-40">
+            <div class="footer__bottom text-center">
+              <p style="margin:0; color:white;">© 2025 Alpen Intelligenz – KI-Automatisierung für Studios. Alle Rechte vorbehalten.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </footer>
+
   </div>
+</div>
 
-  <script src="assets/js/vendor/jquery-3.7.1.min.js"></script>
-  <script src="assets/js/vendor/bootstrap.bundle.min.js"></script>
-  <script src="assets/js/plugins/wow.js"></script>
-  <script src="assets/js/main.js"></script>
+<script>
+  window.ChatWidgetConfig = {
+    webhook: {
+      url: 'https://magnus3773.app.n8n.cloud/webhook/723ab9df-4195-4059-98ba-148a1ba468de/chat',
+      route: 'general',
+    },
+    branding: {
+      logo: 'https://magnus3773.github.io/Nawa/assets/imgs/logo/favicon.png',
+      name: 'Alpen Intelligenz',
+      welcomeText: 'Wie können wir Ihr Studio automatisieren?',
+    },
+    style: {
+      primaryColor: '#0b1f3f',
+      secondaryColor: '#163a6b',
+      position: 'right',
+      backgroundColor: '#0b1f3f',
+      fontColor: '#ffffff',
+    },
+  };
+</script>
+<script src="https://magnus3773.github.io/Alpen-Intelligenz-Chatbot-Design/design.js"></script>
 
-  <script>
-    // Simple Burger Menu Logic
-    $(document).ready(function(){
-      $('.ai-burger').click(function(){
-        $('.offcanvas__area').addClass('is-open');
-        $('.offcanvas__overlay').addClass('is-open');
-      });
-      $('.offcanvas-close, .offcanvas__overlay').click(function(){
-        $('.offcanvas__area').removeClass('is-open');
-        $('.offcanvas__overlay').removeClass('is-open');
-      });
+<script src="assets/js/vendor/jquery-3.7.1.min.js"></script>
+<script src="assets/js/vendor/chroma.min.js"></script>
+<script src="assets/js/plugins/waypoints.min.js"></script>
+<script src="assets/js/vendor/bootstrap.bundle.min.js"></script>
+<script src="assets/js/plugins/meanmenu.min.js"></script>
+<script src="assets/js/plugins/swiper.min.js"></script>
+<script src="assets/js/plugins/gsap.js"></script>
+<script src="assets/js/plugins/ScrollSmoother.js"></script>
+<script src="assets/js/plugins/ScrollToPlugin.js"></script>
+<script src="assets/js/plugins/ScrollTrigger.js"></script>
+<script src="assets/js/plugins/SplitText.js"></script>
+<script src="assets/js/plugins/wow.js"></script>
+<script src="assets/js/vendor/magnific-popup.min.js"></script>
+<script src="assets/js/vendor/type.js"></script>
+<script src="assets/js/vendor/vanilla-tilt.js"></script>
+<script src="assets/js/plugins/nice-select.min.js"></script>
+<script src="assets/js/vendor/odometer.min.js"></script>
+<script src="assets/js/vendor/jquery-ui.min.js"></script>
+<script src="assets/js/plugins/parallax-scroll.js"></script>
+<script src="assets/js/plugins/jquery.countdown.min.js"></script>
+<script src="assets/js/plugins/isotope-docs.min.js"></script>
+<script src="assets/js/vendor/ajax-form.js"></script>
+<script src="assets/js/main.js"></script>
 
-      // Simple Reveal Animation
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if(entry.isIntersecting){
-            entry.target.classList.add('in');
-          }
-        });
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const els = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) {
+          entry.target.classList.add('in');
+          observer.unobserve(entry.target);
+        }
       });
-      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-    });
-  </script>
+    }, { threshold: 0.1 });
+    els.forEach(el => observer.observe(el));
+  });
+</script>
+
 </body>
 </html>
